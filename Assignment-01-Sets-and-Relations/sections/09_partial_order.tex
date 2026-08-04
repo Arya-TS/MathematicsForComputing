@@ -1,0 +1,111 @@
+
+%=====================================================
+\section{Partially Ordered Sets}
+%=====================================================
+
+%-----------------------------------------------------
+
+\begin{frame}{Partial Order}
+
+\begin{block}{Definition}
+
+\vspace{0.1cm}
+
+A relation $R$ on a set $A$ is called a \textbf{Partial Order} if
+
+\[
+R
+\text{ is }
+\boxed{\text{Reflexive}}
+\land
+\boxed{\text{Antisymmetric}}
+\land
+\boxed{\text{Transitive}}
+\]
+
+\end{block}
+
+\vspace{0.3cm}
+
+A set together with a partial order,
+\[
+(A,R)
+\]
+is called a
+\[
+\boxed{\textbf{Partially Ordered Set (Poset)}}
+\]
+
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}{Power Set as a Poset}
+
+Let
+\[
+A=\{1,2,3\}
+\]
+Its power set is
+\[
+\mathcal P(A)
+=
+\{
+\emptyset,
+\{1\},
+\{2\},
+\{3\},
+\{1,2\},
+\{1,3\},
+\{2,3\},
+\{1,2,3\}
+\}
+\]
+Define
+\[
+R=\subseteq
+\]
+Then
+\[
+(\mathcal P(A),\subseteq)
+\]
+is a Partially Ordered Set.
+
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}{Application}
+
+A software project contains the tasks
+\[
+Collect
+\rightarrow
+Design
+\rightarrow
+Develop
+\rightarrow
+Test
+\rightarrow
+Deploy
+\]
+
+Define
+\[
+A\le B
+\]
+to mean
+\[
+\text{Task }A
+\text{ must be completed before Task }B.
+\]
+
+This dependency relation is
+\begin{itemize}
+\item Reflexive
+\item Antisymmetric
+\item Transitive
+\end{itemize}
+Hence, it forms a Partial Order.
+
+\end{frame}

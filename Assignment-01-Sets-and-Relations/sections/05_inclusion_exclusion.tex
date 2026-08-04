@@ -1,0 +1,97 @@
+%=====================================================
+\section{Inclusion-Exclusion Principle}
+%=====================================================
+
+%-----------------------------------------------------
+\begin{frame}{Inclusion-Exclusion Principle}
+
+\textbf{Definition}
+
+\vspace{0.3cm}
+
+The Inclusion-Exclusion Principle is used to determine the
+cardinality of the union of overlapping sets without counting
+common elements more than once.
+
+\vspace{0.5cm}
+
+For two finite sets,
+
+\[
+|A\cup B|
+=
+|A|
++
+|B|
+-
+|A\cap B|
+\]
+
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}{Example:}
+
+Suppose an autonomous driving model detects
+\[
+A=
+\{\text{Pixels predicted as Road}\}
+\]
+\[
+B=
+\{\text{Ground Truth Road Pixels}\}
+\]
+
+Suppose
+\[
+|A|=1200
+\]
+\[
+|B|=1100
+\]
+\[
+|A\cap B|=950
+\]
+Then
+\[
+|A\cup B|
+=
+1200+1100-950
+=
+1350
+\]
+
+The union represents all pixels that are
+either predicted as road or actually belong
+to the road region.
+
+\end{frame}
+
+%-----------------------------------------------------
+\begin{frame}{General Inclusion-Exclusion Formula}
+
+For \(n\) finite sets,
+
+\vspace{0.3cm}
+
+\[
+\left|
+\bigcup_{i=1}^{n}
+A_i
+\right|
+=
+\sum |A_i|
+-
+\sum |A_i\cap A_j|
++
+\sum |A_i\cap A_j\cap A_k|
+-\cdots
++(-1)^{n+1}
+\left|
+\bigcap_{i=1}^{n}
+A_i
+\right|
+\]
+
+\end{frame}

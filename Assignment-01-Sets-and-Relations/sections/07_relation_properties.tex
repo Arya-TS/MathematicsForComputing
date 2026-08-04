@@ -1,0 +1,219 @@
+%=====================================================
+\section{Properties of Relations}
+%=====================================================
+
+%-----------------------------------------------------
+\begin{frame}{Properties of Relations}
+
+The six fundamental properties are
+
+\begin{itemize}
+    \item Reflexive
+    \item Irreflexive
+    \item Symmetric
+    \item Antisymmetric
+    \item Asymmetric
+    \item Transitive
+\end{itemize}
+
+These properties help determine whether a relation is an Equivalence Relation or a Partial Order.
+
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}{Reflexive and Irreflexive Relations}
+
+\begin{columns}
+
+\column{0.48\textwidth}
+
+\textbf{Reflexive}
+
+\vspace{0.1cm}
+
+$\forall a\in A,\;(a,a)\in R$
+
+Every element is related to itself.
+
+\vspace{0.3cm}
+
+Example:
+
+$\le,\quad =,\quad \subseteq$
+
+\column{0.48\textwidth}
+
+\textbf{Irreflexive}
+
+\vspace{0.1cm}
+
+$\forall a\in A,\;
+(a,a)\notin R$
+
+No element is related to itself.
+
+\vspace{0.3cm}
+
+Example:
+
+$<,\quad >$
+
+\end{columns}
+
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}{Symmetric Relation}
+
+\textbf{Definition}
+
+\[
+(a,b)\in R
+\Longrightarrow
+(b,a)\in R
+\]
+
+\vspace{0.5cm}
+
+Example:
+
+\[
+xRy
+\iff
+x
+\text{ and }
+y
+\text{ belong to the same class}
+\]
+
+\[
+(Student_1,Student_2)
+\Longrightarrow
+(Student_2,Student_1)
+\]
+
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}{Antisymmetric Relation}
+
+\textbf{Definition}
+
+\[
+(a,b)\in R
+\land
+(b,a)\in R
+\Longrightarrow
+a=b
+\]
+
+\vspace{0.5cm}
+
+Example:
+\[
+\subseteq
+\]
+If
+\[
+A\subseteq B
+\; and\;
+B\subseteq A
+\]
+then
+\[
+A=B
+\]
+
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}{Asymmetric Relation}
+
+\textbf{Definition}
+
+\[
+(a,b)\in R
+\Longrightarrow
+(b,a)\notin R
+\]
+
+\vspace{0.4cm}
+
+Example:
+\[
+<
+\]
+If
+\[
+3<5
+\]
+then
+\[
+5<3
+\]
+
+is false.
+
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}{Transitive Relation}
+
+\textbf{Definition}
+
+\[
+(a,b)\in R
+\land
+(b,c)\in R
+\Longrightarrow
+(a,c)\in R
+\]
+
+\vspace{0.5cm}
+
+Example:
+
+\[
+\le,\quad \subseteq
+\]
+
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}{Applications in AI \& Software Engineering}
+
+\begin{block}{Software Dependency Graph}
+
+\vspace{0.1cm}
+
+If
+\[
+Module_A
+\rightarrow
+Module_B
+\]
+and
+\[
+Module_B
+\rightarrow
+Module_C
+\]
+then
+\[
+Module_A
+\]
+indirectly depends on
+\[
+Module_C
+\]
+illustrating transitivity.
+
+\end{block}
+
+\end{frame}

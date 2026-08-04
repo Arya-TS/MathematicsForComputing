@@ -1,0 +1,121 @@
+%=====================================================
+\section{Relations}
+%=====================================================
+
+%-----------------------------------------------------
+\begin{frame}{Binary Relation}
+
+\textbf{Definition}
+
+A binary relation from $A$ to $B$ is any subset of
+
+\[
+A\times B
+\]
+
+Mathematically,
+\[
+R\subseteq A\times B \;if \;(a,b)\in R\]
+We write aRb meaning "$a$ is related to $b$."
+
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}{Example of a Binary Relation}
+
+Let
+\[
+A=\{1,2,3\}
+\]
+
+Define
+\[
+R=
+\{
+(1,2),
+(2,3),
+(1,3)
+\}
+\]
+
+Then
+\[
+R\subseteq A\times A
+\]
+
+Hence,
+\[
+R\;is\; a\; binary\; relation\; on\; A.
+\]
+
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}{Predicate Representation}
+
+A relation is often defined using a predicate.
+
+\vspace{0.4cm}
+
+Example
+
+\[
+R=
+\{
+(a,b)
+\mid
+a,b\in A
+\land
+a<b
+\}
+\]
+
+where
+
+\[
+P(a,b):a<b
+\]
+
+is the predicate.
+
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}{Domain and Range of a Relation}
+
+For
+
+\[
+R\subseteq A\times B
+\]
+
+the \textbf{Domain} is
+
+\[
+Dom(R)
+=
+\{
+a\in A
+\mid
+\exists b\in B,
+(a,b)\in R
+\}
+\]
+
+The \textbf{Range} is
+
+\[
+Ran(R)
+=
+\{
+b\in B
+\mid
+\exists a\in A,
+(a,b)\in R
+\}
+\]
+
+\end{frame}
