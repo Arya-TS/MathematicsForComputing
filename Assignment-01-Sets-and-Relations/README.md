@@ -32,4 +32,4 @@ This assignment introduces the mathematical foundations of set theory and relati
 
 ## Preview
 
-![Presentation](Screenshots/title-slide.png)
+![Presentation](screenshots/title-slide.png)
