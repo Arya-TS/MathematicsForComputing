@@ -61,5 +61,5 @@ MathematicsForComputing/
 
 **Arya T S**
 
-M.Tech Artificial Intelligence & Software Engineering**
+M.Tech Artificial Intelligence & Software Engineering  
 Cochin University of Science and Technology (CUSAT)
