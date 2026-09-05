@@ -4,7 +4,7 @@ This repository contains my coursework for the **Mathematics for Computing** cou
 
 ## Repository Contents
 
-The repository contains assignments, presentations, and related work completed as part of the course.
+The repository contains assignments, presentations and related work completed as part of the course.
 
 | Assignment    | Topic                                          |
 | ------------- | ---------------------------------------------- |
@@ -71,7 +71,7 @@ MathematicsForComputing/
 
 ### Assignment 01 — Sets and Relations
 
-Covers fundamental concepts of **sets, set operations, relations, functions, and their mathematical representations**.
+Covers fundamental concepts of **sets, set operations, relations, functions and their mathematical representations**.
 
 ### Assignment 02 — Digital Landscape
 
@@ -79,15 +79,15 @@ A digital landscape created using **mathematical functions in Desmos**, demonstr
 
 ### Assignment 03 — Statistical Analysis
 
-Covers **statistical analysis and data visualization** using computational tools, including data analysis, plotting, and regression.
+Covers **statistical analysis and data visualization** using computational tools, including data analysis, plotting and regression.
 
 ### Assignment 04 — Optimization Problem
 
-Covers fundamental concepts of **optimization, derivatives, convex sets, and optimization methods**.
+Covers fundamental concepts of **optimization, derivatives, convex sets and optimization methods**.
 
 ### Assignment 05 — Descriptive Statistics
 
-A **LaTeX Beamer presentation** covering fundamental concepts of **descriptive statistics, sample statistics, frequentist statistics, and model estimation**.
+A **LaTeX Beamer presentation** covering fundamental concepts of **descriptive statistics, sample statistics, frequentist statistics and model estimation**.
 
 ## Author
 
