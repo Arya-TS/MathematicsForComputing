@@ -53,15 +53,7 @@ MathematicsForComputing/
 ├── Assignment-02-Digital_Landscape/
 ├── Assignment-03-Statistical-Analysis/
 ├── Assignment-04-Optimization-Problem/
-├── Assignment-05/
-│   ├── main.tex
-│   ├── README.md
-│   ├── Descriptive-Statistics.pdf
-│   ├── sections/
-│   ├── figures/
-│   ├── references/
-│   └── screenshots/
-│
+├── Assignment-05-Descriptive-Statistics/
 ├── README.md
 ├── LICENSE
 └── .gitignore
