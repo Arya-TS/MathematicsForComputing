@@ -1,0 +1,141 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+%=====================================================
+% Packages
+%=====================================================
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\usetikzlibrary{positioning,arrows.meta}
+
+%=====================================================
+% Theme
+%=====================================================
+
+\usetheme[numbering=fraction]{metropolis}
+
+%=====================================================
+% Colors
+%=====================================================
+
+\definecolor{Emerald}{RGB}{0,155,119}
+
+\setbeamercolor{title}{fg=Emerald}
+
+\setbeamercolor{frametitle}{
+fg=white,
+bg=Emerald
+}
+
+\setbeamercolor{progress bar}{
+fg=Emerald
+}
+
+%=====================================================
+% Remove Navigation Symbols
+%=====================================================
+
+\setbeamertemplate{navigation symbols}{}
+
+%=====================================================
+% Custom Frame Title
+%=====================================================
+
+\makeatletter
+
+\setbeamertemplate{frametitle}
+{
+\nointerlineskip
+
+\begin{beamercolorbox}[
+wd=\paperwidth,
+ht=3.6ex,
+dp=1.4ex,
+leftskip=0.6cm,
+rightskip=0.6cm
+]{frametitle}
+
+\color{white}
+
+\Large\bfseries
+
+\makebox[\paperwidth-1.2cm][l]
+{
+\insertframetitle
+\hfill
+\normalsize\bfseries Arya T S
+}
+
+\end{beamercolorbox}
+}
+
+\makeatother
+
+%=====================================================
+% Information
+%=====================================================
+
+\title{Mathematics for Computing}
+
+\subtitle{Assignment 01\\Sets and Relations}
+
+\author{Arya T S}
+
+\institute{
+M.Tech Artificial Intelligence \& Software Engineering\\
+Cochin University of Science and Technology (CUSAT)
+}
+
+\date{Semester I}
+
+%=====================================================
+% Document
+%=====================================================
+
+\begin{document}
+
+%-----------------------------------------------------
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%-----------------------------------------------------
+
+\input{sections/01_sets}
+
+\input{sections/02_setbuilder}
+
+\input{sections/03_types}
+
+\input{sections/04_operations}
+
+\input{sections/05_inclusion_exclusion}
+
+\input{sections/06_relations}
+
+\input{sections/07_relation_properties}
+
+\input{sections/08_equivalence_relation}
+
+\input{sections/09_partial_order}
+
+\input{sections/10_hasse_diagram}
+
+\input{sections/11_max_min_chain_antichain}
+
+%-----------------------------------------------------
+
+\begin{frame}[standout]
+\Huge
+Thank You
+\end{frame}
+
+\end{document}
