@@ -1,0 +1,313 @@
+\documentclass[aspectratio=169,12pt]{beamer}
+
+% =========================================================
+% THEME
+% =========================================================
+
+\usetheme{Madrid}
+
+% =========================================================
+% PACKAGES
+% =========================================================
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+
+% =========================================================
+% PASTEL PROFESSIONAL COLORS
+% =========================================================
+
+\definecolor{PastelBlue}{RGB}{91,135,166}
+\definecolor{PastelLavender}{RGB}{125,118,155}
+\definecolor{LightBlue}{RGB}{235,242,247}
+\definecolor{LightLavender}{RGB}{242,240,247}
+\definecolor{DarkText}{RGB}{55,65,75}
+
+\setbeamercolor{structure}{fg=PastelBlue}
+
+\setbeamercolor{normal text}{
+    fg=DarkText,
+    bg=white
+}
+
+\setbeamercolor{frametitle}{
+    fg=PastelBlue,
+    bg=LightBlue
+}
+
+\setbeamercolor{block title}{
+    fg=white,
+    bg=PastelBlue
+}
+
+\setbeamercolor{block body}{
+    fg=DarkText,
+    bg=LightBlue
+}
+
+\setbeamercolor{block title example}{
+    fg=white,
+    bg=PastelLavender
+}
+
+\setbeamercolor{block body example}{
+    fg=DarkText,
+    bg=LightLavender
+}
+
+% =========================================================
+% FOOTER
+% =========================================================
+
+% Show author, title and date only
+\setbeamertemplate{footline}
+{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[
+            wd=.33\paperwidth,
+            ht=2.5ex,
+            dp=1.125ex,
+            leftskip=.3cm
+        ]{author in head/foot}
+            \usebeamerfont{author in head/foot}\insertshortauthor
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[
+            wd=.34\paperwidth,
+            ht=2.5ex,
+            dp=1.125ex,
+            center
+        ]{title in head/foot}
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[
+            wd=.33\paperwidth,
+            ht=2.5ex,
+            dp=1.125ex,
+            rightskip=.3cm
+        ]{date in head/foot}
+            \usebeamerfont{date in head/foot}
+            \hfill\insertshortdate\hspace{0.2cm}
+        \end{beamercolorbox}%
+    }%
+    \vskip0pt%
+}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% =========================================================
+% DOCUMENT INFORMATION
+% =========================================================
+
+\title{Descriptive Statistics}
+\subtitle{Mathematics for Computing -- Module 3}
+
+% Short author name used in the footer
+\author[Arya T S]{Arya T S}
+
+% Full institute information shown on the title page
+\institute{
+    M.Tech Artificial Intelligence \& Software Engineering\\
+    Cochin University of Science and Technology (CUSAT)
+}
+
+\date{September 2026}
+
+% =========================================================
+% DOCUMENT
+% =========================================================
+
+\begin{document}
+
+% =========================================================
+% TITLE SLIDE
+% =========================================================
+
+% \begin{frame}[plain]
+%     \titlepage
+% \end{frame}
+
+% =========================================================
+% MODULE OVERVIEW -- SLIDE 1
+% =========================================================
+
+\begin{frame}{Module Overview}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+% ---------- LEFT COLUMN ----------
+\begin{column}{0.48\textwidth}
+
+\begin{block}{Part I -- Foundations}
+
+\begin{itemize}
+    \item Statistics
+    \item Data
+    \item Information
+    \item Knowledge
+    \item Intelligence
+    \item Types of Data
+\end{itemize}
+
+\end{block}
+
+\end{column}
+
+% ---------- RIGHT COLUMN ----------
+\begin{column}{0.48\textwidth}
+
+\begin{block}{Part II -- Descriptive Statistics}
+
+\begin{itemize}
+    \item Measures of Central Tendency
+    \item Measures of Dispersion
+    \item Histogram
+    \item Box Plot
+    \item Outliers
+    \item Skewness
+    \item Kurtosis
+\end{itemize}
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+% =========================================================
+% MODULE OVERVIEW -- SLIDE 2
+% =========================================================
+
+\begin{frame}{Module Overview}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+% ---------- LEFT COLUMN ----------
+\begin{column}{0.48\textwidth}
+
+\begin{block}{Part III -- Sample Statistics}
+
+\begin{itemize}
+    \item Population and Sample
+    \item Sample Mean
+    \item Sample Variance
+    \item Order Statistics
+    \item Covariance
+    \item Sample Covariance
+    \item Correlation
+    \item Sample Covariance Matrix
+\end{itemize}
+
+\end{block}
+
+\end{column}
+
+% ---------- RIGHT COLUMN ----------
+\begin{column}{0.48\textwidth}
+
+\begin{block}{Part IV -- Frequentist Statistics}
+
+\begin{itemize}
+    \item Frequentist Statistics
+    \item Sampling
+    \item Sampling Distribution
+    \item Standard Error
+    \item Estimator, Estimate and Parameter
+    \item Bias and Variance
+    \item Mean Square Error
+    \item Consistency
+    \item Central Limit Theorem, Confidence Intervals
+\end{itemize}
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+% =========================================================
+% MODULE OVERVIEW -- SLIDE 3
+% =========================================================
+
+\begin{frame}{Module Overview}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+% ---------- LEFT COLUMN ----------
+\begin{column}{0.48\textwidth}
+
+\begin{block}{Part V -- Model Estimation}
+
+\begin{itemize}
+    \item Parametric Model Estimation
+    \item Maximum Likelihood Estimation
+    \item Non-parametric Model Estimation
+    \item Empirical CDF
+    \item Kernel Density Estimation
+    \item Parametric vs Non-parametric Comparison
+\end{itemize}
+
+\end{block}
+
+\end{column}
+
+% ---------- RIGHT COLUMN ----------
+\begin{column}{0.48\textwidth}
+
+\begin{block}{Final}
+
+\begin{itemize}
+    \item Applications in Computing and AI
+    \item Conclusion
+    \item References
+\end{itemize}
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+% =========================================================
+% CONTENT FILES
+% =========================================================
+
+\input{sections/01_foundations}
+\input{sections/02_central_tendency}
+\input{sections/03_dispersion}
+\input{sections/04_data_visualization}
+\input{sections/05_sample_statistics}
+\input{sections/06_frequentist_statistics}
+\input{sections/07_model_estimation}
+\input{sections/08_applications_conclusion}
+
+% ---------------------------------------------------------
+% REFERENCES
+% ---------------------------------------------------------
+
+\nocite{*}
+
+\begin{frame}[allowframebreaks]{References}
+
+\bibliographystyle{plain}
+\bibliography{references/references}
+
+\end{frame}
+% =========================================================
+
+\input{sections/09-thank-you}
+
+\end{document}
