@@ -75,41 +75,19 @@ Covers fundamental concepts of **sets, set operations, relations, functions, and
 
 ### Assignment 02 — Digital Landscape
 
-A digital landscape created using **mathematical functions in Desmos**, demonstrating the use of linear, circular, absolute value, and trigonometric functions for graphical modelling.
+A digital landscape created using **mathematical functions in Desmos**, demonstrating the use of different functions for graphical modelling.
 
 ### Assignment 03 — Statistical Analysis
 
-Explores **statistical analysis and data visualization** using computational tools, including data analysis, plotting, and regression.
+Covers **statistical analysis and data visualization** using computational tools, including data analysis, plotting, and regression.
 
 ### Assignment 04 — Optimization Problem
 
-Covers concepts related to **optimization, derivatives, convex sets, and optimization methods** with applications in mathematical and computational problems.
+Covers fundamental concepts of **optimization, derivatives, convex sets, and optimization methods**.
 
 ### Assignment 05 — Descriptive Statistics
 
-A **LaTeX Beamer presentation** covering descriptive and frequentist statistical concepts, including:
-
-* Statistics, Data, Information, Knowledge and Intelligence
-* Types of Data
-* Measures of Central Tendency
-* Measures of Dispersion
-* Histogram and Box Plot
-* Outliers
-* Skewness and Kurtosis
-* Population and Sample
-* Sample Statistics
-* Covariance and Correlation
-* Sampling and Sampling Distributions
-* Estimators and Estimates
-* Bias, Variance and Mean Square Error
-* Central Limit Theorem
-* Confidence Intervals
-* Parametric Model Estimation
-* Maximum Likelihood Estimation
-* Non-parametric Model Estimation
-* Empirical CDF
-* Kernel Density Estimation
-* Applications in Computing and Artificial Intelligence
+A **LaTeX Beamer presentation** covering fundamental concepts of **descriptive statistics, sample statistics, frequentist statistics, and model estimation**.
 
 ## Author
 
