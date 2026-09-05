@@ -1,0 +1,493 @@
+% =========================================================
+% PART II -- DESCRIPTIVE STATISTICS
+% =========================================================
+
+\section{Descriptive Statistics}
+
+% ---------------------------------------------------------
+% 8. MEASURES OF DISPERSION
+% ---------------------------------------------------------
+
+\begin{frame}{8. Measures of Dispersion}
+
+\textbf{Definition}
+
+Measures of dispersion describe the \textbf{spread or variability}
+of observations around a central value.
+
+\vspace{0.4cm}
+
+Two datasets may have the same mean but different levels of
+variability.
+
+\vspace{0.4cm}
+
+\textbf{Common measures}
+
+\begin{itemize}
+    \item \textbf{Range}
+    \item \textbf{Variance}
+    \item \textbf{Standard deviation}
+    \item \textbf{Interquartile range (IQR)}
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Purpose}
+
+They help determine how widely the observations are distributed
+and how consistent the data is.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 8.1 RANGE -- DEFINITION AND FORMULA
+% ---------------------------------------------------------
+
+\begin{frame}{8.1 Range}
+
+\textbf{Definition}
+
+The range is the difference between the \textbf{maximum} and
+\textbf{minimum} values in a dataset.
+
+\vspace{0.5cm}
+
+\textbf{Formula}
+
+\[
+\boxed{
+\text{Range} = x_{\max} - x_{\min}
+}
+\]
+
+\vspace{0.5cm}
+
+\textbf{Key idea}
+
+\begin{itemize}
+    \item Uses only the smallest and largest observations.
+    \item Provides a simple measure of the total spread.
+    \item Highly sensitive to extreme values.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Application:}
+
+Useful for obtaining a quick estimate of the spread of
+numerical data.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 8.1 RANGE -- EXAMPLE
+% ---------------------------------------------------------
+
+\begin{frame}{8.1 Range -- Example}
+
+\textbf{Example}
+
+Consider the dataset:
+
+\[
+X=\{10,20,30,40,50\}
+\]
+
+The minimum value is
+\[
+x_{\min}=10
+\]
+
+and the maximum value is
+\[
+x_{\max}=50
+\]
+
+\vspace{0.1cm}
+
+Therefore,
+\[
+\text{Range}
+=
+50-10
+=
+\boxed{40}
+\]
+
+\vspace{0.1cm}
+
+\textbf{Interpretation}
+
+The observations span a total interval of $40$ units.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 8.2 VARIANCE -- DEFINITION AND FORMULA
+% ---------------------------------------------------------
+
+\begin{frame}{8.2 Variance}
+
+\textbf{Definition}
+
+Variance measures the average squared deviation of observations
+from their mean.
+
+\vspace{0.1cm}
+
+For a dataset $x_1,x_2,\ldots,x_n$ with mean $\bar{x}$,
+
+\textbf{Population variance:}
+\[
+\boxed{
+\sigma^2
+=
+\frac{1}{N}
+\sum_{i=1}^{N}(x_i-\mu)^2
+}
+\]
+
+\textbf{Sample variance:}
+\[
+\boxed{
+s^2
+=
+\frac{1}{n-1}
+\sum_{i=1}^{n}(x_i-\bar{x})^2
+}
+\]
+
+\textbf{Key idea}
+
+The deviations are squared so that positive and negative
+deviations do not cancel each other.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 8.2 VARIANCE -- EXAMPLE
+% ---------------------------------------------------------
+
+\begin{frame}{8.2 Variance -- Example}
+
+\textbf{Example}
+
+Consider:
+\[
+X=\{2,4,6\}
+\]
+
+First calculate the mean:
+\[
+\bar{x}
+=
+\frac{2+4+6}{3}
+=
+4
+\]
+
+Squared deviations:
+\[
+(2-4)^2=4,\qquad
+(4-4)^2=0,\qquad
+(6-4)^2=4
+\]
+
+Population variance:
+\[
+\sigma^2
+=
+\frac{4+0+4}{3}
+=
+\boxed{\frac{8}{3}}
+\]
+
+\textbf{Interpretation}
+
+A larger variance indicates greater spread around the mean.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 8.3 STANDARD DEVIATION -- DEFINITION AND FORMULA
+% ---------------------------------------------------------
+
+\begin{frame}{8.3 Standard Deviation}
+
+\textbf{Definition}
+
+Standard deviation is the positive square root of the variance.
+
+\textbf{Population standard deviation}
+\[
+\boxed{
+\sigma
+=
+\sqrt{
+\frac{1}{N}
+\sum_{i=1}^{N}(x_i-\mu)^2
+}
+}
+\]
+\textbf{Sample standard deviation}
+\[
+\boxed{
+s
+=
+\sqrt{
+\frac{1}{n-1}
+\sum_{i=1}^{n}(x_i-\bar{x})^2
+}
+}
+\]
+
+Standard deviation is expressed in the \textbf{same units as the
+original data}, unlike variance.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 8.3 STANDARD DEVIATION -- EXAMPLE
+% ---------------------------------------------------------
+
+\begin{frame}{8.3 Standard Deviation -- Example}
+
+\textbf{Example}
+
+For the dataset
+\[
+X=\{2,4,6\},
+\]
+\[
+\sigma^2=\frac{8}{3}
+\]
+Therefore,
+\[
+\sigma
+=
+\sqrt{\frac{8}{3}}
+\approx
+\boxed{1.63}
+\]
+\textbf{Interpretation}
+
+The standard deviation indicates the typical magnitude of
+deviation of observations from the mean.
+
+\textbf{Application}
+
+Standard deviation is widely used in data analysis and machine
+learning to measure feature variability.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 8.4 INTERQUARTILE RANGE -- DEFINITION AND FORMULA
+% ---------------------------------------------------------
+
+\begin{frame}{8.4 Interquartile Range (IQR)}
+
+\textbf{Definition}
+
+The interquartile range measures the spread of the
+\textbf{middle 50\%} of the observations.
+
+\vspace{0.4cm}
+
+The data is divided into four parts using quartiles:
+
+\begin{itemize}
+    \item $Q_1$ -- First quartile (25th percentile)
+    \item $Q_2$ -- Second quartile (50th percentile / median)
+    \item $Q_3$ -- Third quartile (75th percentile)
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Formula}
+
+\[
+\boxed{
+IQR=Q_3-Q_1
+}
+\]
+
+\vspace{0.3cm}
+
+\textbf{Key idea}
+
+IQR focuses on the middle portion of the data and is
+less affected by extreme observations.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 8.4 IQR -- EXAMPLE
+% ---------------------------------------------------------
+
+% ---------------------------------------------------------
+% 8.4 IQR -- EXAMPLE 1
+% ---------------------------------------------------------
+
+% ---------------------------------------------------------
+% 8.4 IQR -- EXAMPLE 1
+% ---------------------------------------------------------
+
+\begin{frame}{8.4 Interquartile Range -- Example}
+
+\textbf{Example}
+
+Consider the ordered dataset:
+\[
+X=\{1,2,3,4,5,6,7,8,9\}
+\]
+
+The median is
+\[
+Q_2=5
+\]
+
+\textbf{Lower half}
+\[
+\{1,2,3,4\}
+\]
+
+Therefore,
+\[
+Q_1
+=
+\frac{2+3}{2}
+=
+\boxed{2.5}
+\]
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 8.4 IQR -- EXAMPLE 2
+% ---------------------------------------------------------
+
+\begin{frame}{8.4 Interquartile Range -- Example}
+
+\textbf{Upper half}
+
+\[
+\{6,7,8,9\}
+\]
+
+Therefore,
+
+\[
+Q_3
+=
+\frac{7+8}{2}
+=
+\boxed{7.5}
+\]
+
+From the previous example:
+
+\[
+Q_1=2.5,
+\qquad
+Q_3=7.5
+\]
+
+\textbf{Quartiles}
+
+\[
+Q_1=2.5,
+\qquad
+Q_2=5,
+\qquad
+Q_3=7.5
+\]
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 8.4 IQR -- CALCULATION
+% ---------------------------------------------------------
+
+\begin{frame}{8.4 Interquartile Range -- Calculation}
+
+\textbf{Formula}
+\[
+\boxed{IQR=Q_3-Q_1}
+\]
+
+\textbf{Calculation}
+
+Using
+\[
+Q_1=2.5,
+\qquad
+Q_3=7.5
+\]
+we get
+\[
+IQR=7.5-2.5
+\]
+\[
+\boxed{IQR=5}
+\]
+
+\textbf{Interpretation}
+
+The interquartile range is $5$, meaning that the middle
+$50\%$ of the observations are spread over an interval of
+$5$ units.
+
+\textbf{Key Point}
+
+IQR is less affected by extreme values than the range.
+
+\end{frame}
+
+% ---------------------------------------------------------
+% 8.5 COMPARISON OF DISPERSION MEASURES
+% ---------------------------------------------------------
+
+\begin{frame}{8.5 Comparison of Dispersion Measures}
+
+\small
+
+\begin{table}
+\centering
+
+\begin{tabular}{>{\bfseries}l l l}
+\toprule
+Measure & What it describes & Outlier sensitivity \\
+\midrule
+Range & Total spread & High \\
+Variance & Squared deviation from mean & High \\
+Standard deviation & Spread around mean & High \\
+IQR & Spread of middle 50\% & Low \\
+\bottomrule
+\end{tabular}
+
+\end{table}
+
+\vspace{0.4cm}
+
+\textbf{When to use?}
+
+\begin{itemize}
+    \item \textbf{Range:} Quick measure of total spread.
+    \item \textbf{Variance:} Useful in statistical and mathematical models.
+    \item \textbf{Standard deviation:} Easy to interpret in the original units.
+    \item \textbf{IQR:} Useful for skewed data and datasets with outliers.
+\end{itemize}
+
+\end{frame}

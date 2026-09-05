@@ -1,0 +1,321 @@
+% =========================================================
+% PART II -- DESCRIPTIVE STATISTICS
+% =========================================================
+
+\section{Descriptive Statistics}
+
+% ---------------------------------------------------------
+% 7. MEASURES OF CENTRAL TENDENCY
+% ---------------------------------------------------------
+
+\begin{frame}{7. Measures of Central Tendency}
+
+\textbf{Definition}
+
+Measures of central tendency describe the \textbf{central or typical
+value} of a dataset.
+
+\vspace{0.4cm}
+
+The three commonly used measures are:
+
+\begin{itemize}
+    \item \textbf{Mean} -- arithmetic average of the observations.
+    \item \textbf{Median} -- middle value after arranging the data.
+    \item \textbf{Mode} -- most frequently occurring value.
+\end{itemize}
+
+\vspace{0.4cm}
+
+\textbf{Purpose}
+
+They provide a single value that represents the center of a dataset.
+
+\vspace{0.3cm}
+
+\textbf{Application:}
+
+Used to summarize datasets in statistics, data analysis,
+and machine learning.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 7.1 MEAN -- DEFINITION AND FORMULA
+% ---------------------------------------------------------
+
+\begin{frame}{7.1 Mean}
+
+\textbf{Definition}
+
+The arithmetic mean is obtained by dividing the sum of all
+observations by the number of observations.
+
+\textbf{Formula}
+
+For observations $x_1,x_2,\ldots,x_n$,
+\[
+\boxed{
+\bar{x} = \frac{1}{n}\sum_{i=1}^{n}x_i
+}
+\]
+
+where $n$ is the number of observations.
+
+\textbf{Interpretation}
+
+The mean represents the value obtained when the total of all
+observations is distributed equally among the $n$ observations.
+
+\textbf{Note:} The mean uses every observation in the dataset and
+is therefore sensitive to extreme values.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 7.1 MEAN -- EXAMPLE
+% ---------------------------------------------------------
+
+\begin{frame}{7.1 Mean -- Example}
+
+\textbf{Example}
+
+Consider the dataset:
+\[
+X=\{10,20,30,40,50\}
+\]
+
+There are $n=5$ observations.
+
+\textbf{Calculation}
+\[
+\bar{x}
+=
+\frac{10+20+30+40+50}{5}
+\]
+\[
+\boxed{\bar{x}=30}
+\]
+
+\textbf{Interpretation}
+
+The average value of the dataset is $30$.
+
+\textbf{Application}
+
+The mean is widely used to summarize numerical features such as
+marks, income, temperature, and sensor measurements.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 7.2 MEDIAN -- DEFINITION AND FORMULA
+% ---------------------------------------------------------
+
+\begin{frame}{7.2 Median}
+
+\textbf{Definition}
+
+The median is the \textbf{middle value} of an ordered dataset.
+
+The observations must first be arranged in ascending or
+descending order.
+
+\textbf{Formula}
+
+For an ordered dataset with $n$ observations:
+\[
+\boxed{
+\text{Median} =
+\begin{cases}
+x_{\frac{n+1}{2}}, & n \text{ is odd}\\[8pt]
+\dfrac{x_{\frac{n}{2}}+x_{\frac{n}{2}+1}}{2},
+& n \text{ is even}
+\end{cases}
+}
+\]
+
+\textbf{Key idea}
+
+\begin{itemize}
+    \item If $n$ is odd, the median is the single middle observation.
+    \item If $n$ is even, the median is the average of the two middle observations.
+\end{itemize}
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 7.2 MEDIAN -- EXAMPLES
+% ---------------------------------------------------------
+
+\begin{frame}{7.2 Median -- Examples}
+
+\textbf{Example 1 -- Odd number of observations}
+
+Consider:
+\[
+X=\{10,20,30,40,50\}
+\]
+
+Here, $n=5$ is odd.
+\[
+\text{Median}
+=
+x_{\frac{5+1}{2}}
+=
+x_3
+=
+\boxed{30}
+\]
+
+\vspace{0.1cm}
+
+\textbf{Example 2 -- Even number of observations}
+
+Consider:
+
+\[
+X=\{10,20,30,40\}
+\]
+
+Here, $n=4$ is even.
+
+\[
+\text{Median}
+=
+\frac{x_2+x_3}{2}
+=
+\frac{20+30}{2}
+=
+\boxed{25}
+\]
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 7.3 MEDIAN -- OUTLIER EFFECT
+% ---------------------------------------------------------
+
+\begin{frame}{7.3 Median and Outliers}
+
+\textbf{Example}
+
+Consider:
+\[
+X=\{10,20,30,40,1000\}
+\]
+
+The mean is
+\[
+\bar{x}
+=
+\frac{10+20+30+40+1000}{5}
+=
+220
+\]
+
+while the median is
+\[
+\text{Median}=30
+\]
+
+\vspace{0.1cm}
+\textbf{Interpretation}
+
+The extreme value $1000$ greatly increases the mean, while the
+median remains close to the center of the majority of observations.
+
+\textbf{Key Point}
+
+\begin{itemize}
+    \item Mean is sensitive to extreme values.
+    \item Median is more resistant to outliers.
+\end{itemize}
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 7.4 MODE
+% ---------------------------------------------------------
+
+\begin{frame}{7.4 Mode}
+
+\textbf{Definition}
+
+The mode is the value that occurs with the \textbf{highest frequency}
+in a dataset.
+
+\textbf{Example}
+
+Consider:
+\[
+X=\{2,4,4,5,6,4,7,8\}
+\]
+
+Therefore,
+\[
+\boxed{\text{Mode}=4}
+\]
+\textbf{Types}
+\begin{itemize}
+    \item \textbf{Unimodal} -- one mode.
+    \item \textbf{Bimodal} -- two modes.
+    \item \textbf{Multimodal} -- more than two modes.
+\end{itemize}
+
+\textbf{Application:}
+
+Useful for identifying the most common category or value,
+especially for categorical data.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 7.5 COMPARISON
+% ---------------------------------------------------------
+
+\begin{frame}{7.5 Mean, Median and Mode}
+
+\small
+
+\begin{table}
+\centering
+
+\begin{tabular}{>{\bfseries}l l l}
+\toprule
+Measure & Main Idea & Sensitivity to Outliers \\
+\midrule
+Mean & Arithmetic average & High \\
+Median & Middle value & Low \\
+Mode & Most frequent value & Generally low \\
+\bottomrule
+\end{tabular}
+
+\end{table}
+
+\textbf{When to use?}
+
+\begin{itemize}
+    \item \textbf{Mean:} Suitable when the data is approximately
+    symmetric and does not contain strong outliers.
+    
+    \item \textbf{Median:} Suitable for skewed data or data
+    containing extreme values.
+    
+    \item \textbf{Mode:} Useful when the most frequent value or
+    category is important.
+\end{itemize}
+
+\textbf{Application:}
+
+Choosing an appropriate measure of central tendency helps
+summarize real-world datasets effectively.
+
+\end{frame}

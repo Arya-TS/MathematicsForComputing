@@ -1,0 +1,743 @@
+% =========================================================
+% PART III -- SAMPLE STATISTICS
+% =========================================================
+
+\section{Sample Statistics}
+
+% ---------------------------------------------------------
+% 14. POPULATION AND SAMPLE
+% ---------------------------------------------------------
+
+\begin{frame}{14. Population and Sample}
+
+\textbf{Population}
+
+A population is the \textbf{complete set of individuals,
+objects, or observations} of interest in a study.
+
+\vspace{0.4cm}
+
+\textbf{Sample}
+
+A sample is a \textbf{subset of the population} selected for
+analysis.
+
+\vspace{0.4cm}
+
+\[
+\boxed{
+\text{Population}
+\supseteq
+\text{Sample}
+}
+\]
+
+\vspace{0.3cm}
+
+\textbf{Example}
+
+If a university has 5,000 students and we select 200 students
+for analysis:
+
+\begin{itemize}
+    \item Population = 5,000 students
+    \item Sample = 200 selected students
+\end{itemize}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% 14.1 POPULATION AND SAMPLE -- FIGURE
+% ---------------------------------------------------------
+
+\begin{frame}{14.1 Population and Sample -- Figure}
+
+\begin{columns}[T]
+
+\begin{column}{0.55\textwidth}
+
+\centering
+\includegraphics[width=\textwidth]{figures/population_sample.png}
+
+\end{column}
+
+\begin{column}{0.46\textwidth}
+
+The figure illustrates the relationship between a population, a sampling frame, and a sample in a research study.
+
+\vspace{0.1cm}
+
+The large gray circle represents the population, the entire target population under study.
+
+\vspace{0.1cm}
+
+The blue circle inside it represents the sampling frame, the portion of the target population from which participants can be selected.
+
+\vspace{0.1cm}
+
+The dark navy circle represents the sample, the actual units or individuals selected for the study.
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% 14.2 POPULATION VS SAMPLE
+% ---------------------------------------------------------
+
+\begin{frame}{14.2 Population and Sample -- Comparison}
+
+\small
+
+\begin{table}
+\centering
+
+\begin{tabular}{>{\bfseries}l l l}
+\toprule
+ & Population & Sample \\
+\midrule
+Size & Complete set & Subset \\
+Mean & $\mu$ & $\bar{x}$ \\
+Variance & $\sigma^2$ & $s^2$ \\
+Standard deviation & $\sigma$ & $s$ \\
+Purpose & Describe population & Estimate population \\
+\bottomrule
+\end{tabular}
+
+\end{table}
+
+\vspace{0.5cm}
+
+\textbf{Key idea}
+
+Since studying an entire population may be expensive or
+impractical, statistical analysis often uses a sample to
+learn about the population.
+
+\vspace{0.3cm}
+
+\textbf{Application}
+
+Sampling is fundamental in machine learning, surveys,
+experiments and data analysis.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 15. SAMPLE MEAN
+% ---------------------------------------------------------
+
+\begin{frame}{15. Sample Mean}
+
+\textbf{Definition}
+
+The sample mean is the arithmetic average of the observations
+in a sample.
+
+For a sample
+\[
+x_1,x_2,\ldots,x_n
+\]
+
+the sample mean is
+\[
+\boxed{
+\bar{x}
+=
+\frac{1}{n}
+\sum_{i=1}^{n}x_i
+}
+\]
+
+\vspace{0.1cm}
+
+\textbf{Interpretation}
+
+The sample mean provides an estimate of the population mean $\mu$.
+
+\[
+\boxed{
+\bar{x}\approx\mu
+}
+\]
+
+The quality of this estimate generally improves as the sample
+size increases.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 15.1 SAMPLE MEAN -- EXAMPLE
+% ---------------------------------------------------------
+
+\begin{frame}{15.1 Sample Mean -- Example}
+
+\textbf{Example}
+
+Consider a sample of five observations:
+
+\[
+X=\{12,15,18,20,25\}
+\]
+
+The sample mean is
+
+\[
+\bar{x}
+=
+\frac{12+15+18+20+25}{5}
+\]
+
+\[
+\boxed{
+\bar{x}=18
+}
+\]
+
+\vspace{0.4cm}
+
+\textbf{Interpretation}
+
+The value $18$ is the average of the observations in the
+sample and can be used as an estimate of the population mean.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 16. SAMPLE VARIANCE
+% ---------------------------------------------------------
+
+\begin{frame}{16. Sample Variance}
+
+\textbf{Definition}
+
+Sample variance measures the variability of observations
+around the sample mean.
+
+\vspace{0.4cm}
+
+For a sample $x_1,x_2,\ldots,x_n$:
+
+\[
+\boxed{
+s^2
+=
+\frac{1}{n-1}
+\sum_{i=1}^{n}
+(x_i-\bar{x})^2
+}
+\]
+
+\vspace{0.4cm}
+
+\textbf{Why $n-1$?}
+
+The denominator $n-1$ provides an unbiased estimator of the
+population variance under the usual random-sampling assumptions.
+
+\vspace{0.3cm}
+
+\textbf{Key idea}
+
+Sample variance measures how much the observations vary
+around their sample mean.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 16.1 SAMPLE VARIANCE -- EXAMPLE
+% ---------------------------------------------------------
+
+\begin{frame}{16.1 Sample Variance -- Example}
+
+\textbf{Example}
+
+Consider:
+\[
+X=\{2,4,6\}
+\]
+The sample mean is
+\[
+\bar{x}=4
+\]
+Squared deviations:
+\[
+(2-4)^2=4,\qquad
+(4-4)^2=0,\qquad
+(6-4)^2=4
+\]
+\[
+s^2
+=
+\frac{4+0+4}{3-1}
+\]
+\[
+\boxed{s^2=4}
+\]
+\textbf{Interpretation}
+
+The sample variance quantifies the spread of the observations
+around their sample mean.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 17. ORDER STATISTICS
+% ---------------------------------------------------------
+
+\begin{frame}{17. Order Statistics}
+
+\textbf{Definition}
+
+Order statistics are the observations arranged in
+\textbf{ascending order}.
+
+\vspace{0.1cm}
+
+Given observations
+\[
+x_1,x_2,\ldots,x_n,
+\]
+
+their ordered values are written as
+\[
+\boxed{
+x_{(1)}\leq x_{(2)}\leq\cdots\leq x_{(n)}
+}
+\]
+
+where $x_{(i)}$ denotes the $i$-th smallest observation.
+
+\vspace{0.1cm}
+
+\textbf{Examples of order statistics}
+
+\begin{itemize}
+    \item $x_{(1)}$ -- minimum
+    \item $x_{(n)}$ -- maximum
+    \item Middle order statistic -- median
+    \item Quartiles -- divide ordered data into parts
+\end{itemize}
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 17.1 ORDER STATISTICS -- EXAMPLE
+% ---------------------------------------------------------
+
+\begin{frame}{17.1 Order Statistics -- Example}
+
+\textbf{Example}
+
+Consider:
+\[
+X=\{40,10,30,50,20\}
+\]
+
+Arrange the observations in ascending order:
+\[
+10,\;20,\;30,\;40,\;50
+\]
+Therefore,
+\[
+x_{(1)}=10,\qquad
+x_{(2)}=20,\qquad
+x_{(3)}=30,\qquad
+x_{(4)}=40,\qquad
+x_{(5)}=50
+\]
+Hence,
+\[
+\boxed{x_{(1)}=\min(X)}
+\]
+\[
+\boxed{x_{(5)}=\max(X)}
+\]
+
+The middle observation $x_{(3)}=30$ is the median.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 18. COVARIANCE
+% ---------------------------------------------------------
+
+\begin{frame}{18. Covariance}
+
+\textbf{Definition}
+
+Covariance measures the \textbf{direction of the linear
+relationship} between two variables.
+
+\vspace{0.4cm}
+
+For random variables $X$ and $Y$:
+
+\[
+\boxed{
+\operatorname{Cov}(X,Y)
+=
+E[(X-\mu_X)(Y-\mu_Y)]
+}
+\]
+
+\vspace{0.4cm}
+
+\textbf{Interpretation}
+
+\begin{itemize}
+    \item Positive covariance: variables tend to increase together.
+    \item Negative covariance: one tends to increase when the other decreases.
+    \item Covariance near zero: weak linear association.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Note}
+
+The magnitude of covariance depends on the units of the variables.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 18.1 COVARIANCE -- EXAMPLE
+% ---------------------------------------------------------
+
+\begin{frame}{18.1 Covariance -- Example}
+
+\textbf{Example}
+
+Consider two variables:
+\[
+X=\{1,2,3\}
+\]
+\[
+Y=\{2,4,6\}
+\]
+As $X$ increases, $Y$ also increases.
+Their means are:
+\[
+\bar{x}=2,\qquad \bar{y}=4
+\]
+The deviations have the same sign:
+\[
+(-1)(-2),\quad (0)(0),\quad (1)(2)
+\]
+All products are non-negative.
+Therefore, the covariance is \textbf{positive}.
+
+\textbf{Interpretation}
+
+The variables show a positive linear relationship.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 19. SAMPLE COVARIANCE
+% ---------------------------------------------------------
+
+\begin{frame}{19. Sample Covariance}
+
+\textbf{Definition}
+
+Sample covariance measures the linear relationship between
+two variables using sample observations.
+
+\vspace{0.1cm}
+
+For paired observations
+\[
+(x_1,y_1),(x_2,y_2),\ldots,(x_n,y_n),
+\]
+
+the sample covariance is
+\[
+\boxed{
+s_{XY}
+=
+\frac{1}{n-1}
+\sum_{i=1}^{n}
+(x_i-\bar{x})(y_i-\bar{y})
+}
+\]
+
+\vspace{0.1cm}
+
+\textbf{Interpretation}
+
+\begin{itemize}
+    \item $s_{XY}>0$: positive association.
+    \item $s_{XY}<0$: negative association.
+    \item $s_{XY}\approx0$: weak linear association.
+\end{itemize}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% 19.1 SAMPLE COVARIANCE -- EXAMPLE
+% ---------------------------------------------------------
+
+\begin{frame}{19.1 Sample Covariance -- Example}
+
+\textbf{Example}
+
+Consider two variables:
+\[
+X=\{1,2,3\},
+\qquad
+Y=\{2,4,6\}
+\]
+
+The sample means are:
+\[
+\bar{x}=2,
+\qquad
+\bar{y}=4
+\]
+
+\begin{table}
+\centering
+\small
+
+\begin{tabular}{c c c c c}
+\toprule
+$x_i$ & $y_i$ & $x_i-\bar{x}$ & $y_i-\bar{y}$ &
+Product \\
+\midrule
+1 & 2 & $-1$ & $-2$ & $2$ \\
+2 & 4 & $0$ & $0$ & $0$ \\
+3 & 6 & $1$ & $2$ & $2$ \\
+\bottomrule
+\end{tabular}
+
+\end{table}
+\[
+s_{XY}
+=
+\frac{2+0+2}{3-1}
+=
+\boxed{2}
+\]
+
+Since $s_{XY}>0$, $X$ and $Y$ have a positive covariance
+and tend to increase together.
+
+\end{frame}
+
+% ---------------------------------------------------------
+% 20. CORRELATION
+% ---------------------------------------------------------
+
+\begin{frame}{20. Correlation}
+
+\textbf{Definition}
+
+Correlation is a standardized measure of the
+\textbf{strength and direction of linear association}
+between two variables.
+
+\vspace{0.1cm}
+
+The population correlation coefficient is
+\[
+\boxed{
+\rho_{XY}
+=
+\frac{\operatorname{Cov}(X,Y)}
+{\sigma_X\sigma_Y}
+}
+\]
+
+For a sample, the corresponding measure is the
+\textbf{sample correlation coefficient} $r$.
+\[
+\boxed{
+-1\leq r\leq1
+}
+\]
+
+\textbf{Interpretation}
+
+\begin{itemize}
+    \item $r=1$: perfect positive linear relationship.
+    \item $r=-1$: perfect negative linear relationship.
+    \item $r\approx0$: weak or no linear relationship.
+\end{itemize}
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 20.1 CORRELATION -- COVARIANCE
+% ---------------------------------------------------------
+
+\begin{frame}{20.1 Correlation -- Relation to Covariance}
+
+The sample correlation coefficient can be written as
+\[
+\boxed{
+r
+=
+\frac{s_{XY}}{s_Xs_Y}
+}
+\]
+where:
+
+\begin{itemize}
+    \item $s_{XY}$ = sample covariance
+    \item $s_X$ = sample standard deviation of $X$
+    \item $s_Y$ = sample standard deviation of $Y$
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Key difference}
+
+\begin{itemize}
+    \item Covariance depends on the units of measurement.
+    \item Correlation is standardized and always lies between $-1$ and $1$.
+\end{itemize}
+
+\vspace{0.1cm}
+
+\textbf{Application}
+
+Correlation is commonly used for feature analysis and
+understanding relationships between variables in datasets.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 21. SAMPLE COVARIANCE MATRIX
+% ---------------------------------------------------------
+
+\begin{frame}{21. Sample Covariance Matrix}
+
+\textbf{Definition}
+
+For a dataset containing multiple variables, the sample
+covariance matrix summarizes the covariance between every
+pair of variables.
+
+For $p$ variables:
+\[
+\boxed{
+S=
+\begin{bmatrix}
+s_{11} & s_{12} & \cdots & s_{1p}\\
+s_{21} & s_{22} & \cdots & s_{2p}\\
+\vdots & \vdots & \ddots & \vdots\\
+s_{p1} & s_{p2} & \cdots & s_{pp}
+\end{bmatrix}
+}
+\]
+
+where
+\[
+s_{ij}
+=
+\frac{1}{n-1}
+\sum_{k=1}^{n}
+(x_{ki}-\bar{x}_i)(x_{kj}-\bar{x}_j)
+\]
+
+The diagonal elements represent the \textbf{sample variances}
+of the variables.
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 21.1 SAMPLE COVARIANCE MATRIX -- EXAMPLE
+% ---------------------------------------------------------
+
+\begin{frame}{21.1 Sample Covariance Matrix -- Example}
+
+Suppose a dataset contains three variables:
+
+\[
+\{\text{Age, Study Hours, Marks}\}
+\]
+
+A sample covariance matrix may be represented as
+
+\[
+S=
+\begin{bmatrix}
+s_{\text{Age,Age}} &
+s_{\text{Age,Study}} &
+s_{\text{Age,Marks}}
+\\
+s_{\text{Study,Age}} &
+s_{\text{Study,Study}} &
+s_{\text{Study,Marks}}
+\\
+s_{\text{Marks,Age}} &
+s_{\text{Marks,Study}} &
+s_{\text{Marks,Marks}}
+\end{bmatrix}
+\]
+
+\textbf{Interpretation}
+
+\begin{itemize}
+    \item Diagonal entries represent variances.
+    \item Off-diagonal entries represent covariances.
+    \item The matrix is symmetric:
+    \[
+    s_{ij}=s_{ji}
+    \]
+\end{itemize}
+
+\end{frame}
+
+
+% ---------------------------------------------------------
+% 21.2 SAMPLE COVARIANCE MATRIX -- APPLICATION
+% ---------------------------------------------------------
+
+\begin{frame}{21.2 Sample Covariance Matrix -- Application}
+
+\textbf{Why it is useful}
+
+The covariance matrix provides a compact representation of
+relationships among multiple numerical variables.
+
+\vspace{0.4cm}
+
+\textbf{Applications in AI and Computing}
+
+\begin{itemize}
+    \item Feature analysis
+    \item Principal Component Analysis (PCA)
+    \item Multivariate statistical analysis
+    \item Understanding relationships between features
+\end{itemize}
+
+\vspace{0.4cm}
+
+\textbf{Key idea}
+
+\[
+\boxed{
+\text{Multiple variables}
+\longrightarrow
+\text{Covariance Matrix}
+\longrightarrow
+\text{Multivariate Analysis}
+}
+\]
+
+\end{frame}
