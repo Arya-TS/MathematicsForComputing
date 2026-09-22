@@ -13,6 +13,7 @@ The repository contains assignments, presentations and related work completed as
 | Assignment 03 | Statistical Analysis                           |
 | Assignment 04 | Optimization Problem                           |
 | Assignment 05 | Descriptive Statistics                         |
+| Assignment 06 | Statistical Department Report                  |
 
 ## Topics
 
