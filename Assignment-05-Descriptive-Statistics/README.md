@@ -156,13 +156,3 @@ The final compiled presentation is provided as:
 ```text
 Descriptive-Statistics.pdf
 ```
-
-## Course
-
-**Course:** Maths for Computing
-**Programme:** M.Tech Artificial Intelligence & Software Engineering
-**Institution:** Cochin University of Science and Technology (CUSAT)
-
-## Author
-
-**Arya T S**
