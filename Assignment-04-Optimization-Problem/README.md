@@ -72,7 +72,7 @@ $$
 
 ### Files
 
-* **`optimization.ipynb`** – Contains the data analysis, curve fitting, mathematical calculations, plots, differentiation, and optimization.
+* **`box_optimization.ipynb`** – Contains the data analysis, curve fitting, mathematical calculations, plots, differentiation, and optimization.
 * **`box_experiment.xlsx`** – Contains the experimentally collected data.
 
 ### Conclusion
