@@ -7,7 +7,7 @@ The report examines the role, organisation, activities, and functions of statist
 ## Files
 
 * `report.tex` — LaTeX source file
-* `DES_report.pdf` — Compiled report
+* `DES_Report.pdf` — Compiled report
 
 ## Topics Covered
 
