@@ -2,7 +2,7 @@
 
 A report prepared for the **Mathematics for Computing** course.
 
-The report examines the role, organisation, activities, and functions of statistical departments in Kerala and the statistical system of India.
+The report examines the role, organisation, activities and functions of statistical departments in Kerala and the statistical system of India.
 
 ## Files
 
