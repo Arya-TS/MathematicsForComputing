@@ -20,5 +20,6 @@ The report examines the role, organisation, activities, and functions of statist
 ## Author
 
 **Arya T S**
+
 M.Tech Artificial Intelligence and Software Engineering
 Cochin University of Science and Technology
