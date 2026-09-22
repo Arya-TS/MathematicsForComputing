@@ -86,4 +86,5 @@ A **LaTeX Beamer presentation** covering fundamental concepts of **descriptive s
 **Arya T S**
 
 M.Tech Artificial Intelligence & Software Engineering
+
 Cochin University of Science and Technology (CUSAT)
