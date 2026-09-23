@@ -30,6 +30,7 @@ The coursework covers mathematical concepts and their applications in computing,
 * Optimization
 * Derivatives and Applications
 * Mathematical Modelling
+* Vectors and Linear Algebra
 
 ## Tools
 
@@ -58,6 +59,7 @@ MathematicsForComputing/
 ├── Assignment-05-Descriptive-Statistics/
 ├── Assignment-06-Statistical_Departments/
 ├── Assignment-07-Vectors-and-Linear-Algebra/
+│
 ├── README.md
 ├── LICENSE
 └── .gitignore
@@ -84,6 +86,14 @@ Covers fundamental concepts of **optimization, derivatives, convex sets and opti
 ### Assignment 05 — Descriptive Statistics
 
 A **LaTeX Beamer presentation** covering fundamental concepts of **descriptive statistics, sample statistics, frequentist statistics and model estimation**.
+
+### Assignment 06 — Statistical Department Report
+
+A report covering the **activities and functions of the Department of Statistics in Kerala and India**.
+
+### Assignment 07 — Vectors and Linear Algebra
+
+Covers fundamental concepts of **vectors, vector operations, matrices and linear algebra** with applications in computing.
 
 ## Author
 
