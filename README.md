@@ -14,6 +14,7 @@ The repository contains assignments, presentations and related work completed as
 | Assignment 04 | Optimization Problem                           |
 | Assignment 05 | Descriptive Statistics                         |
 | Assignment 06 | Statistical Department Report                  |
+| Assignment 07 | Vectors and Linear Algebra                     |
 
 ## Topics
 
@@ -55,6 +56,8 @@ MathematicsForComputing/
 ├── Assignment-03-Statistical-Analysis/
 ├── Assignment-04-Optimization-Problem/
 ├── Assignment-05-Descriptive-Statistics/
+├── Assignment-06-Statistical_Departments/
+├── Assignment-07-Vectors-and-Linear-Algebra/
 ├── README.md
 ├── LICENSE
 └── .gitignore
