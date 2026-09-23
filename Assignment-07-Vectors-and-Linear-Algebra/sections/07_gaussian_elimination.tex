@@ -1,0 +1,806 @@
+% =========================================================
+% 07_determinants_inverses_cramers.tex
+% Vectors and Linear Algebra
+% =========================================================
+
+% =========================================================
+% SECTION DIVIDER
+% =========================================================
+
+\section{Determinants and Inverse Matrices}
+
+% =========================================================
+% DETERMINANT
+% =========================================================
+
+\begin{frame}{The Determinant}
+
+The \textbf{determinant} is a scalar associated with a
+square matrix.
+
+For a $2\times2$ matrix
+
+\[
+A=
+\begin{bmatrix}
+a&b\\
+c&d
+\end{bmatrix},
+\]
+
+the determinant is
+
+\[
+\boxed{
+\det(A)=ad-bc.
+}
+\]
+
+\vspace{0.4cm}
+
+The determinant provides information about the transformation
+represented by the matrix.
+
+\vspace{0.3cm}
+
+It also plays a central role in determining whether a matrix
+is invertible.
+
+\end{frame}
+
+
+% =========================================================
+% 2x2 EXAMPLE
+% =========================================================
+
+\begin{frame}{Example: Determinant of a $2\times2$ Matrix}
+
+Consider
+\vspace{-0.1cm}
+\[
+A=
+\begin{bmatrix}
+3&2\\
+1&4
+\end{bmatrix}.
+\]
+
+Then
+
+\[
+\det(A)
+=
+(3)(4)-(2)(1).
+\]
+
+Therefore,
+
+\[
+\boxed{
+\det(A)=10.
+}
+\]
+
+Since
+
+\[
+\det(A)\neq0,
+\]
+
+the matrix is invertible.
+
+\end{frame}
+
+
+% =========================================================
+% GEOMETRIC MEANING
+% =========================================================
+
+\begin{frame}{Geometric Meaning of the Determinant}
+
+For a $2\times2$ matrix, the absolute value
+\vspace{-0.1cm}
+\[
+|\det(A)|
+\]
+
+represents the factor by which the transformation changes
+\textbf{area}.
+
+If
+\vspace{-0.1cm}
+\[
+|\det(A)|>1,
+\]
+
+areas are enlarged.
+
+If
+\vspace{-0.1cm}
+\[
+0<|\det(A)|<1,
+\]
+
+areas are reduced.
+
+If
+\vspace{-0.1cm}
+\[
+\boxed{\det(A)=0},
+\]
+
+the transformation collapses the plane into a lower-dimensional
+space.
+
+\end{frame}
+
+
+% =========================================================
+% 3D DETERMINANT
+% =========================================================
+
+\begin{frame}{Determinant in Three Dimensions}
+
+For a $3\times3$ matrix, the absolute value of the determinant
+represents the volume-scaling factor.
+
+\vspace{0.4cm}
+
+\[
+\boxed{
+|\det(A)|
+=
+\text{volume scaling factor}
+}
+\]
+
+For example,
+
+\[
+\det(A)=2
+\]
+
+means that the transformation doubles volumes.
+
+\vspace{0.4cm}
+
+A negative determinant indicates that the transformation also
+reverses orientation.
+
+\end{frame}
+
+
+% =========================================================
+% PROPERTIES
+% =========================================================
+
+\begin{frame}{Properties of the Determinant}
+
+For square matrices $A$ and $B$:
+
+\[
+\boxed{
+\det(AB)=\det(A)\det(B)
+}
+\]
+
+and
+
+\[
+\boxed{
+\det(A^T)=\det(A).
+}
+\]
+
+For the identity matrix,
+
+\[
+\boxed{
+\det(I)=1.
+}
+\]
+
+For a scalar $c$ and an $n\times n$ matrix,
+
+\[
+\boxed{
+\det(cA)=c^n\det(A).
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% SINGULAR MATRIX
+% =========================================================
+
+\begin{frame}{Singular and Non-Singular Matrices}
+
+A square matrix $A$ is called \textbf{singular} if
+
+\[
+\boxed{
+\det(A)=0.
+}
+\]
+
+A square matrix is \textbf{non-singular} if
+
+\[
+\boxed{
+\det(A)\neq0.
+}
+\]
+
+\vspace{0.4cm}
+
+Geometrically, a singular transformation collapses
+space into a lower-dimensional set.
+
+\vspace{0.4cm}
+
+For example, a plane may be collapsed into a line.
+
+\end{frame}
+
+
+% =========================================================
+% INVERTIBILITY
+% =========================================================
+
+\begin{frame}{Determinant and Invertibility}
+
+For a square matrix $A$,
+
+\[
+\boxed{
+A^{-1}\text{ exists}
+\iff
+\det(A)\neq0.
+}
+\]
+
+Equivalently,
+
+\[
+\boxed{
+\det(A)=0
+\iff
+A\text{ is singular}.
+}
+\]
+
+Therefore, the determinant provides a quick test for
+whether a square matrix has an inverse.
+
+\vspace{0.4cm}
+
+This connects three ideas:
+
+\[
+\boxed{
+\text{Determinant}
+\quad\longleftrightarrow\quad
+\text{Invertibility}
+\quad\longleftrightarrow\quad
+\text{Unique solution}
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% INVERSE MATRIX
+% =========================================================
+
+\begin{frame}{Inverse Matrix}
+
+For a square matrix $A$, its inverse $A^{-1}$ satisfies
+
+\[
+\boxed{
+AA^{-1}=A^{-1}A=I.
+}
+\]
+
+Therefore,
+\vspace{-0.1cm}
+\[
+A^{-1}
+\]
+
+undoes the transformation performed by $A$.
+
+\vspace{0.5cm}
+
+If
+\vspace{-0.1cm}
+\[
+\vect{y}=A\vect{x},
+\]
+
+then
+
+\[
+\boxed{
+\vect{x}=A^{-1}\vect{y}.
+}
+\]
+
+Thus, the inverse transformation recovers the original vector.
+
+\end{frame}
+
+
+% =========================================================
+% 2x2 INVERSE
+% =========================================================
+
+\begin{frame}{Inverse of a $2\times2$ Matrix}
+
+For
+\vspace{-0.1cm}
+\[
+A=
+\begin{bmatrix}
+a&b\\
+c&d
+\end{bmatrix},
+\]
+
+if
+\vspace{-0.1cm}
+\[
+ad-bc\neq0,
+\]
+
+then
+\vspace{-0.1cm}
+\[
+\boxed{
+A^{-1}
+=
+\frac{1}{ad-bc}
+\begin{bmatrix}
+d&-b\\
+-c&a
+\end{bmatrix}.
+}
+\]
+
+The denominator is precisely
+\vspace{-0.1cm}
+\[
+\det(A).
+\]
+
+Therefore,
+\vspace{-0.1cm}
+\[
+\det(A)\neq0
+\]
+
+is required for the inverse to exist.
+
+\end{frame}
+
+
+% =========================================================
+% INVERSE EXAMPLE
+% =========================================================
+
+\begin{frame}{Example: Computing an Inverse}
+
+Consider
+\vspace{-0.1cm}
+\[
+A=
+\begin{bmatrix}
+2&1\\
+1&1
+\end{bmatrix}.
+\]
+
+First,
+
+\[
+\det(A)
+=
+(2)(1)-(1)(1)
+=
+1.
+\]
+
+Therefore,
+
+\[
+A^{-1}
+=
+\begin{bmatrix}
+1&-1\\
+-1&2
+\end{bmatrix}.
+\]
+
+Indeed,
+
+\[
+AA^{-1}
+=
+\begin{bmatrix}
+1&0\\
+0&1
+\end{bmatrix}
+=
+I.
+\]
+
+\end{frame}
+
+
+% =========================================================
+% INVERSE AND LINEAR SYSTEM
+% =========================================================
+
+\begin{frame}{Inverse Matrix and Linear Systems}
+
+Consider
+
+\[
+A\vect{x}=\vect{b}.
+\]
+
+If $A$ is invertible,
+
+\[
+A^{-1}A\vect{x}
+=
+A^{-1}\vect{b}.
+\]
+
+Therefore,
+
+\[
+\boxed{
+\vect{x}=A^{-1}\vect{b}.
+}
+\]
+
+\vspace{0.4cm}
+
+Hence, an invertible coefficient matrix guarantees a
+unique solution for every right-hand side $\vect{b}$.
+
+\end{frame}
+
+
+% =========================================================
+% COFACTORS
+% =========================================================
+
+\begin{frame}{Cofactors}
+
+For larger matrices, determinants can be computed using
+\textbf{cofactors}.
+
+For an element $a_{ij}$,
+
+\[
+\boxed{
+C_{ij}=(-1)^{i+j}M_{ij},
+}
+\]
+
+where $M_{ij}$ is the determinant obtained after deleting
+row $i$ and column $j$.
+
+\vspace{0.4cm}
+
+For a $3\times3$ matrix,
+
+\[
+\det(A)
+=
+a_{11}C_{11}
++
+a_{12}C_{12}
++
+a_{13}C_{13}.
+\]
+
+\vspace{0.3cm}
+
+This is called \textbf{cofactor expansion}.
+
+\end{frame}
+
+
+% =========================================================
+% ADJUGATE
+% =========================================================
+
+\begin{frame}{Adjugate and the Inverse}
+
+The matrix of cofactors is called the \textbf{cofactor matrix}.
+
+Its transpose is the \textbf{adjugate}:
+
+\[
+\operatorname{adj}(A)
+=
+C^T.
+\]
+
+For an invertible matrix,
+
+\[
+\boxed{
+A^{-1}
+=
+\frac{1}{\det(A)}
+\operatorname{adj}(A).
+}
+\]
+
+\vspace{0.4cm}
+
+This provides a general formula for the inverse of a
+square matrix.
+
+\vspace{0.3cm}
+
+For large matrices, however, direct inverse computation is
+usually not the preferred computational approach.
+
+\end{frame}
+
+
+% =========================================================
+% CRAMER'S RULE
+% =========================================================
+
+\begin{frame}{Cramer's Rule}
+
+Consider the system
+
+\[
+A\vect{x}=\vect{b},
+\]
+
+where $A$ is an invertible $n\times n$ matrix.
+
+Cramer's rule gives each component of the solution as
+
+\[
+\boxed{
+x_i
+=
+\frac{\det(A_i)}{\det(A)},
+}
+\]
+
+where $A_i$ is obtained by replacing the $i$-th column of $A$
+with $\vect{b}$.
+
+\vspace{0.4cm}
+
+The rule requires
+
+\[
+\boxed{
+\det(A)\neq0.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% CRAMER 2x2
+% =========================================================
+
+\begin{frame}{Cramer's Rule for a $2\times2$ System}
+
+Consider
+\vspace{-0.1cm}
+\[
+\begin{cases}
+a_1x+b_1y=c_1,\\
+a_2x+b_2y=c_2.
+\end{cases}
+\]
+\vspace{-0.1cm}
+The coefficient determinant is
+\vspace{-0.1cm}
+\[
+D=
+\begin{vmatrix}
+a_1&b_1\\
+a_2&b_2
+\end{vmatrix}.
+\]
+\vspace{-0.1cm}
+For $x$,
+\vspace{-0.1cm}
+\[
+D_x=
+\begin{vmatrix}
+c_1&b_1\\
+c_2&b_2
+\end{vmatrix}.
+\]
+\vspace{-0.1cm}
+For $y$,
+\vspace{-0.1cm}
+\[
+D_y=
+\begin{vmatrix}
+a_1&c_1\\
+a_2&c_2
+\end{vmatrix}.
+\]
+\vspace{-0.1cm}
+Therefore,
+\vspace{-0.1cm}
+\[
+\boxed{
+x=\frac{D_x}{D},
+\qquad
+y=\frac{D_y}{D}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% CRAMER EXAMPLE
+% =========================================================
+
+\begin{frame}{Example: Cramer's Rule}
+
+Consider
+\vspace{-0.1cm}
+\[
+\begin{cases}
+2x+y=5,\\
+x-y=1.
+\end{cases}
+\]
+
+The coefficient determinant is
+\vspace{-0.1cm}
+\[
+D=
+\begin{vmatrix}
+2&1\\
+1&-1
+\end{vmatrix}
+=-3.
+\]
+
+For $x$,
+\vspace{-0.1cm}
+\[
+D_x=
+\begin{vmatrix}
+5&1\\
+1&-1
+\end{vmatrix}
+=-6.
+\]
+
+For $y$,
+\vspace{-0.1cm}
+\[
+D_y=
+\begin{vmatrix}
+2&5\\
+1&1
+\end{vmatrix}
+=-3.
+\]
+\vspace{-0.1cm}
+Hence,
+\vspace{-0.1cm}
+\[
+\boxed{
+x=2,\qquad y=1.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% CRAMER'S RULE VS GAUSSIAN ELIMINATION
+% =========================================================
+
+\begin{frame}{Cramer's Rule and Gaussian Elimination}
+
+Both methods can solve
+
+\[
+A\vect{x}=\vect{b}.
+\]
+
+\vspace{0.4cm}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\begin{column}{0.43\textwidth}
+
+\begin{block}{Cramer's Rule}
+
+Uses determinants:
+
+\[
+x_i=
+\frac{\det(A_i)}{\det(A)}.
+\]
+
+Useful for theoretical derivations and small systems.
+
+\end{block}
+
+\end{column}
+
+\begin{column}{0.43\textwidth}
+
+\begin{block}{Gaussian Elimination}
+
+Uses elementary row operations.
+
+Efficient and widely used for numerical computation.
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\vspace{0.4cm}
+
+For large systems, repeatedly computing determinants is
+computationally expensive.
+
+\end{frame}
+
+
+% =========================================================
+% KEY CONNECTION
+% =========================================================
+
+\begin{frame}{The Linear Algebra Connection}
+\vspace{-0.1cm}
+For a square system
+\vspace{-0.2cm}
+\[
+A\vect{x}=\vect{b},
+\]
+\vspace{-0.2cm}
+the following ideas are connected:
+\vspace{-0.09cm}
+\[
+\boxed{
+\begin{array}{c}
+\det(A)\neq0\\
+\Downarrow\\
+A\text{ is invertible}\\
+\Downarrow\\
+A^{-1}\text{ exists}\\
+\Downarrow\\
+A\vect{x}=\vect{b}\text{ has a unique solution}\\
+\Downarrow\\
+\vect{x}=A^{-1}\vect{b}
+\end{array}
+}
+\]
+\vspace{-0.1cm}
+
+This connection will be extended further through
+\textbf{column space, null space, rank, and linear independence}.
+
+\end{frame}

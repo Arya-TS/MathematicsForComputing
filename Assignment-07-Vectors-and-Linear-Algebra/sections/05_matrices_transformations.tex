@@ -1,0 +1,788 @@
+% =========================================================
+% 05_matrices_transformations.tex
+% Vectors and Linear Algebra
+% =========================================================
+
+% =========================================================
+% SECTION DIVIDER
+% =========================================================
+
+\section{Matrices and Linear Transformations}
+
+% =========================================================
+% MATRICES
+% =========================================================
+
+\begin{frame}{Matrices}
+
+A matrix is a rectangular array of numbers.
+
+\[
+A=
+\begin{bmatrix}
+a_{11} & a_{12}\\
+a_{21} & a_{22}
+\end{bmatrix}.
+\]
+
+\vspace{0.4cm}
+
+A matrix with $m$ rows and $n$ columns has dimensions
+
+\[
+\boxed{m\times n}.
+\]
+
+\vspace{0.4cm}
+
+Matrices can represent:
+
+\begin{itemize}
+    \item systems of linear equations
+    \item transformations
+    \item datasets
+    \item relationships between variables
+\end{itemize}
+
+\end{frame}
+
+
+% =========================================================
+% MATRIX-VECTOR MULTIPLICATION
+% =========================================================
+
+\begin{frame}{Matrix--Vector Multiplication}
+
+Let
+
+\[
+A=
+\begin{bmatrix}
+a_{11} & a_{12}\\
+a_{21} & a_{22}
+\end{bmatrix},
+\qquad
+\vect{x}
+=
+\begin{bmatrix}
+x_1\\
+x_2
+\end{bmatrix}.
+\]
+
+Then
+
+\[
+A\vect{x}
+=
+\begin{bmatrix}
+a_{11}x_1+a_{12}x_2\\
+a_{21}x_1+a_{22}x_2
+\end{bmatrix}.
+\]
+
+\vspace{0.4cm}
+
+Equivalently,
+
+\[
+\boxed{
+A\vect{x}
+=
+x_1
+\begin{bmatrix}
+a_{11}\\
+a_{21}
+\end{bmatrix}
++
+x_2
+\begin{bmatrix}
+a_{12}\\
+a_{22}
+\end{bmatrix}
+}
+\]
+
+So matrix--vector multiplication is a linear combination
+of the columns of $A$.
+
+\end{frame}
+
+
+% =========================================================
+% MATRIX AS A TRANSFORMATION
+% =========================================================
+
+\begin{frame}{A Matrix as a Transformation}
+
+A matrix can define a function
+\vspace{-0.1cm}
+\[
+T:\mathbb{R}^n\rightarrow\mathbb{R}^m
+\]
+
+through
+\[
+\boxed{
+T(\vect{x})=A\vect{x}.
+}
+\]
+
+The matrix $A$ determines how the input vector is transformed.
+
+\[
+\boxed{
+\vect{x}
+\quad\xrightarrow{\quad A\quad}\quad
+A\vect{x}
+}
+\]
+
+If
+
+\[
+A\in\mathbb{R}^{m\times n},
+\]
+
+then
+
+\[
+\vect{x}\in\mathbb{R}^n
+\quad\Longrightarrow\quad
+A\vect{x}\in\mathbb{R}^m.
+\]
+
+\end{frame}
+
+
+% =========================================================
+% LINEAR TRANSFORMATION
+% =========================================================
+
+\begin{frame}{Linear Transformations}
+
+A transformation $T$ is linear if, for all vectors $\vect{u},\vect{v}$
+and scalars $c$,
+
+\[
+\boxed{
+T(\vect{u}+\vect{v})
+=
+T(\vect{u})+T(\vect{v})
+}
+\]
+
+and
+
+\[
+\boxed{
+T(c\vect{u})
+=
+cT(\vect{u}).
+}
+\]
+
+These two properties can be combined as
+
+\[
+\boxed{
+T(c_1\vect{u}+c_2\vect{v})
+=
+c_1T(\vect{u})+c_2T(\vect{v}).
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% EXAMPLE OF TRANSFORMATION
+% =========================================================
+
+\begin{frame}{Example: Scaling Transformation}
+
+Consider
+\vspace{-0.1cm}
+\[
+A=
+\begin{bmatrix}
+2&0\\
+0&3
+\end{bmatrix}.
+\]
+
+For
+\vspace{-0.1cm}
+\[
+\vect{x}
+=
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix},
+\]
+
+we obtain
+
+\[
+A\vect{x}
+=
+\begin{bmatrix}
+2x\\
+3y
+\end{bmatrix}.
+\]
+
+Therefore, the transformation
+
+\[
+T(\vect{x})=A\vect{x}
+\]
+
+scales the $x$-coordinate by $2$ and the $y$-coordinate
+by $3$.
+
+\end{frame}
+
+
+% =========================================================
+% IDENTITY TRANSFORMATION
+% =========================================================
+
+\begin{frame}{Identity Transformation}
+
+The identity matrix is
+
+\[
+I=
+\begin{bmatrix}
+1&0\\
+0&1
+\end{bmatrix}.
+\]
+
+For any vector $\vect{x}$,
+
+\[
+\boxed{
+I\vect{x}=\vect{x}.
+}
+\]
+
+The corresponding transformation
+
+\[
+T(\vect{x})=I\vect{x}
+\]
+
+leaves every vector unchanged.
+\vspace{0.1cm}
+
+Thus, the identity transformation acts as the
+\textbf{neutral transformation} under composition.
+
+\end{frame}
+
+
+% =========================================================
+% ROTATION
+% =========================================================
+
+\begin{frame}{Rotation as a Linear Transformation}
+
+A rotation through angle $\theta$ in $\mathbb{R}^2$ is represented by
+
+\[
+\boxed{
+R_\theta
+=
+\begin{bmatrix}
+\cos\theta & -\sin\theta\\
+\sin\theta & \cos\theta
+\end{bmatrix}.
+}
+\]
+
+Therefore,
+
+\[
+T(\vect{x})
+=
+R_\theta\vect{x}.
+\]
+
+\vspace{0.4cm}
+
+For $\theta=90^\circ$,
+
+\[
+R_{90^\circ}
+=
+\begin{bmatrix}
+0&-1\\
+1&0
+\end{bmatrix}.
+\]
+
+\vspace{0.3cm}
+
+The transformation rotates every vector by $90^\circ$.
+
+\end{frame}
+
+
+% =========================================================
+% REFLECTION
+% =========================================================
+
+\begin{frame}{Reflection as a Linear Transformation}
+
+Reflection about the $x$-axis can be represented by
+
+\[
+\boxed{
+A=
+\begin{bmatrix}
+1&0\\
+0&-1
+\end{bmatrix}.
+}
+\]
+
+For
+
+\[
+\vect{x}
+=
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix},
+\]
+
+we obtain
+
+\[
+A\vect{x}
+=
+\begin{bmatrix}
+x\\
+-y
+\end{bmatrix}.
+\]
+
+\vspace{0.4cm}
+
+The $x$-coordinate remains unchanged while the
+$y$-coordinate changes sign.
+
+\end{frame}
+
+
+% =========================================================
+% MATRIX COLUMNS AS TRANSFORMED BASIS VECTORS
+% =========================================================
+
+\begin{frame}{Columns Determine the Transformation}
+
+Let
+\vspace{-0.1cm}
+\[
+A=
+\begin{bmatrix}
+|&|\\
+\vect{a}_1&\vect{a}_2\\
+|&|
+\end{bmatrix}.
+\]
+
+For
+\vspace{-0.1cm}
+\[
+\vect{x}
+=
+\begin{bmatrix}
+x_1\\
+x_2
+\end{bmatrix},
+\]
+
+we have
+\vspace{-0.1cm}
+\[
+A\vect{x}
+=
+x_1\vect{a}_1+x_2\vect{a}_2.
+\]
+
+In particular,
+\vspace{-0.1cm}
+\[
+A
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+=
+\vect{a}_1,
+\qquad
+A
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+=
+\vect{a}_2.
+\]
+
+Thus, the columns of a matrix are the images of the
+standard basis vectors.
+
+\end{frame}
+
+
+% =========================================================
+% COMPOSITION
+% =========================================================
+
+\begin{frame}{Composition of Transformations}
+
+Suppose two linear transformations are represented by
+
+\[
+T(\vect{x})=A\vect{x}
+\]
+
+and
+
+\[
+S(\vect{x})=B\vect{x}.
+\]
+
+Applying $T$ first and then $S$ gives
+\vspace{-0.1cm}
+\[
+S(T(\vect{x}))
+=
+B(A\vect{x}).
+\]
+
+Therefore,
+\vspace{-0.1cm}
+\[
+\boxed{
+S\circ T
+\quad\longleftrightarrow\quad
+BA.
+}
+\]
+\vspace{-0.1cm}
+
+Matrix multiplication therefore provides a compact way to
+represent the \textbf{composition of linear transformations}.
+
+\end{frame}
+
+
+% =========================================================
+% ORDER MATTERS
+% =========================================================
+
+\begin{frame}{Order of Composition Matters}
+
+In general,
+
+\[
+\boxed{
+AB\neq BA.
+}
+\]
+
+Therefore,
+
+\[
+B(A\vect{x})
+\neq
+A(B\vect{x})
+\]
+
+in general.
+
+\vspace{0.5cm}
+
+This means that applying transformation $A$ followed by $B$
+is generally different from applying $B$ followed by $A$.
+
+\vspace{0.4cm}
+
+\begin{block}{Key Idea}
+Matrix multiplication is generally \textbf{not commutative}.
+\end{block}
+
+\end{frame}
+
+
+% =========================================================
+% COMPOSITION EXAMPLE
+% =========================================================
+
+\begin{frame}{Composition: Example}
+
+Consider
+
+\[
+A=
+\begin{bmatrix}
+2&0\\
+0&1
+\end{bmatrix},
+\qquad
+B=
+\begin{bmatrix}
+1&0\\
+0&3
+\end{bmatrix}.
+\]
+
+Then
+
+\[
+BA
+=
+\begin{bmatrix}
+2&0\\
+0&3
+\end{bmatrix}.
+\]
+
+For this particular pair,
+
+\[
+AB=BA.
+\]
+
+But this is not generally true.
+
+For transformations such as rotations, reflections,
+and shears, the order can produce different results.
+
+\end{frame}
+
+
+% =========================================================
+% THREE-DIMENSIONAL TRANSFORMATIONS
+% =========================================================
+
+\begin{frame}{Three-Dimensional Linear Transformations}
+
+A linear transformation in three dimensions has the form
+
+\[
+\boxed{
+T:\mathbb{R}^3\rightarrow\mathbb{R}^3
+}
+\]
+
+with
+\vspace{-0.1cm}
+\[
+T(\vect{x})=A\vect{x},
+\]
+
+where
+\vspace{-0.1cm}
+\[
+A=
+\begin{bmatrix}
+a_{11}&a_{12}&a_{13}\\
+a_{21}&a_{22}&a_{23}\\
+a_{31}&a_{32}&a_{33}
+\end{bmatrix}.
+\]
+
+The matrix can represent transformations such as:
+
+\begin{itemize}
+    \item scaling
+    \item rotation
+    \item reflection
+    \item shear
+\end{itemize}
+
+\end{frame}
+
+
+% =========================================================
+% 3D SCALING
+% =========================================================
+
+\begin{frame}{3D Scaling}
+
+A three-dimensional scaling transformation can be written as
+
+\[
+A=
+\begin{bmatrix}
+s_x&0&0\\
+0&s_y&0\\
+0&0&s_z
+\end{bmatrix}.
+\]
+
+Then
+
+\[
+\begin{bmatrix}
+x'\\
+y'\\
+z'
+\end{bmatrix}
+=
+A
+\begin{bmatrix}
+x\\
+y\\
+z
+\end{bmatrix}
+\]
+
+gives
+\vspace{-0.1cm}
+\[
+\boxed{
+x'=s_xx,\qquad
+y'=s_yy,\qquad
+z'=s_zz.
+}
+\]
+
+Different scaling factors can independently stretch or
+compress the three coordinate directions.
+
+\end{frame}
+
+
+% =========================================================
+% 3D ROTATION
+% =========================================================
+
+\begin{frame}{Rotation About the $z$-Axis}
+
+A rotation through $\theta$ about the $z$-axis is represented by
+
+\[
+\boxed{
+R_z(\theta)
+=
+\begin{bmatrix}
+\cos\theta&-\sin\theta&0\\
+\sin\theta&\cos\theta&0\\
+0&0&1
+\end{bmatrix}.
+}
+\]
+
+\vspace{0.4cm}
+
+The $x$ and $y$ coordinates rotate in their plane while
+the $z$ coordinate remains unchanged.
+
+\vspace{0.4cm}
+
+This type of transformation is fundamental in
+
+\[
+\text{3D graphics}
+\qquad\text{and}\qquad
+\text{computer vision}.
+\]
+
+\end{frame}
+
+
+% =========================================================
+% TRANSFORMATION PIPELINE
+% =========================================================
+
+\begin{frame}{Transformation Pipeline}
+
+Multiple transformations can be combined into a single matrix.
+
+\[
+\vect{x}
+\xrightarrow{\ A\ }
+A\vect{x}
+\xrightarrow{\ B\ }
+BA\vect{x}
+\xrightarrow{\ C\ }
+CBA\vect{x}.
+\]
+
+Therefore,
+
+\[
+\boxed{
+T(\vect{x})=CBA\vect{x}.
+}
+\]
+
+\vspace{0.5cm}
+
+This idea is central to transformation pipelines in:
+
+\begin{itemize}
+    \item computer graphics
+    \item robotics
+    \item computer vision
+    \item geometric modelling
+\end{itemize}
+
+\end{frame}
+
+
+% =========================================================
+% HOMOGENEOUS COORDINATES PREVIEW
+% =========================================================
+
+\begin{frame}{Beyond Linear Transformations}
+
+Pure linear transformations preserve the origin:
+
+\[
+\boxed{
+T(\mathbf{0})=\mathbf{0}.
+}
+\]
+
+Translations do not satisfy this property.
+
+\vspace{0.4cm}
+
+In computer graphics, translations are commonly incorporated
+using \textbf{homogeneous coordinates}.
+
+For example,
+
+\[
+\begin{bmatrix}
+x'\\
+y'\\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1&0&t_x\\
+0&1&t_y\\
+0&0&1
+\end{bmatrix}
+\begin{bmatrix}
+x\\
+y\\
+1
+\end{bmatrix}.
+\]
+
+This allows translation and linear transformations to be
+combined into matrix operations.
+
+\end{frame}

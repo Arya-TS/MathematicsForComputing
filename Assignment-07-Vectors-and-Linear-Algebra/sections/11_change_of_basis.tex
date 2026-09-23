@@ -1,0 +1,653 @@
+% =========================================================
+% 11_change_of_basis.tex
+% Vectors and Linear Algebra
+% =========================================================
+
+% =========================================================
+% SECTION DIVIDER
+% =========================================================
+
+\section{Change of Basis}
+
+% =========================================================
+% BASIS AND COORDINATES
+% =========================================================
+
+\begin{frame}{Basis and Coordinates}
+
+A vector can be represented using different bases.
+
+Consider the standard basis of $\mathbb{R}^2$:
+\vspace{-0.1cm}
+\[
+\mathcal{E}
+=
+\left\{
+\begin{bmatrix}
+1\\0
+\end{bmatrix},
+\begin{bmatrix}
+0\\1
+\end{bmatrix}
+\right\}.
+\]
+
+For
+\vspace{-0.1cm}
+\[
+\vect{v}
+=
+\begin{bmatrix}
+3\\2
+\end{bmatrix},
+\]
+
+its coordinates in the standard basis are
+\vspace{-0.1cm}
+\[
+[\vect{v}]_{\mathcal{E}}
+=
+\begin{bmatrix}
+3\\2
+\end{bmatrix}.
+\]
+
+The vector itself and its coordinate representation
+are related, but are not the same concept.
+
+\end{frame}
+
+
+% =========================================================
+% NON-STANDARD BASIS
+% =========================================================
+
+\begin{frame}{A Different Basis}
+\vspace{-0.3cm}
+Consider the basis
+\vspace{-0.1cm}
+\[
+\mathcal{B}
+=
+\left\{
+\begin{bmatrix}
+1\\1
+\end{bmatrix},
+\begin{bmatrix}
+1\\-1
+\end{bmatrix}
+\right\}.
+\]
+
+We want to express
+\vspace{-0.4cm}
+\[
+\vect{v}
+=
+\begin{bmatrix}
+3\\1
+\end{bmatrix}
+\]
+\vspace{-0.5cm}
+
+using this basis.
+
+Write
+\vspace{-0.1cm}
+\[
+\vect{v}
+=
+c_1
+\begin{bmatrix}
+1\\1
+\end{bmatrix}
++
+c_2
+\begin{bmatrix}
+1\\-1
+\end{bmatrix}.
+\]
+\vspace{-0.5cm}
+
+This gives
+\vspace{-0.1cm}
+\[
+c_1+c_2=3,
+\qquad
+c_1-c_2=1.
+\]
+
+Hence,
+\vspace{-0.1cm}
+\[
+c_1=2,
+\qquad
+c_2=1.
+\]
+
+\vspace{-0.3cm}
+
+Therefore,
+\vspace{-0.1cm}
+\[
+\boxed{
+[\vect{v}]_{\mathcal{B}}
+=
+\begin{bmatrix}
+2\\1
+\end{bmatrix}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% VECTOR VS COORDINATES
+% =========================================================
+
+\begin{frame}{Vector vs. Coordinate Representation}
+
+For the same vector $\vect{v}$,
+
+\[
+[\vect{v}]_{\mathcal{E}}
+=
+\begin{bmatrix}
+3\\1
+\end{bmatrix}
+\]
+
+while
+
+\[
+[\vect{v}]_{\mathcal{B}}
+=
+\begin{bmatrix}
+2\\1
+\end{bmatrix}.
+\]
+
+The numerical coordinates are different because the bases
+are different.
+
+\vspace{0.4cm}
+
+However,
+
+\[
+\boxed{
+\text{The vector itself has not changed.}
+}
+\]
+
+Only its representation has changed.
+
+\end{frame}
+
+
+% =========================================================
+% BASIS AND COORDINATES
+% =========================================================
+
+\begin{frame}{Basis and Coordinates}
+
+Let
+
+\[
+\mathcal{B}
+=
+\{\vect{b}_1,\vect{b}_2,\ldots,\vect{b}_n\}
+\]
+
+be a basis for $\mathbb{R}^n$.
+
+\vspace{0.1cm}
+
+Every vector $\vect{v}\in\mathbb{R}^n$ can be written uniquely as
+\vspace{-0.1cm}
+\[
+\boxed{
+\vect{v}
+=
+c_1\vect{b}_1
++
+c_2\vect{b}_2
++
+\cdots
++
+c_n\vect{b}_n
+}
+\]
+
+\vspace{0.1cm}
+
+The coefficients form the coordinate vector of $\vect{v}$
+with respect to $\mathcal{B}$:
+\vspace{-0.1cm}
+\[
+\boxed{
+[\vect{v}]_{\mathcal{B}}
+=
+\begin{bmatrix}
+c_1\\
+c_2\\
+\vdots\\
+c_n
+\end{bmatrix}
+}
+\]
+
+\end{frame}
+
+% =========================================================
+% BASIS MATRIX
+% =========================================================
+
+\begin{frame}{Basis Matrix}
+
+The basis vectors can be arranged as the columns of a matrix:
+
+\[
+\boxed{
+P_{\mathcal{B}}
+=
+\begin{bmatrix}
+|&|&&|\\
+\vect{b}_1&\vect{b}_2&\cdots&\vect{b}_n\\
+|&|&&|
+\end{bmatrix}
+}
+\]
+
+\vspace{0.3cm}
+
+Then the vector can be reconstructed from its coordinates:
+
+\[
+\boxed{
+\vect{v}
+=
+P_{\mathcal{B}}[\vect{v}]_{\mathcal{B}}
+}
+\]
+
+\vspace{0.3cm}
+
+\begin{block}{Interpretation}
+$P_{\mathcal{B}}$ converts coordinates expressed in basis
+$\mathcal{B}$ into the standard-coordinate representation.
+\end{block}
+
+\end{frame}
+
+
+% =========================================================
+% CHANGE TO STANDARD COORDINATES
+% =========================================================
+
+\begin{frame}{From Basis Coordinates to Standard Coordinates}
+
+Consider the basis
+\vspace{-0.1cm}
+\[
+\mathcal{B}
+=
+\left\{
+\begin{bmatrix}
+1\\
+1
+\end{bmatrix},
+\begin{bmatrix}
+1\\
+-1
+\end{bmatrix}
+\right\}.
+\]
+
+Its basis matrix is
+\vspace{-0.1cm}
+\[
+\boxed{
+P_{\mathcal{B}}
+=
+\begin{bmatrix}
+1&1\\
+1&-1
+\end{bmatrix}
+}
+\]
+
+\vspace{0.1cm}
+
+Suppose the coordinates of $\vect{v}$ in $\mathcal{B}$ are
+\vspace{-0.1cm}
+\[
+[\vect{v}]_{\mathcal{B}}
+=
+\begin{bmatrix}
+2\\
+1
+\end{bmatrix}.
+\]
+
+Then
+\vspace{-0.1cm}
+\[
+\vect{v}
+=
+P_{\mathcal{B}}[\vect{v}]_{\mathcal{B}}
+=
+\begin{bmatrix}
+1&1\\
+1&-1
+\end{bmatrix}
+\begin{bmatrix}
+2\\
+1
+\end{bmatrix}
+=
+\boxed{
+\begin{bmatrix}
+3\\
+1
+\end{bmatrix}
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% INVERSE BASIS MATRIX
+% =========================================================
+
+\begin{frame}{From Standard Coordinates to Basis Coordinates}
+
+Starting from
+\vspace{-0.1cm}
+\[
+\vect{v}
+=
+P_{\mathcal{B}}[\vect{v}]_{\mathcal{B}},
+\]
+
+multiply by $P_{\mathcal{B}}^{-1}$:
+\vspace{-0.1cm}
+\[
+P_{\mathcal{B}}^{-1}\vect{v}
+=
+[\vect{v}]_{\mathcal{B}}.
+\]
+
+Therefore,
+\vspace{-0.1cm}
+\[
+\boxed{
+[\vect{v}]_{\mathcal{B}}
+=
+P_{\mathcal{B}}^{-1}\vect{v}.
+}
+\]
+
+Thus,
+\vspace{-0.1cm}
+\[
+\boxed{
+\begin{array}{ccc}
+[\vect{v}]_{\mathcal{B}}
+&\xrightarrow{\quad P_{\mathcal{B}}\quad}&
+\vect{v}\\[4pt]
+\vect{v}
+&\xrightarrow{\quad P_{\mathcal{B}}^{-1}\quad}&
+[\vect{v}]_{\mathcal{B}}
+\end{array}
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% CHANGE OF BASIS
+% =========================================================
+
+\begin{frame}{Change of Basis}
+
+Suppose $\mathcal{B}$ and $\mathcal{C}$ are two bases.
+
+We can convert coordinates from $\mathcal{B}$ to $\mathcal{C}$.
+
+Since
+\vspace{-0.1cm}
+\[
+\vect{v}
+=
+P_{\mathcal{B}}[\vect{v}]_{\mathcal{B}}
+\]
+
+and
+
+\[
+[\vect{v}]_{\mathcal{C}}
+=
+P_{\mathcal{C}}^{-1}\vect{v},
+\]
+
+we obtain
+
+\[
+\boxed{
+[\vect{v}]_{\mathcal{C}}
+=
+P_{\mathcal{C}}^{-1}
+P_{\mathcal{B}}
+[\vect{v}]_{\mathcal{B}}.
+}
+\]
+
+Therefore, the change-of-basis matrix is
+
+\[
+\boxed{
+P_{\mathcal{C}\leftarrow\mathcal{B}}
+=
+P_{\mathcal{C}}^{-1}P_{\mathcal{B}}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% CHANGE OF BASIS EXAMPLE
+% =========================================================
+
+\begin{frame}{Example: Changing Coordinates}
+
+Let
+\vspace{-0.2cm}
+\[
+\mathcal{B}
+=
+\left\{
+\begin{bmatrix}
+1\\1
+\end{bmatrix},
+\begin{bmatrix}
+1\\-1
+\end{bmatrix}
+\right\}
+\]
+
+and let $\mathcal{E}$ be the standard basis.
+
+Then
+\vspace{-0.4cm}
+\[
+P_{\mathcal{B}}
+=
+\begin{bmatrix}
+1&1\\
+1&-1
+\end{bmatrix}.
+\]
+\vspace{-0.4cm}
+
+Suppose
+\vspace{-0.1cm}
+\[
+[\vect{v}]_{\mathcal{B}}
+=
+\begin{bmatrix}
+2\\1
+\end{bmatrix}.
+\]
+\vspace{-0.4cm}
+
+Then
+\vspace{-0.1cm}
+\[
+\vect{v}
+=
+P_{\mathcal{B}}[\vect{v}]_{\mathcal{B}}
+=
+\begin{bmatrix}
+3\\1
+\end{bmatrix}.
+\]
+\vspace{-0.4cm}
+
+Hence,
+\vspace{-0.1cm}
+\[
+\boxed{
+[\vect{v}]_{\mathcal{E}}
+=
+\begin{bmatrix}
+3\\1
+\end{bmatrix}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% TRANSFORMATION IN DIFFERENT BASES
+% =========================================================
+
+\begin{frame}{Linear Transformations in Different Bases}
+
+Suppose
+\vspace{-0.1cm}
+\[
+T:V\rightarrow V
+\]
+
+is a linear transformation. Its matrix depends on the chosen basis.
+
+Let
+\vspace{-0.1cm}
+\[
+A_{\mathcal{B}}
+\]
+
+represent $T$ in basis $\mathcal{B}$, and
+\vspace{-0.1cm}
+\[
+A_{\mathcal{C}}
+\]
+
+represent the same transformation in basis $\mathcal{C}$.
+
+Then
+\vspace{-0.1cm}
+\[
+\boxed{
+A_{\mathcal{C}}
+=
+P_{\mathcal{C}}^{-1}
+A_{\mathcal{B}}
+P_{\mathcal{C}}.
+}
+\]
+
+Thus, changing the basis changes the matrix representation,
+not the underlying transformation.
+
+\end{frame}
+
+
+% =========================================================
+% SIMILAR MATRICES
+% =========================================================
+
+\begin{frame}{Similar Matrices}
+
+Two square matrices $A$ and $B$ are \textbf{similar} if
+
+\[
+\boxed{
+B=P^{-1}AP
+}
+\]
+
+for some invertible matrix $P$.
+
+\vspace{0.4cm}
+
+Similar matrices represent the same linear transformation
+under different coordinate systems.
+
+\vspace{0.4cm}
+
+Important properties are preserved under similarity,
+including
+
+\[
+\boxed{
+\det(A)=\det(B).
+}
+\]
+
+The eigenvalues are also preserved.
+
+\end{frame}
+
+
+% =========================================================
+% WHY CHANGE BASIS?
+% =========================================================
+
+\begin{frame}{Why Change the Basis?}
+
+A suitable basis can make a linear transformation easier
+to understand or compute.
+
+For example, a matrix may have a complicated representation
+in the standard basis but become diagonal in another basis.
+
+\vspace{0.4cm}
+
+This motivates the idea of
+
+\[
+\boxed{
+\text{choosing coordinates that simplify the problem}.
+}
+\]
+
+\vspace{0.4cm}
+
+This idea leads directly to
+
+\[
+\boxed{
+\text{eigenvectors}
+\quad\text{and}\quad
+\text{diagonalization}.
+}
+\]
+
+\end{frame}

@@ -1,0 +1,815 @@
+% =========================================================
+% 09_column_null_spaces.tex
+% Vectors and Linear Algebra
+% =========================================================
+
+% =========================================================
+% SECTION DIVIDER
+% =========================================================
+
+\section{Column Space and Null Space}
+
+% =========================================================
+% COLUMN SPACE
+% =========================================================
+
+\begin{frame}{Column Space}
+
+Let
+
+\[
+A=
+\begin{bmatrix}
+|&|& &|\\
+\vect{a}_1&\vect{a}_2&\cdots&\vect{a}_n\\
+|&|& &|
+\end{bmatrix}.
+\]
+
+The \textbf{column space} of $A$ is the set of all
+linear combinations of its columns.
+
+\[
+\boxed{
+\operatorname{Col}(A)
+=
+\operatorname{span}
+\{\vect{a}_1,\vect{a}_2,\ldots,\vect{a}_n\}
+}
+\]
+
+\vspace{0.4cm}
+
+Therefore, the column space contains every vector that can be
+obtained in the form
+
+\[
+A\vect{x}.
+\]
+
+\end{frame}
+
+
+% =========================================================
+% COLUMN SPACE AND Ax=b
+% =========================================================
+
+\begin{frame}{Column Space and $A\vect{x}=\vect{b}$}
+
+Consider
+
+\[
+A\vect{x}=\vect{b}.
+\]
+
+Since
+
+\[
+A\vect{x}
+=
+x_1\vect{a}_1+
+x_2\vect{a}_2+\cdots+x_n\vect{a}_n,
+\]
+
+a solution exists precisely when $\vect{b}$ can be expressed
+as a linear combination of the columns of $A$.
+
+Therefore,
+
+\[
+\boxed{
+A\vect{x}=\vect{b}
+\text{ is consistent}
+\iff
+\vect{b}\in\operatorname{Col}(A).
+}
+\]
+
+The column space therefore describes all possible outputs of
+the transformation represented by $A$.
+
+\end{frame}
+
+
+% =========================================================
+% COLUMN SPACE EXAMPLE
+% =========================================================
+
+\begin{frame}{Example: Column Space}
+
+Consider
+\vspace{-0.1cm}
+\[
+A=
+\begin{bmatrix}
+1&2\\
+2&4
+\end{bmatrix}.
+\]
+
+Its columns are
+\vspace{-0.1cm}
+\[
+\vect{a}_1=
+\begin{bmatrix}
+1\\2
+\end{bmatrix},
+\qquad
+\vect{a}_2=
+\begin{bmatrix}
+2\\4
+\end{bmatrix}.
+\]
+
+Since
+
+\[
+\vect{a}_2=2\vect{a}_1,
+\]
+
+the two columns do not generate the entire plane.
+
+Thus,
+\vspace{-0.1cm}
+\[
+\boxed{
+\operatorname{Col}(A)
+=
+\operatorname{span}
+\left\{
+\begin{bmatrix}
+1\\2
+\end{bmatrix}
+\right\}.
+}
+\]
+
+The column space is a line through the origin.
+
+\end{frame}
+
+
+% =========================================================
+% NULL SPACE
+% =========================================================
+
+\begin{frame}{Null Space}
+
+The \textbf{null space} of a matrix $A$ is the set of all
+vectors $\vect{x}$ satisfying
+
+\[
+A\vect{x}=\mathbf{0}.
+\]
+
+It is denoted by
+
+\[
+\boxed{
+\operatorname{Null}(A)
+=
+\{\vect{x}:A\vect{x}=\mathbf{0}\}.
+}
+\]
+
+\vspace{0.4cm}
+
+The null space contains all inputs that are mapped to
+the zero vector.
+
+\[
+\vect{x}
+\xrightarrow{\quad A\quad}
+\mathbf{0}.
+\]
+
+\end{frame}
+
+
+% =========================================================
+% NULL SPACE EXAMPLE
+% =========================================================
+
+\begin{frame}{Example: Null Space}
+
+Consider
+\vspace{-1.5cm}
+\begin{columns}[c,totalwidth=\textwidth]
+
+% ---------- LEFT ----------
+\begin{column}{0.42\textwidth}
+
+\begin{center}
+
+\[
+A=
+\begin{bmatrix}
+1&2\\
+2&4
+\end{bmatrix}
+\]
+
+\end{center}
+
+\end{column}
+
+% ---------- RIGHT ----------
+\begin{column}{0.50\textwidth}
+
+\begin{center}
+
+\[
+A
+\begin{bmatrix}
+x\\y
+\end{bmatrix}
+=
+\begin{bmatrix}
+0\\0
+\end{bmatrix}
+\]
+
+\end{center}
+
+\end{column}
+
+\end{columns}
+
+\vspace{0.2cm}
+
+Solving the system gives
+\vspace{-0.1cm}
+\[
+x+2y=0
+\qquad\Longrightarrow\qquad
+x=-2y.
+\]
+
+Let $y=t$. Then
+
+\[
+\begin{bmatrix}
+x\\y
+\end{bmatrix}
+=
+t
+\begin{bmatrix}
+-2\\1
+\end{bmatrix}.
+\]
+
+Therefore,
+
+\[
+\boxed{
+\operatorname{Null}(A)
+=
+\operatorname{span}
+\left\{
+\begin{bmatrix}
+-2\\1
+\end{bmatrix}
+\right\}
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% NULL SPACE AS KERNEL
+% =========================================================
+
+\begin{frame}{Null Space as the Kernel}
+
+For a linear transformation
+
+\[
+T(\vect{x})=A\vect{x},
+\]
+
+the null space is also called the \textbf{kernel}.
+
+\[
+\boxed{
+\operatorname{Null}(A)
+=
+\ker(T)
+}
+\]
+
+\vspace{0.4cm}
+
+It contains all vectors that are mapped to zero:
+
+\[
+\boxed{
+\ker(T)
+=
+\{\vect{x}:T(\vect{x})=\mathbf{0}\}.
+}
+\]
+
+\vspace{0.4cm}
+
+The kernel measures which directions are lost or collapsed
+by the transformation.
+
+\end{frame}
+
+
+% =========================================================
+% BASIS OF COLUMN SPACE
+% =========================================================
+
+\begin{frame}{Basis for the Column Space}
+
+A basis for the column space consists of linearly independent
+columns that span the column space.
+
+Consider
+\vspace{-0.1cm}
+\[
+A=
+\begin{bmatrix}
+1&2&3\\
+2&4&6
+\end{bmatrix}.
+\]
+
+Since
+\vspace{-0.1cm}
+\[
+\vect{a}_2=2\vect{a}_1,
+\qquad
+\vect{a}_3=3\vect{a}_1,
+\]
+
+only the first column is needed.
+
+Therefore,
+\vspace{-0.1cm}
+\[
+\boxed{
+\left\{
+\begin{bmatrix}
+1\\2
+\end{bmatrix}
+\right\}
+}
+\]
+
+is a basis for $\operatorname{Col}(A)$.
+
+\end{frame}
+
+
+% =========================================================
+% PIVOT COLUMNS
+% =========================================================
+
+\begin{frame}{Pivot Columns and Column Space}
+
+Gaussian elimination can be used to identify independent
+columns.
+
+Consider
+
+\[
+A=
+\begin{bmatrix}
+1&2&3\\
+2&4&6
+\end{bmatrix}.
+\]
+
+Row reduction gives
+
+\[
+\begin{bmatrix}
+1&2&3\\
+0&0&0
+\end{bmatrix}.
+\]
+
+There is one pivot.
+
+\vspace{0.3cm}
+
+The corresponding column of the \textbf{original matrix}
+forms a basis for the column space.
+
+\[
+\boxed{
+\operatorname{rank}(A)
+=
+\text{number of pivot columns}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% RANK
+% =========================================================
+
+\begin{frame}{Rank of a Matrix}
+
+The \textbf{rank} of a matrix is the dimension of its
+column space.
+
+\[
+\boxed{
+\operatorname{rank}(A)
+=
+\dim\bigl(\operatorname{Col}(A)\bigr).
+}
+\]
+
+Equivalently, the rank is the number of pivot columns
+obtained during row reduction.
+
+\vspace{0.4cm}
+
+For an $m\times n$ matrix,
+
+\[
+\boxed{
+\operatorname{rank}(A)\leq\min(m,n).
+}
+\]
+
+Rank measures the number of independent directions produced
+by the transformation.
+
+\end{frame}
+
+
+% =========================================================
+% ROW SPACE
+% =========================================================
+
+\begin{frame}{Row Space}
+
+The \textbf{row space} of a matrix is the span of its rows.
+
+For
+
+\[
+A=
+\begin{bmatrix}
+1&2&3\\
+2&4&6
+\end{bmatrix},
+\]
+
+the rows are
+
+\[
+\begin{bmatrix}
+1&2&3
+\end{bmatrix},
+\qquad
+\begin{bmatrix}
+2&4&6
+\end{bmatrix}.
+\]
+
+Since the second row is twice the first,
+
+\[
+\boxed{
+\operatorname{Row}(A)
+=
+\operatorname{span}
+\left\{
+\begin{bmatrix}
+1&2&3
+\end{bmatrix}
+\right\}.
+}
+\]
+
+The dimension of the row space is also the rank of $A$.
+
+\end{frame}
+
+
+% =========================================================
+% NULLITY
+% =========================================================
+
+\begin{frame}{Nullity}
+
+The \textbf{nullity} of a matrix is the dimension of its
+null space.
+
+\[
+\boxed{
+\operatorname{nullity}(A)
+=
+\dim\bigl(\operatorname{Null}(A)\bigr).
+}
+\]
+
+For an $m\times n$ matrix,
+
+\[
+\boxed{
+\operatorname{rank}(A)
++
+\operatorname{nullity}(A)
+=
+n.
+}
+\]
+
+This is the \textbf{Rank--Nullity Theorem}.
+
+\vspace{0.4cm}
+
+The value $n$ is the number of columns of $A$.
+
+\end{frame}
+
+
+% =========================================================
+% RANK-NULLITY EXAMPLE
+% =========================================================
+
+\begin{frame}{Example: Rank--Nullity}
+
+Consider
+\vspace{-0.1cm}
+\[
+A=
+\begin{bmatrix}
+1&2&3\\
+2&4&6
+\end{bmatrix}.
+\]
+
+There are
+\vspace{-0.1cm}
+\[
+n=3
+\]
+
+columns.
+
+From row reduction,
+\vspace{-0.1cm}
+\[
+\operatorname{rank}(A)=1.
+\]
+
+Therefore,
+\vspace{-0.1cm}
+\[
+1+\operatorname{nullity}(A)=3.
+\]
+
+Hence,
+\vspace{-0.1cm}
+\[
+\boxed{
+\operatorname{nullity}(A)=2.
+}
+\]
+
+So the matrix has one independent output direction and
+two independent null directions.
+
+\end{frame}
+
+
+% =========================================================
+% LINEAR DEPENDENCE
+% =========================================================
+
+\begin{frame}{Linear Dependence and the Null Space}
+
+Suppose the columns of $A$ are
+\vspace{-0.1cm}
+\[
+\vect{a}_1,\vect{a}_2,\ldots,\vect{a}_n.
+\]
+
+A linear dependence relation has the form
+\vspace{-0.1cm}
+\[
+c_1\vect{a}_1+
+c_2\vect{a}_2+
+\cdots+
+c_n\vect{a}_n
+=
+\mathbf{0},
+\]
+
+where at least one coefficient is non-zero.
+
+But this can be written as
+\vspace{-0.1cm}
+\[
+A
+\begin{bmatrix}
+c_1\\
+c_2\\
+\vdots\\
+c_n
+\end{bmatrix}
+=
+\mathbf{0}.
+\]
+
+Therefore,
+\vspace{-0.1cm}
+\[
+\boxed{
+\text{Non-trivial null vectors}
+\iff
+\text{Linear dependence among columns}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% TRIVIAL NULL SPACE
+% =========================================================
+
+\begin{frame}{Linear Independence and the Null Space}
+
+The columns of $A$ are linearly independent if
+
+\[
+A\vect{x}=\mathbf{0}
+\]
+
+has only the trivial solution
+
+\[
+\boxed{
+\vect{x}=\mathbf{0}.
+}
+\]
+
+Thus,
+
+\[
+\boxed{
+\operatorname{Null}(A)=\{\mathbf{0}\}
+\iff
+\text{columns of }A\text{ are linearly independent}.
+}
+\]
+
+\vspace{0.4cm}
+
+A non-zero vector in the null space therefore provides
+a direct certificate of linear dependence.
+
+\end{frame}
+
+
+% =========================================================
+% COLUMN SPACE AND NULL SPACE
+% =========================================================
+
+\begin{frame}{Column Space vs. Null Space}
+
+For a matrix $A$:
+
+\vspace{0.3cm}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\begin{column}{0.44\textwidth}
+
+\begin{block}{Column Space}
+
+\[
+\operatorname{Col}(A)
+\]
+
+Contains all possible outputs
+
+\[
+A\vect{x}.
+\]
+
+Its dimension is the rank.
+
+\end{block}
+
+\end{column}
+
+\begin{column}{0.44\textwidth}
+
+\begin{block}{Null Space}
+
+\[
+\operatorname{Null}(A)
+\]
+
+Contains all inputs satisfying
+
+\[
+A\vect{x}=\mathbf{0}.
+\]
+
+Its dimension is the nullity.
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\vspace{0.4cm}
+
+One describes possible \textbf{outputs}; the other describes
+inputs that are \textbf{collapsed to zero}.
+
+\end{frame}
+
+
+% =========================================================
+% FUNDAMENTAL CONNECTION
+% =========================================================
+
+\begin{frame}{The Fundamental Connection}
+
+For
+\vspace{-0.1cm}
+\[
+A\vect{x}=\vect{b},
+\]
+
+two fundamental questions are:
+\vspace{-0.1cm}
+\[
+\boxed{
+\vect{b}\in\operatorname{Col}(A)\;?
+}
+\]
+
+determines whether a solution exists.
+
+If a solution $\vect{x}_p$ exists, then every solution has the form
+\vspace{-0.1cm}
+\[
+\boxed{
+\vect{x}
+=
+\vect{x}_p+\vect{x}_n,
+\qquad
+\vect{x}_n\in\operatorname{Null}(A).
+}
+\]
+
+Therefore:
+\vspace{-0.1cm}
+\[
+\boxed{
+\text{Particular solution}
++
+\text{Null-space solution}
+}
+\]
+
+describes the complete solution set.
+
+\end{frame}
+
+
+% =========================================================
+% INVERTIBLE MATRIX CONNECTION
+% =========================================================
+
+\begin{frame}{Column Space, Null Space and Invertibility}
+
+For an $n\times n$ matrix $A$, the following are equivalent:
+
+\[
+\boxed{
+\begin{array}{c}
+A\text{ is invertible}\\
+\Updownarrow\\
+\operatorname{rank}(A)=n\\
+\Updownarrow\\
+\operatorname{Null}(A)=\{\mathbf{0}\}\\
+\Updownarrow\\
+\text{columns of }A\text{ are linearly independent}\\
+\Updownarrow\\
+\det(A)\neq0
+\end{array}
+}
+\]
+
+These equivalences connect the ideas developed throughout
+linear algebra.
+
+\end{frame}

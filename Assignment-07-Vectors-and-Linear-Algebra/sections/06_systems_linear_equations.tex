@@ -1,0 +1,984 @@
+% =========================================================
+% 06_systems_of_linear_equations.tex
+% Vectors and Linear Algebra
+% =========================================================
+
+% =========================================================
+% SECTION DIVIDER
+% =========================================================
+
+\section{Systems of Linear Equations}
+
+% =========================================================
+% SYSTEM OF LINEAR EQUATIONS
+% =========================================================
+
+\begin{frame}{System of Linear Equations}
+
+A \textbf{linear equation} in variables
+$x_1,x_2,\ldots,x_n$ has the form
+
+\[
+a_1x_1+a_2x_2+\cdots+a_nx_n=b.
+\]
+
+A \textbf{system of linear equations} consists of
+multiple linear equations considered simultaneously.
+
+\vspace{0.4cm}
+
+For example,
+
+\[
+\begin{cases}
+2x+y=5,\\
+x-y=1.
+\end{cases}
+\]
+
+\vspace{0.3cm}
+
+The objective is to find values of the variables that
+satisfy \textbf{all equations simultaneously}.
+
+\end{frame}
+
+
+% =========================================================
+% SOLUTION OF A SYSTEM
+% =========================================================
+
+\begin{frame}{Solution of a System}
+
+For the system
+\vspace{-0.1cm}
+\[
+\begin{cases}
+2x+y=5,\\
+x-y=1,
+\end{cases}
+\]
+
+adding the two equations gives
+\vspace{-0.1cm}
+\[
+3x=6.
+\]
+
+Therefore,
+\vspace{-0.1cm}
+\[
+x=2.
+\]
+
+Substituting into
+\vspace{-0.1cm}
+\[
+x-y=1
+\]
+
+gives
+\vspace{-0.1cm}
+\[
+y=1.
+\]
+
+Hence,
+\vspace{-0.1cm}
+\[
+\boxed{
+(x,y)=(2,1)
+}
+\]
+\vspace{-0.1cm}
+is the solution.
+
+\end{frame}
+
+
+% =========================================================
+% GEOMETRIC INTERPRETATION
+% =========================================================
+
+\begin{frame}{Geometric Interpretation}
+
+In two variables, each linear equation represents a line.
+
+For example,
+
+\[
+2x+y=5
+\]
+
+and
+
+\[
+x-y=1
+\]
+
+represent two lines in the plane.
+
+\vspace{0.4cm}
+
+Their solution is the point where the two lines intersect.
+
+\[
+\boxed{
+\text{Solution of system}
+=
+\text{Common intersection}
+}
+\]
+
+This geometric interpretation becomes more general when
+we move to higher dimensions.
+
+\end{frame}
+
+
+% =========================================================
+% CONSISTENCY
+% =========================================================
+
+\begin{frame}{Consistency of a System}
+
+A system of linear equations is \textbf{consistent} if it has
+at least one solution.
+
+It is \textbf{inconsistent} if it has no solution.
+
+\vspace{0.5cm}
+
+A consistent system may have:
+
+\[
+\boxed{
+\text{Exactly one solution}
+}
+\]
+
+or
+
+\[
+\boxed{
+\text{Infinitely many solutions}.
+}
+\]
+
+\vspace{0.4cm}
+
+Therefore, the three possibilities are:
+
+\[
+\boxed{
+\text{Unique solution}
+\qquad
+\text{Infinitely many solutions}
+\qquad
+\text{No solution}
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% CONSISTENCY GEOMETRICALLY
+% =========================================================
+
+\begin{frame}{Consistency: Geometric View}
+
+For two equations in two variables:
+
+\vspace{0.3cm}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\begin{column}{0.30\textwidth}
+
+\begin{block}{One Solution}
+Two distinct lines intersect at one point.
+\end{block}
+
+\end{column}
+
+\begin{column}{0.30\textwidth}
+
+\begin{block}{No Solution}
+Parallel distinct lines never intersect.
+\end{block}
+
+\end{column}
+
+\begin{column}{0.30\textwidth}
+
+\begin{block}{Infinite Solutions}
+Coincident lines represent the same equation.
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\vspace{0.5cm}
+
+Thus, consistency is closely related to the geometry of the
+equations.
+
+\end{frame}
+
+
+% =========================================================
+% MATRIX FORM
+% =========================================================
+
+\begin{frame}{Matrix Form of a Linear System}
+
+Consider
+
+\[
+\begin{cases}
+a_{11}x_1+a_{12}x_2=b_1,\\
+a_{21}x_1+a_{22}x_2=b_2.
+\end{cases}
+\]
+
+Define
+
+\[
+A=
+\begin{bmatrix}
+a_{11}&a_{12}\\
+a_{21}&a_{22}
+\end{bmatrix},
+\qquad
+\vect{x}
+=
+\begin{bmatrix}
+x_1\\
+x_2
+\end{bmatrix},
+\qquad
+\vect{b}
+=
+\begin{bmatrix}
+b_1\\
+b_2
+\end{bmatrix}.
+\]
+
+Then the system becomes
+
+\[
+\boxed{
+A\vect{x}=\vect{b}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% Ax = b
+% =========================================================
+
+\begin{frame}{The Equation $A\vect{x}=\vect{b}$}
+
+The matrix equation
+
+\[
+\boxed{
+A\vect{x}=\vect{b}
+}
+\]
+
+can be interpreted as a transformation.
+
+\[
+\vect{x}
+\xrightarrow{\quad A\quad}
+A\vect{x}
+=
+\vect{b}.
+\]
+
+\vspace{0.5cm}
+
+The problem is therefore:
+
+\[
+\boxed{
+\text{Find the input }\vect{x}
+\text{ that produces the output }\vect{b}.
+}
+\]
+
+\vspace{0.4cm}
+
+This connects systems of equations directly with
+\textbf{linear transformations}.
+
+\end{frame}
+
+
+% =========================================================
+% COLUMN INTERPRETATION
+% =========================================================
+
+\begin{frame}{$A\vect{x}=\vect{b}$ as a Linear Combination}
+
+Let
+\vspace{-1.9cm}
+\begin{columns}[c,totalwidth=\textwidth]
+
+% ---------- LEFT ----------
+\begin{column}{0.45\textwidth}
+
+\begin{center}
+
+\[
+A=
+\begin{bmatrix}
+|&|& &|\\
+\vect{a}_1&\vect{a}_2&\cdots&\vect{a}_n\\
+|&|& &|
+\end{bmatrix}
+\],
+
+\end{center}
+
+\end{column}
+
+% ---------- RIGHT ----------
+\begin{column}{0.45\textwidth}
+
+\begin{center}
+
+\[
+\vect{x}
+=
+\begin{bmatrix}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{bmatrix}
+\]
+
+\end{center}
+
+\end{column}
+
+\end{columns}
+
+\vspace{0.1cm}
+
+Then
+\vspace{-0.1cm}
+\[
+A\vect{x}
+=
+x_1\vect{a}_1+
+x_2\vect{a}_2+
+\cdots+
+x_n\vect{a}_n.
+\]
+
+Therefore,
+
+\[
+A\vect{x}=\vect{b}
+\]
+
+asks whether $\vect{b}$ can be expressed as a linear
+combination of the columns of $A$.
+
+\vspace{-0.1cm}
+
+\begin{center}
+
+\[
+\boxed{
+\vect{b}\in\operatorname{Col}(A)
+}
+\]
+
+\end{center}
+
+This is precisely the condition for consistency.
+
+\end{frame}
+
+
+% =========================================================
+% AUGMENTED MATRIX
+% =========================================================
+
+\begin{frame}{Augmented Matrix}
+
+A system can be represented using an \textbf{augmented matrix}.
+
+For
+
+\[
+\begin{cases}
+2x+y=5,\\
+x-y=1,
+\end{cases}
+\]
+
+the augmented matrix is
+
+\[
+\boxed{
+\left[
+\begin{array}{cc|c}
+2&1&5\\
+1&-1&1
+\end{array}
+\right].
+}
+\]
+
+\vspace{0.4cm}
+
+The vertical line separates:
+
+\[
+\text{coefficient matrix}
+\qquad\text{from}\qquad
+\text{right-hand side}.
+\]
+
+\end{frame}
+
+
+% =========================================================
+% ELEMENTARY ROW OPERATIONS
+% =========================================================
+
+\begin{frame}{Elementary Row Operations}
+
+Gaussian elimination uses three elementary row operations.
+
+\vspace{0.4cm}
+
+\begin{enumerate}
+    \item Interchange two rows.
+    \item Multiply a row by a non-zero scalar.
+    \item Add a multiple of one row to another row.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+These operations transform the system into an equivalent
+system with the same solution set.
+
+\[
+\boxed{
+\text{Equivalent system}
+\quad\Longrightarrow\quad
+\text{Same solutions}
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% GAUSSIAN ELIMINATION
+% =========================================================
+
+\begin{frame}{Gaussian Elimination}
+
+Gaussian elimination transforms an augmented matrix into
+\textbf{row echelon form}.
+
+Consider
+\vspace{-0.1cm}
+\[
+\left[
+\begin{array}{cc|c}
+2&1&5\\
+1&-1&1
+\end{array}
+\right].
+\]
+
+Swap the rows:
+\vspace{-0.1cm}
+\[
+\left[
+\begin{array}{cc|c}
+1&-1&1\\
+2&1&5
+\end{array}
+\right].
+\]
+
+Then perform
+
+\[
+R_2\leftarrow R_2-2R_1.
+\]
+
+This gives
+
+\[
+\left[
+\begin{array}{cc|c}
+1&-1&1\\
+0&3&3
+\end{array}
+\right].
+\]
+
+\end{frame}
+
+
+% =========================================================
+% BACK SUBSTITUTION
+% =========================================================
+
+\begin{frame}{Gaussian Elimination: Back Substitution}
+
+From
+\vspace{-0.1cm}
+\[
+\left[
+\begin{array}{cc|c}
+1&-1&1\\
+0&3&3
+\end{array}
+\right]
+\]
+
+we obtain
+\vspace{-0.1cm}
+\[
+3y=3
+\]
+
+and therefore
+\vspace{-0.1cm}
+\[
+y=1.
+\]
+
+Substituting into the first equation,
+\vspace{-0.2cm}
+\[
+x-y=1
+\]
+
+gives
+\vspace{-0.2cm}
+\[
+x=2.
+\]
+
+Hence,
+\vspace{-0.2cm}
+\[
+\boxed{
+\vect{x}
+=
+\begin{bmatrix}
+2\\
+1
+\end{bmatrix}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% ROW ECHELON FORM
+% =========================================================
+
+\begin{frame}{Row Echelon Form}
+
+A matrix is in \textbf{row echelon form} when:
+
+\begin{itemize}
+    \item all non-zero rows occur above zero rows,
+    \item each leading entry is to the right of the leading
+    entry in the row above it,
+    \item entries below each leading entry are zero.
+\end{itemize}
+
+For example,
+
+\[
+\begin{bmatrix}
+1&2&-1\\
+0&1&3\\
+0&0&1
+\end{bmatrix}
+\]
+
+is in row echelon form.
+
+\vspace{0.4cm}
+
+Gaussian elimination systematically produces this structure.
+
+\end{frame}
+
+
+% =========================================================
+% REDUCED ROW ECHELON FORM
+% =========================================================
+
+\begin{frame}{Reduced Row Echelon Form}
+
+A matrix is in \textbf{reduced row echelon form} when, in addition
+to row echelon conditions:
+
+\begin{itemize}
+    \item every leading entry is $1$,
+    \item each leading $1$ is the only non-zero entry in its column.
+\end{itemize}
+
+For example,
+
+\[
+\boxed{
+\begin{bmatrix}
+1&0&2\\
+0&1&-3\\
+0&0&0
+\end{bmatrix}
+}
+\]
+
+is in reduced row echelon form.
+
+\vspace{0.3cm}
+
+RREF makes the solution structure of a system easier to identify.
+
+\end{frame}
+
+
+% =========================================================
+% UNIQUE SOLUTION
+% =========================================================
+
+\begin{frame}{Identifying a Unique Solution}
+
+Consider
+
+\[
+\left[
+\begin{array}{ccc|c}
+1&0&2&4\\
+0&1&-1&3\\
+0&0&1&2
+\end{array}
+\right].
+\]
+
+Every variable has a pivot.
+
+\vspace{0.4cm}
+
+Therefore, the system has
+
+\[
+\boxed{
+\text{exactly one solution}.
+}
+\]
+
+In general, a unique solution occurs when every variable
+is determined by the equations.
+
+\end{frame}
+
+
+% =========================================================
+% NO SOLUTION
+% =========================================================
+
+\begin{frame}{Detecting No Solution}
+
+Suppose elimination produces
+\vspace{-0.1cm}
+\[
+\left[
+\begin{array}{ccc|c}
+1&2&0&3\\
+0&0&0&5
+\end{array}
+\right].
+\]
+
+The second row represents
+\vspace{-0.1cm}
+\[
+0=5.
+\]
+
+This is impossible.
+
+Therefore,
+\vspace{-0.1cm}
+\[
+\boxed{
+\text{The system is inconsistent.}
+}
+\]
+
+A row of the form
+
+\[
+\left[
+\begin{array}{ccc|c}
+0&0&0&c
+\end{array}
+\right],
+\qquad c\neq0,
+\]
+
+signals that the system has \textbf{no solution}.
+
+\end{frame}
+
+
+% =========================================================
+% INFINITELY MANY SOLUTIONS
+% =========================================================
+
+\begin{frame}{Infinitely Many Solutions}
+
+Consider a system whose reduced form contains
+\vspace{-0.1cm}
+\[
+\left[
+\begin{array}{ccc|c}
+1&0&2&4\\
+0&1&-1&3\\
+0&0&0&0
+\end{array}
+\right].
+\]
+
+The third row gives no new constraint. One variable can therefore be chosen freely.
+
+Let
+\vspace{-0.2cm}
+\[
+z=t.
+\]
+
+Then
+\vspace{-0.1cm}
+\[
+x=4-2t,
+\qquad
+y=3+t.
+\]
+
+Hence,
+\vspace{-0.1cm}
+\[
+\boxed{
+\begin{bmatrix}
+x\\y\\z
+\end{bmatrix}
+=
+\begin{bmatrix}
+4\\3\\0
+\end{bmatrix}
++
+t
+\begin{bmatrix}
+-2\\1\\1
+\end{bmatrix}.
+}
+\]
+\vspace{-0.1cm}
+There are infinitely many solutions.
+
+\end{frame}
+
+
+% =========================================================
+% INVERSE MATRIX
+% =========================================================
+
+\begin{frame}{Solving $A\vect{x}=\vect{b}$ Using an Inverse}
+\vspace{-0.1cm}
+Suppose $A$ is a square matrix with an inverse.
+
+Starting with
+
+\[
+A\vect{x}=\vect{b},
+\]
+
+multiply both sides by $A^{-1}$:
+
+\[
+A^{-1}A\vect{x}
+=
+A^{-1}\vect{b}.
+\]
+
+Since
+\vspace{-0.1cm}
+\[
+A^{-1}A=I,
+\]
+
+we obtain
+\vspace{-0.1cm}
+\[
+\boxed{
+\vect{x}=A^{-1}\vect{b}.
+}
+\]
+
+This gives a direct formula for the solution.
+
+\end{frame}
+
+
+% =========================================================
+% CONDITIONS FOR INVERSE SOLUTION
+% =========================================================
+
+\begin{frame}{When Does $A^{-1}\vect{b}$ Exist?}
+
+The expression
+
+\[
+\vect{x}=A^{-1}\vect{b}
+\]
+
+requires $A$ to be:
+
+\begin{itemize}
+    \item square,
+    \item invertible.
+\end{itemize}
+
+For a square matrix,
+
+\[
+A^{-1}\text{ exists}
+\quad\Longleftrightarrow\quad
+\det(A)\neq0.
+\]
+
+
+When these conditions hold, the system
+
+\[
+A\vect{x}=\vect{b}
+\]
+
+has a unique solution for every $\vect{b}$.
+
+\end{frame}
+
+
+% =========================================================
+% GAUSSIAN ELIMINATION VS INVERSE
+% =========================================================
+
+\begin{frame}{Two Ways to Solve a Linear System}
+
+For a system
+
+\[
+A\vect{x}=\vect{b},
+\]
+
+two approaches are:
+
+\vspace{0.3cm}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\begin{column}{0.44\textwidth}
+
+\begin{block}{Gaussian Elimination}
+
+Transform the augmented matrix and solve the resulting system.
+
+\[
+[A\mid\vect{b}]
+\]
+
+\end{block}
+
+\end{column}
+
+\begin{column}{0.44\textwidth}
+
+\begin{block}{Inverse Method}
+
+If $A$ is invertible,
+
+\[
+\vect{x}=A^{-1}\vect{b}.
+\]
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\vspace{0.5cm}
+
+For computational problems involving many right-hand sides,
+factorization-based methods are generally more useful than
+explicitly computing $A^{-1}$.
+
+\end{frame}
+
+
+% =========================================================
+% HOMOGENEOUS SYSTEM
+% =========================================================
+
+\begin{frame}{Homogeneous Linear Systems}
+
+A homogeneous system has the form
+
+\[
+\boxed{
+A\vect{x}=\mathbf{0}.
+}
+\]
+
+It always has at least the trivial solution
+
+\[
+\boxed{
+\vect{x}=\mathbf{0}.
+}
+\]
+
+\vspace{0.4cm}
+
+Depending on $A$, there may also be non-zero solutions.
+
+\vspace{0.4cm}
+
+\[
+\boxed{
+\text{Trivial solution}
+\qquad\text{vs.}\qquad
+\text{Non-trivial solutions}
+}
+\]
+
+This will become important when studying the
+\textbf{null space} and linear dependence.
+
+\end{frame}

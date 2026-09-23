@@ -1,0 +1,642 @@
+% =========================================================
+% 08_determinants_inverse.tex
+% Vectors and Linear Algebra
+% =========================================================
+
+% =========================================================
+% SECTION DIVIDER
+% =========================================================
+
+\section{Determinants and Inverse Matrices}
+
+% =========================================================
+% DETERMINANT
+% =========================================================
+
+\begin{frame}{The Determinant}
+
+The \textbf{determinant} is a scalar associated with a
+square matrix.
+
+For a $2\times2$ matrix,
+
+\[
+A=
+\begin{bmatrix}
+a&b\\
+c&d
+\end{bmatrix},
+\]
+
+the determinant is
+
+\[
+\boxed{
+\det(A)=ad-bc
+}
+\]
+
+\vspace{0.4cm}
+
+The determinant provides information about:
+
+\begin{itemize}
+    \item whether a matrix is invertible,
+    \item how a transformation changes area or volume,
+    \item whether dimensions are collapsed by a transformation.
+\end{itemize}
+
+\end{frame}
+
+
+% =========================================================
+% DETERMINANT EXAMPLE
+% =========================================================
+
+\begin{frame}{Example: Determinant of a $2\times2$ Matrix}
+
+Consider
+\vspace{-0.1cm}
+\[
+A=
+\begin{bmatrix}
+3&2\\
+1&4
+\end{bmatrix}.
+\]
+
+Using
+
+\[
+\det(A)=ad-bc,
+\]
+
+we obtain
+
+\[
+\det(A)
+=
+(3)(4)-(2)(1)
+=
+12-2.
+\]
+
+Therefore,
+
+\[
+\boxed{
+\det(A)=10
+}
+\]
+
+Since the determinant is non-zero, $A$ is invertible.
+
+\end{frame}
+
+
+% =========================================================
+% GEOMETRIC MEANING
+% =========================================================
+
+\begin{frame}{Geometric Meaning of the Determinant}
+
+For a $2\times2$ transformation,
+
+\[
+|\det(A)|
+\]
+
+represents the factor by which areas are scaled.
+
+\vspace{0.4cm}
+
+\[
+\begin{array}{c|c}
+\text{Determinant} & \text{Geometric effect}\\
+\hline
+|\det(A)|>1 & \text{Area increases}\\[3pt]
+0<|\det(A)|<1 & \text{Area decreases}\\[3pt]
+|\det(A)|=1 & \text{Area is preserved}\\[3pt]
+\det(A)=0 & \text{Area collapses to zero}
+\end{array}
+\]
+
+\vspace{0.3cm}
+
+The sign of the determinant also indicates whether
+orientation is preserved or reversed.
+
+\end{frame}
+
+
+% =========================================================
+% 3D DETERMINANT
+% =========================================================
+
+\begin{frame}{Determinant in Three Dimensions}
+
+For a $3\times3$ matrix, the absolute value of the determinant
+represents the factor by which volumes are scaled.
+
+\[
+\boxed{
+|\det(A)|
+=
+\text{volume scaling factor}
+}
+\]
+
+\vspace{0.4cm}
+
+For example,
+
+\[
+\det(A)=3
+\]
+
+means that the transformation scales volume by a factor of $3$.
+
+\vspace{0.4cm}
+
+A negative determinant indicates a reversal of orientation.
+
+\end{frame}
+
+
+% =========================================================
+% DETERMINANT PROPERTIES
+% =========================================================
+
+\begin{frame}{Properties of the Determinant}
+
+For square matrices $A$ and $B$,
+
+\[
+\boxed{
+\det(AB)=\det(A)\det(B)
+}
+\]
+
+and
+
+\[
+\boxed{
+\det(A^T)=\det(A).
+}
+\]
+
+For the identity matrix,
+
+\[
+\boxed{
+\det(I)=1.
+}
+\]
+
+If $A$ is invertible,
+
+\[
+\boxed{
+\det(A^{-1})
+=
+\frac{1}{\det(A)}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% SINGULAR MATRIX
+% =========================================================
+
+\begin{frame}{Singular and Non-Singular Matrices}
+
+A square matrix $A$ is \textbf{singular} when
+
+\[
+\boxed{
+\det(A)=0.
+}
+\]
+
+A square matrix is \textbf{non-singular} when
+
+\[
+\boxed{
+\det(A)\neq0.
+}
+\]
+
+\vspace{0.4cm}
+
+Geometrically, a singular transformation collapses the
+space into a lower-dimensional space.
+
+\vspace{0.3cm}
+
+For example,
+
+\[
+\mathbb{R}^2
+\longrightarrow
+\text{a line}.
+\]
+
+\end{frame}
+
+
+% =========================================================
+% INVERTIBILITY
+% =========================================================
+
+\begin{frame}{Determinant and Invertibility}
+
+For a square matrix $A$,
+
+\[
+\boxed{
+A^{-1}\text{ exists}
+\iff
+\det(A)\neq0.
+}
+\]
+
+Therefore,
+
+\[
+\boxed{
+\det(A)=0
+\iff
+A\text{ is singular}.
+}
+\]
+
+\vspace{0.4cm}
+
+This gives an important connection:
+
+\[
+\boxed{
+\text{Non-zero determinant}
+\rightarrow
+\text{Invertible matrix}
+\rightarrow
+\text{Inverse transformation}
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% INVERSE MATRIX
+% =========================================================
+
+\begin{frame}{Inverse Matrix}
+
+The inverse of a square matrix $A$ is a matrix $A^{-1}$
+such that
+
+\[
+\boxed{
+AA^{-1}=A^{-1}A=I.
+}
+\]
+
+\vspace{0.4cm}
+
+The inverse matrix represents the transformation that
+\textbf{undoes} the original transformation.
+
+If
+
+\[
+\vect{y}=A\vect{x},
+\]
+
+then
+
+\[
+\boxed{
+\vect{x}=A^{-1}\vect{y}.
+}
+\]
+
+\vspace{0.3cm}
+
+Thus, $A^{-1}$ maps the output back to the original input.
+
+\end{frame}
+
+
+% =========================================================
+% 2x2 INVERSE FORMULA
+% =========================================================
+
+\begin{frame}{Inverse of a $2\times2$ Matrix}
+
+For
+\vspace{-0.1cm}
+\[
+A=
+\begin{bmatrix}
+a&b\\
+c&d
+\end{bmatrix},
+\]
+
+if
+\vspace{-0.1cm}
+\[
+ad-bc\neq0,
+\]
+
+then
+\vspace{-0.1cm}
+\[
+\boxed{
+A^{-1}
+=
+\frac{1}{ad-bc}
+\begin{bmatrix}
+d&-b\\
+-c&a
+\end{bmatrix}.
+}
+\]
+
+Notice that
+\vspace{-0.1cm}
+\[
+ad-bc=\det(A).
+\]
+
+Therefore, the inverse exists precisely when
+
+\[
+\det(A)\neq0.
+\]
+
+\end{frame}
+
+
+% =========================================================
+% INVERSE EXAMPLE
+% =========================================================
+
+\begin{frame}{Example: Finding an Inverse}
+
+Let
+\vspace{-0.1cm}
+\[
+A=
+\begin{bmatrix}
+2&1\\
+1&1
+\end{bmatrix}.
+\]
+
+First,
+
+\[
+\det(A)
+=
+(2)(1)-(1)(1)
+=
+1.
+\]
+
+Therefore,
+
+\[
+A^{-1}
+=
+\begin{bmatrix}
+1&-1\\
+-1&2
+\end{bmatrix}.
+\]
+
+Verification:
+
+\[
+AA^{-1}
+=
+\begin{bmatrix}
+1&0\\
+0&1
+\end{bmatrix}
+=
+I.
+\]
+
+\end{frame}
+
+
+% =========================================================
+% INVERSE AND LINEAR SYSTEMS
+% =========================================================
+
+\begin{frame}{Inverse Matrix and Linear Systems}
+
+Consider
+
+\[
+A\vect{x}=\vect{b}.
+\]
+
+If $A$ is invertible, multiply both sides by $A^{-1}$:
+
+\[
+A^{-1}A\vect{x}
+=
+A^{-1}\vect{b}.
+\]
+
+Since
+
+\[
+A^{-1}A=I,
+\]
+
+we obtain
+
+\[
+\boxed{
+\vect{x}=A^{-1}\vect{b}.
+}
+\]
+
+Thus, an invertible coefficient matrix gives a unique solution
+for every $\vect{b}$.
+
+\end{frame}
+
+
+% =========================================================
+% COFACTORS
+% =========================================================
+
+\begin{frame}{Minors and Cofactors}
+
+For an element $a_{ij}$ of a matrix, its \textbf{minor}
+$M_{ij}$ is the determinant obtained by deleting row $i$
+and column $j$.
+
+\vspace{0.4cm}
+
+The corresponding cofactor is
+
+\[
+\boxed{
+C_{ij}=(-1)^{i+j}M_{ij}.
+}
+\]
+
+\vspace{0.4cm}
+
+The signs follow the pattern
+
+\[
+\begin{bmatrix}
++&-&+\\
+-&+&-\\
++&-&+
+\end{bmatrix}.
+\]
+
+\vspace{0.3cm}
+
+Cofactors can be used to calculate determinants of larger matrices.
+
+\end{frame}
+
+
+% =========================================================
+% COFACTOR EXPANSION
+% =========================================================
+
+\begin{frame}{Cofactor Expansion}
+
+For
+
+\[
+A=
+\begin{bmatrix}
+a_{11}&a_{12}&a_{13}\\
+a_{21}&a_{22}&a_{23}\\
+a_{31}&a_{32}&a_{33}
+\end{bmatrix},
+\]
+
+expanding along the first row gives
+
+\[
+\boxed{
+\det(A)
+=
+a_{11}C_{11}
++
+a_{12}C_{12}
++
+a_{13}C_{13}.
+}
+\]
+
+\vspace{0.4cm}
+
+Equivalently,
+
+\[
+\det(A)
+=
+a_{11}M_{11}
+-a_{12}M_{12}
++a_{13}M_{13}.
+\]
+
+\vspace{0.3cm}
+
+The same determinant can be expanded along any row or column.
+
+\end{frame}
+
+
+% =========================================================
+% ADJUGATE
+% =========================================================
+
+\begin{frame}{Adjugate Matrix}
+
+The matrix of cofactors is
+
+\[
+C=
+\begin{bmatrix}
+C_{11}&C_{12}&\cdots\\
+C_{21}&C_{22}&\cdots\\
+\vdots&\vdots&\ddots
+\end{bmatrix}.
+\]
+
+The \textbf{adjugate} is the transpose of the cofactor matrix:
+
+\[
+\boxed{
+\operatorname{adj}(A)=C^T.
+}
+\]
+
+For an invertible matrix,
+
+\[
+\boxed{
+A^{-1}
+=
+\frac{1}{\det(A)}
+\operatorname{adj}(A).
+}
+\]
+
+This provides a general formula for computing the inverse.
+
+\end{frame}
+
+
+% =========================================================
+% LIMITATIONS
+% =========================================================
+
+\begin{frame}{Computing Inverses in Practice}
+
+Although
+
+\[
+A^{-1}
+=
+\frac{1}{\det(A)}
+\operatorname{adj}(A)
+\]
+
+is mathematically useful, it is not usually the preferred
+method for large numerical problems.
+
+\vspace{0.4cm}
+
+For computational applications, methods such as
+
+\begin{itemize}
+    \item Gaussian elimination,
+    \item LU factorization,
+    \item QR factorization
+\end{itemize}
+
+are generally more practical.
+
+\vspace{0.4cm}
+
+The inverse formula is therefore particularly useful for
+understanding the mathematics and for small matrices.
+
+\end{frame}

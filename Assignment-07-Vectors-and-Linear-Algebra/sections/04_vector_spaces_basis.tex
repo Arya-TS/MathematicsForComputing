@@ -1,0 +1,645 @@
+% =========================================================
+% 04_vector_spaces_basis.tex
+% Vectors and Linear Algebra
+% =========================================================
+
+% =========================================================
+% SECTION DIVIDER
+% =========================================================
+
+\section{Vector Spaces, Basis and Dimension}
+
+\begin{frame}{Basis of a Vector Space}
+
+A set of vectors
+
+\[
+\mathcal{B}
+=
+\{\vect{v}_1,\vect{v}_2,\ldots,\vect{v}_n\}
+\]
+
+is a \textbf{basis} of a vector space if:
+
+\begin{enumerate}
+    \item the vectors span the space, and
+    \item the vectors are linearly independent.
+\end{enumerate}
+
+Therefore,
+
+\[
+\boxed{
+\text{Basis}
+=
+\text{Spanning set}
++
+\text{Linear independence}
+}
+\]
+
+\vspace{0.4cm}
+
+A basis provides a set of fundamental directions from which
+every vector in the space can be constructed.
+
+\end{frame}
+
+
+% =========================================================
+% STANDARD BASIS
+% =========================================================
+
+\begin{frame}{Standard Basis}
+
+The standard basis of $\mathbb{R}^2$ is
+
+\[
+\boxed{
+\mathcal{B}
+=
+\left\{
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix},
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+\right\}.
+}
+\]
+
+Every vector
+
+\[
+\vect{x}
+=
+\begin{bmatrix}
+x_1\\
+x_2
+\end{bmatrix}
+\]
+
+can be written as
+
+\[
+\vect{x}
+=
+x_1
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
++
+x_2
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}.
+\]
+
+\vspace{0.3cm}
+
+Thus, the basis vectors provide the coordinate directions of
+$\mathbb{R}^2$.
+
+\end{frame}
+
+
+% =========================================================
+% BASIS IN R3
+% =========================================================
+
+\begin{frame}{Standard Basis of $\mathbb{R}^3$}
+
+The standard basis of $\mathbb{R}^3$ is
+
+\[
+\mathcal{B}
+=
+\left\{
+\begin{bmatrix}
+1\\0\\0
+\end{bmatrix},
+\begin{bmatrix}
+0\\1\\0
+\end{bmatrix},
+\begin{bmatrix}
+0\\0\\1
+\end{bmatrix}
+\right\}.
+\]
+
+Any vector
+
+\[
+\vect{x}
+=
+\begin{bmatrix}
+x_1\\x_2\\x_3
+\end{bmatrix}
+\]
+
+can be expressed as
+
+\[
+\boxed{
+\vect{x}
+=
+x_1\vect{e}_1
++
+x_2\vect{e}_2
++
+x_3\vect{e}_3.
+}
+\]
+
+The three basis vectors provide three independent directions.
+
+\end{frame}
+
+
+% =========================================================
+% COORDINATES RELATIVE TO A BASIS
+% =========================================================
+
+\begin{frame}{Coordinates Relative to a Basis}
+
+Let
+
+\[
+\mathcal{B}
+=
+\{\vect{v}_1,\vect{v}_2\}
+\]
+
+be a basis of $\mathbb{R}^2$.
+
+A vector $\vect{x}$ can be expressed as
+
+\[
+\vect{x}
+=
+c_1\vect{v}_1+c_2\vect{v}_2.
+\]
+
+The coefficients form the \textbf{coordinate vector} of $\vect{x}$
+relative to $\mathcal{B}$:
+
+\[
+\boxed{
+[\vect{x}]_{\mathcal{B}}
+=
+\begin{bmatrix}
+c_1\\
+c_2
+\end{bmatrix}.
+}
+\]
+
+\vspace{0.3cm}
+
+The same geometric vector can therefore have different coordinates
+when different bases are used.
+
+\end{frame}
+
+
+% =========================================================
+% DIMENSION
+% =========================================================
+
+\begin{frame}{Dimension}
+
+The \textbf{dimension} of a vector space is the number of vectors
+in any basis of that space.
+
+For example,
+
+\[
+\boxed{
+\dim(\mathbb{R}^2)=2
+}
+\]
+
+and
+
+\[
+\boxed{
+\dim(\mathbb{R}^3)=3.
+}
+\]
+
+\vspace{0.5cm}
+
+More generally,
+
+\[
+\boxed{
+\dim(\mathbb{R}^n)=n.
+}
+\]
+
+Dimension tells us how many independent directions are needed
+to describe the entire space.
+
+\end{frame}
+
+
+% =========================================================
+% BASIS AND DIMENSION
+% =========================================================
+
+\begin{frame}{Basis, Span and Dimension}
+
+These concepts are closely connected.
+\vspace{-0.1cm}
+\[
+\boxed{
+\begin{array}{c}
+\text{Linearly independent vectors}\\[3pt]
+\downarrow\\[3pt]
+\text{Basis}\\[3pt]
+\downarrow\\[3pt]
+\text{Spans the vector space}\\[3pt]
+\downarrow\\[3pt]
+\text{Number of basis vectors}\\[3pt]
+\downarrow\\[3pt]
+\text{Dimension}
+\end{array}
+}
+\]
+
+A basis is therefore a \textbf{minimal set of generators} for
+a vector space.
+
+\end{frame}
+
+
+% =========================================================
+% VECTOR SPACE
+% =========================================================
+
+\begin{frame}{What Is a Vector Space?}
+
+A \textbf{vector space} is a set of objects that is closed under:
+
+\begin{itemize}
+    \item vector addition
+    \item scalar multiplication
+\end{itemize}
+
+and satisfies a collection of algebraic rules.
+
+\vspace{0.4cm}
+
+If $\vect{u}$ and $\vect{v}$ belong to a vector space $V$, and
+$c$ is a scalar, then
+
+\[
+\vect{u}+\vect{v}\in V
+\]
+
+and
+
+\[
+c\vect{u}\in V.
+\]
+
+\vspace{0.4cm}
+
+The scalars are usually elements of $\mathbb{R}$ or $\mathbb{C}$.
+
+\end{frame}
+
+
+% =========================================================
+% VECTOR SPACE AXIOMS
+% =========================================================
+
+\begin{frame}{Vector Space Properties}
+
+For vectors $\vect{u},\vect{v},\vect{w}\in V$ and scalar $c$,
+the vector-space operations satisfy properties such as:
+
+\begin{itemize}
+    \item $\vect{u}+\vect{v}=\vect{v}+\vect{u}$
+    \item $(\vect{u}+\vect{v})+\vect{w}
+    =\vect{u}+(\vect{v}+\vect{w})$
+    \item There exists a zero vector $\mathbf{0}$
+    \item Every vector has an additive inverse
+    \item $c(\vect{u}+\vect{v})
+    =c\vect{u}+c\vect{v}$
+    \item $(c+d)\vect{u}
+    =c\vect{u}+d\vect{u}$
+\end{itemize}
+
+\vspace{0.2cm}
+
+These properties provide the algebraic structure required
+for vector-space operations.
+
+\end{frame}
+
+
+% =========================================================
+% EXAMPLES OF VECTOR SPACES
+% =========================================================
+
+\begin{frame}{Examples of Vector Spaces}
+
+Vector spaces are not limited to arrows in $\mathbb{R}^n$.
+
+Examples include:
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\begin{column}{0.46\textwidth}
+
+\begin{block}{$\mathbb{R}^n$}
+\[
+\begin{bmatrix}
+x_1\\
+\vdots\\
+x_n
+\end{bmatrix}
+\]
+\end{block}
+
+\begin{block}{Polynomials}
+\[
+p(x)=a_0+a_1x+\cdots+a_nx^n
+\]
+\end{block}
+
+\end{column}
+
+\begin{column}{0.46\textwidth}
+
+\begin{block}{Matrices}
+Matrices of a fixed size form a vector space under
+matrix addition and scalar multiplication.
+\end{block}
+
+\begin{block}{Functions}
+Suitable sets of functions can also form vector spaces.
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+
+% =========================================================
+% SCALARS
+% =========================================================
+
+\begin{frame}{Scalars and Fields}
+
+A \textbf{scalar} is a quantity used to multiply vectors.
+
+Common scalar sets include
+
+\[
+\mathbb{R}
+\qquad\text{and}\qquad
+\mathbb{C}.
+\]
+
+\vspace{0.4cm}
+
+A \textbf{field} provides the arithmetic structure required
+for scalar operations.
+
+\vspace{0.4cm}
+
+For example, the real numbers $\mathbb{R}$ form a field with
+
+\begin{itemize}
+    \item addition
+    \item subtraction
+    \item multiplication
+    \item division by non-zero numbers
+\end{itemize}
+
+\vspace{0.2cm}
+
+Vector spaces are therefore defined relative to a chosen
+field of scalars.
+
+\end{frame}
+
+
+% =========================================================
+% ALGEBRAIC STRUCTURES
+% =========================================================
+
+\begin{frame}{Algebraic Structures}
+
+The lecture material introduces increasingly structured
+algebraic systems.
+
+\vspace{0.3cm}
+
+\begin{center}
+
+\begin{tikzpicture}[
+    node distance=1.5cm,
+    >=Latex
+]
+
+\node[
+    draw,
+    rounded corners,
+    fill=LightBlue,
+    minimum width=2.5cm
+] (semigroup) {Semigroup};
+
+\node[
+    draw,
+    rounded corners,
+    fill=LightBlue,
+    minimum width=2.5cm,
+    right=of semigroup
+] (monoid) {Monoid};
+
+\node[
+    draw,
+    rounded corners,
+    fill=LightLavender,
+    minimum width=2.5cm,
+    right=of monoid
+] (group) {Group};
+
+\node[
+    draw,
+    rounded corners,
+    fill=LightLavender,
+    minimum width=2.5cm,
+    right=of group
+] (abelian) {Abelian Group};
+
+\draw[->, thick] (semigroup) -- (monoid);
+\draw[->, thick] (monoid) -- (group);
+\draw[->, thick] (group) -- (abelian);
+
+\end{tikzpicture}
+
+\end{center}
+
+\vspace{0.4cm}
+
+Each step adds additional algebraic properties.
+
+\end{frame}
+
+
+% =========================================================
+% SEMIGROUP AND MONOID
+% =========================================================
+
+\begin{frame}{Semigroup and Monoid}
+
+A \textbf{semigroup} is a set with an associative binary operation.
+
+\[
+(a*b)*c=a*(b*c).
+\]
+
+\vspace{0.4cm}
+
+A \textbf{monoid} is a semigroup that additionally contains
+an identity element $e$:
+
+\[
+\boxed{
+e*a=a*e=a.
+}
+\]
+
+\vspace{0.4cm}
+
+These structures provide a foundation for understanding
+more structured algebraic systems.
+
+\end{frame}
+
+
+% =========================================================
+% GROUP
+% =========================================================
+
+\begin{frame}{Group and Abelian Group}
+
+A \textbf{group} is a monoid in which every element has
+an inverse.
+
+For every $a$, there exists $a^{-1}$ such that
+
+\[
+aa^{-1}=a^{-1}a=e.
+\]
+
+\vspace{0.4cm}
+
+An \textbf{Abelian group} additionally satisfies commutativity:
+
+\[
+\boxed{
+a*b=b*a.
+}
+\]
+
+\vspace{0.3cm}
+
+Vector addition forms an Abelian group.
+
+\end{frame}
+
+
+% =========================================================
+% VECTOR SPACE STRUCTURE
+% =========================================================
+
+\begin{frame}{From Algebraic Structure to Vector Spaces}
+
+The vector-space structure combines two types of operations:
+
+\vspace{0.4cm}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\begin{column}{0.43\textwidth}
+
+\begin{block}{Vector Addition}
+
+\[
+\vect{u}+\vect{v}
+\]
+
+Vectors form an Abelian group under addition.
+
+\end{block}
+
+\end{column}
+
+\begin{column}{0.43\textwidth}
+
+\begin{block}{Scalar Multiplication}
+
+\[
+c\vect{v}
+\]
+
+Scalars act on vectors while satisfying compatibility rules.
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\vspace{0.5cm}
+
+Together, these operations produce the structure of a
+\textbf{vector space}.
+
+\end{frame}
+
+
+% =========================================================
+% VECTOR SPACES IN COMPUTING
+% =========================================================
+
+\begin{frame}{Vector Spaces in Computing}
+
+The idea of a vector space allows many different objects
+to be treated using the same mathematical framework.
+
+\vspace{0.4cm}
+
+\begin{itemize}
+    \item Feature vectors in machine learning
+    \item Coordinate vectors in computer graphics
+    \item Matrix spaces in numerical computing
+    \item Polynomial representations
+    \item Function spaces in mathematical modelling
+\end{itemize}
+
+\begin{center}
+
+\[
+\boxed{
+\text{Different objects}
+\quad\longrightarrow\quad
+\text{Common linear structure}
+}
+\]
+
+\end{center}
+
+\end{frame}

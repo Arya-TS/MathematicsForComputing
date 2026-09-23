@@ -1,0 +1,700 @@
+% =========================================================
+% 13_applications.tex
+% Vectors and Linear Algebra
+% =========================================================
+
+% =========================================================
+% SECTION DIVIDER
+% =========================================================
+
+\section{Applications in Computing and AI}
+
+% =========================================================
+% LINEAR ALGEBRA IN COMPUTING
+% =========================================================
+
+\begin{frame}{Linear Algebra in Computing}
+
+Linear algebra provides a mathematical language for
+representing and transforming structured data.
+
+\vspace{0.4cm}
+
+Common objects include
+
+\begin{itemize}
+    \item vectors for features and observations,
+    \item matrices for transformations and datasets,
+    \item linear systems for solving computational problems,
+    \item eigenvectors for discovering important directions.
+\end{itemize}
+
+\vspace{0.4cm}
+
+These ideas form part of the mathematical foundation of
+
+\[
+\boxed{
+\text{Computer Graphics, Machine Learning, AI and Data Science}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% DATA REPRESENTATION
+% =========================================================
+
+\begin{frame}{Vectors as Data Representation}
+\vspace{-0.1cm}
+A data instance can be represented as a vector.
+
+For example, a student may be represented by
+\vspace{-0.1cm}
+\[
+\vect{x}
+=
+\begin{bmatrix}
+\text{age}\\
+\text{study hours}\\
+\text{attendance}\\
+\text{previous score}
+\end{bmatrix}.
+\]
+
+A collection of observations can then be represented
+as a matrix
+\vspace{-0.1cm}
+\[
+\boxed{
+X=
+\begin{bmatrix}
+- & \vect{x}_1^T & -\\
+- & \vect{x}_2^T & -\\
+\vdots & \vdots & \\
+- & \vect{x}_m^T & -
+\end{bmatrix}.
+}
+\]
+\vspace{-0.1cm}
+\[
+\boxed{
+\text{Data}
+\longrightarrow
+\text{Vectors}
+\longrightarrow
+\text{Matrices}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% FEATURE VECTORS
+% =========================================================
+
+\begin{frame}{Feature Vectors in Machine Learning}
+
+In machine learning, an observation is often represented
+by a \textbf{feature vector}.
+
+For example,
+\vspace{-0.3cm}
+\[
+\vect{x}
+=
+\begin{bmatrix}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{bmatrix}
+\]
+
+may contain $n$ features.
+
+A dataset containing $m$ observations can be represented by
+\vspace{-0.1cm}
+\[
+\boxed{
+X\in\mathbb{R}^{m\times n}.
+}
+\]
+
+Here,
+\vspace{-0.1cm}
+\[
+m=\text{number of observations}
+\]
+
+\vspace{-0.1cm}
+
+and
+\vspace{-0.1cm}
+\[
+n=\text{number of features}.
+\]
+
+\vspace{-0.1cm}
+
+This representation allows mathematical operations to be
+applied to entire datasets.
+
+\end{frame}
+
+
+% =========================================================
+% LINEAR MODELS
+% =========================================================
+
+\begin{frame}{Linear Models}
+
+A simple linear model can be written as
+\vspace{-0.1cm}
+\[
+\boxed{
+y=\vect{w}^{T}\vect{x}+b.
+}
+\]
+
+Here,
+\vspace{-0.1cm}
+\[
+\vect{x}
+=
+\text{input feature vector},
+\]
+\vspace{-0.1cm}
+\[
+\vect{w}
+=
+\text{weight vector},
+\]
+
+and
+\vspace{-0.1cm}
+\[
+b
+=
+\text{bias}.
+\]
+
+The dot product
+\vspace{-0.1cm}
+\[
+\vect{w}^{T}\vect{x}
+\]
+
+combines the input features using their corresponding
+weights.
+
+\end{frame}
+
+
+% =========================================================
+% SYSTEMS IN COMPUTING
+% =========================================================
+
+\begin{frame}{Systems of Linear Equations}
+
+Many computational problems can be expressed as
+
+\[
+\boxed{
+A\vect{x}=\vect{b}.
+}
+\]
+
+Here,
+
+\[
+A=\text{coefficient matrix},
+\qquad
+\vect{x}=\text{unknown vector},
+\qquad
+\vect{b}=\text{known vector}.
+\]
+
+Applications include
+
+\begin{itemize}
+    \item solving networks of equations,
+    \item resource allocation,
+    \item circuit models,
+    \item parameter estimation,
+    \item numerical simulation.
+\end{itemize}
+
+Gaussian elimination provides a systematic method
+for solving such systems.
+
+\end{frame}
+
+
+% =========================================================
+% COMPUTER GRAPHICS
+% =========================================================
+
+\begin{frame}{Linear Transformations in Computer Graphics}
+
+Vectors and matrices are fundamental to computer graphics.
+\vspace{-0.1cm}
+A point or direction can be represented as
+\vspace{-0.1cm}
+\[
+\vect{x}
+=
+\begin{bmatrix}
+x\\y\\z
+\end{bmatrix}.
+\]
+
+A matrix can transform the vector:
+\vspace{-0.1cm}
+\[
+\boxed{
+\vect{x}'=A\vect{x}.
+}
+\]
+
+Different matrices can represent operations such as
+
+\begin{itemize}
+    \item rotation,
+    \item scaling,
+    \item reflection,
+    \item projection.
+\end{itemize}
+
+Thus, linear transformations provide a mathematical
+framework for manipulating geometric objects.
+
+\end{frame}
+
+
+% =========================================================
+% ROTATION
+% =========================================================
+
+\begin{frame}{Rotation as a Matrix Transformation}
+
+A two-dimensional rotation through angle $\theta$ can be
+represented by
+
+\[
+\boxed{
+R=
+\begin{bmatrix}
+\cos\theta&-\sin\theta\\
+\sin\theta&\cos\theta
+\end{bmatrix}.
+}
+\]
+
+For a vector $\vect{x}$,
+
+\[
+\boxed{
+\vect{x}'=R\vect{x}.
+}
+\]
+
+The transformation changes the direction of the vector
+while preserving its length.
+
+\[
+\boxed{
+\|\vect{x}'\|=\|\vect{x}\|.
+}
+\]
+
+Matrix transformations therefore provide a compact way
+to describe geometric operations.
+
+\end{frame}
+
+
+% =========================================================
+% IMAGE REPRESENTATION
+% =========================================================
+
+\begin{frame}{Matrices and Images}
+
+A grayscale image can be represented as a matrix
+
+\[
+I=
+\begin{bmatrix}
+p_{11}&p_{12}&\cdots&p_{1n}\\
+p_{21}&p_{22}&\cdots&p_{2n}\\
+\vdots&\vdots&\ddots&\vdots\\
+p_{m1}&p_{m2}&\cdots&p_{mn}
+\end{bmatrix},
+\]
+
+where each entry represents a pixel intensity.
+
+For colour images, multiple matrices can represent
+different colour channels.
+
+\vspace{0.4cm}
+
+Therefore,
+
+\[
+\boxed{
+\text{Image data can be represented using matrices.}
+}
+\]
+
+Linear algebra can then be used for image transformations,
+compression and analysis.
+
+\end{frame}
+
+
+% =========================================================
+% PCA
+% =========================================================
+
+\begin{frame}{Principal Component Analysis}
+
+Principal Component Analysis (PCA) uses eigenvectors and
+eigenvalues to identify important directions in data.
+
+Given a covariance matrix
+
+\[
+C,
+\]
+
+the principal directions are obtained from
+
+\[
+\boxed{
+C\vect{v}=\lambda\vect{v}.
+}
+\]
+
+The eigenvectors represent principal directions, while
+the corresponding eigenvalues indicate the amount of
+variation associated with those directions.
+
+PCA can therefore be used for
+
+\[
+\boxed{
+\text{dimensionality reduction}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% PCA INTUITION
+% =========================================================
+
+\begin{frame}{PCA: Geometric Intuition}
+
+Suppose data points are distributed mainly along one
+direction.
+
+Instead of describing the data using the original
+coordinates, PCA finds a new coordinate system aligned
+with the dominant directions.
+
+\[
+\boxed{
+\text{Original coordinates}
+\quad\longrightarrow\quad
+\text{Principal coordinates}
+}
+\]
+
+This can reduce the number of dimensions while retaining
+important variation in the data.
+
+The new directions are determined by eigenvectors of
+the covariance matrix.
+
+\end{frame}
+
+
+% =========================================================
+% DIMENSIONALITY REDUCTION
+% =========================================================
+
+\begin{frame}{Dimensionality Reduction}
+
+Suppose
+\vspace{-0.1cm}
+\[
+\vect{x}\in\mathbb{R}^{n}
+\]
+
+contains many features.
+
+If the data can be represented approximately using
+$k<n$ important directions, we can project it into
+\vspace{-0.1cm}
+\[
+\mathbb{R}^{k}.
+\]
+
+Thus,
+\vspace{-0.1cm}
+\[
+\boxed{
+n\text{ dimensions}
+\longrightarrow
+k\text{ dimensions},
+\qquad k<n.
+}
+\]
+
+Benefits can include
+
+\begin{itemize}
+    \item reduced computational cost,
+    \item lower storage requirements,
+    \item visualization of high-dimensional data,
+    \item removal of less informative directions.
+\end{itemize}
+
+\end{frame}
+
+
+% =========================================================
+% NEURAL NETWORKS
+% =========================================================
+
+\begin{frame}{Linear Algebra in Neural Networks}
+
+A basic neural-network layer can be represented as
+
+\[
+\boxed{
+\vect{z}=W\vect{x}+\vect{b}.
+}
+\]
+
+Here,
+
+\[
+W=\text{weight matrix},
+\qquad
+\vect{x}=\text{input},
+\qquad
+\vect{b}=\text{bias}.
+\]
+
+A nonlinear activation function is then applied:
+
+\[
+\boxed{
+\vect{a}=f(\vect{z}).
+}
+\]
+
+Therefore, neural networks repeatedly combine
+
+\[
+\boxed{
+\text{matrix multiplication}
++
+\text{vector addition}
++
+\text{nonlinear transformation}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% EMBEDDINGS
+% =========================================================
+
+\begin{frame}{Vectors and Embeddings}
+\vspace{-0.1cm}
+In modern AI systems, objects such as
+
+\begin{itemize}
+    \item words,
+    \item sentences,
+    \item images,
+    \item documents,
+\end{itemize}
+
+can be represented as vectors called \textbf{embeddings}.
+
+For example,
+\vspace{-0.1cm}
+\[
+\vect{x}\in\mathbb{R}^{d}.
+\]
+
+Relationships between embeddings can be studied using
+vector operations such as
+\vspace{-0.1cm}
+\[
+\boxed{
+\vect{x}\cdot\vect{y}
+}
+\]
+
+and
+\vspace{-0.1cm}
+\[
+\boxed{
+\cos\theta
+=
+\frac{\vect{x}\cdot\vect{y}}
+{\|\vect{x}\|\|\vect{y}\|}.
+}
+\]
+
+These provide measures of directional similarity.
+
+\end{frame}
+
+
+% =========================================================
+% GRAPH REPRESENTATION
+% =========================================================
+
+\begin{frame}{Matrices in Graphs and Networks}
+
+A graph can be represented using matrices.
+
+For example, an adjacency matrix records connections
+between vertices:
+
+\[
+A_{ij}
+=
+\begin{cases}
+1,&\text{if vertices }i\text{ and }j\text{ are connected},\\
+0,&\text{otherwise}.
+\end{cases}
+\]
+
+Thus,
+
+\[
+\boxed{
+\text{Graph}
+\longrightarrow
+\text{Matrix representation}.
+}
+\]
+
+Matrix operations and eigenvalue methods can then be
+used to study structural properties of networks.
+
+\end{frame}
+
+
+% =========================================================
+% RANK IN DATA
+% =========================================================
+
+\begin{frame}{Rank and Redundant Information}
+
+Suppose a dataset is represented by
+
+\[
+X\in\mathbb{R}^{m\times n}.
+\]
+
+If some columns are linear combinations of other columns,
+then the features are not all independent.
+
+The rank measures the number of independent directions:
+
+\[
+\boxed{
+\operatorname{rank}(X)
+=
+\text{number of independent directions}.
+}
+\]
+
+A rank smaller than the number of features indicates
+linear dependence or redundancy in the representation.
+
+\end{frame}
+
+
+% =========================================================
+% NUMERICAL COMPUTING
+% =========================================================
+
+\begin{frame}{Linear Algebra and Numerical Computing}
+
+Many computational algorithms repeatedly perform operations
+such as
+
+\[
+A\vect{x},
+\qquad
+A\vect{x}=\vect{b},
+\qquad
+A^{-1},
+\qquad
+\det(A).
+\]
+
+In practice, efficient numerical algorithms are preferred
+over direct symbolic calculations.
+
+Examples include
+
+\begin{itemize}
+    \item Gaussian elimination,
+    \item LU decomposition,
+    \item QR decomposition,
+    \item iterative methods.
+\end{itemize}
+
+Thus, linear algebra connects mathematical models with
+efficient computational procedures.
+
+\end{frame}
+
+
+% =========================================================
+% APPLICATION MAP
+% =========================================================
+
+\begin{frame}{Linear Algebra Across AI}
+
+\begin{center}
+
+\begin{tabular}{>{\bfseries}l l}
+\toprule
+Concept & Example Application\\
+\midrule
+Vectors & Feature representation\\
+Matrices & Datasets and transformations\\
+Dot products & Similarity and linear models\\
+Linear systems & Numerical modelling\\
+Determinants & Invertibility and geometry\\
+Eigenvectors & PCA and spectral methods\\
+Change of basis & Coordinate transformations\\
+Rank & Dimensionality and redundancy\\
+Cross products & 3D geometry\\
+\bottomrule
+\end{tabular}
+
+\end{center}
+
+\vspace{0.4cm}
+
+Linear algebra therefore provides a common mathematical
+foundation across many areas of computing and AI.
+
+\end{frame}

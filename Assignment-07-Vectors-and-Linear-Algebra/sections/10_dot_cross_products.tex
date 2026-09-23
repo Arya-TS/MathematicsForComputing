@@ -1,0 +1,905 @@
+% =========================================================
+% 10_dot_cross_products.tex
+% Vectors and Linear Algebra
+% =========================================================
+
+% =========================================================
+% SECTION DIVIDER
+% =========================================================
+
+\section{Dot and Cross Products}
+
+% =========================================================
+% DOT PRODUCT
+% =========================================================
+
+\begin{frame}{Dot Product}
+
+For two vectors
+\vspace{-0.1cm}
+\[
+\vect{u}=
+\begin{bmatrix}
+u_1\\
+u_2\\
+\vdots\\
+u_n
+\end{bmatrix},
+\qquad
+\vect{v}=
+\begin{bmatrix}
+v_1\\
+v_2\\
+\vdots\\
+v_n
+\end{bmatrix},
+\]
+
+their \textbf{dot product} is
+\vspace{-0.1cm}
+\[
+\boxed{
+\vect{u}\cdot\vect{v}
+=
+\sum_{i=1}^{n}u_iv_i
+}
+\]
+
+or equivalently,
+\vspace{-0.1cm}
+\[
+\boxed{
+\vect{u}\cdot\vect{v}
+=
+\vect{u}^{T}\vect{v}.
+}
+\]
+
+The result is a \textbf{scalar}, not a vector.
+
+\end{frame}
+
+
+% =========================================================
+% DOT PRODUCT EXAMPLE
+% =========================================================
+
+\begin{frame}{Example: Dot Product}
+
+Let
+\vspace{-0.1cm}
+\[
+\vect{u}
+=
+\begin{bmatrix}
+2\\
+-1\\
+3
+\end{bmatrix},
+\qquad
+\vect{v}
+=
+\begin{bmatrix}
+1\\
+4\\
+2
+\end{bmatrix}.
+\]
+
+Then
+\vspace{-0.1cm}
+\[
+\vect{u}\cdot\vect{v}
+=
+(2)(1)+(-1)(4)+(3)(2).
+\]
+
+Therefore,
+
+\[
+\boxed{
+\vect{u}\cdot\vect{v}=4.
+}
+\]
+
+Using matrix notation,
+\vspace{-0.1cm}
+\[
+\vect{u}^{T}\vect{v}
+=
+\begin{bmatrix}
+2&-1&3
+\end{bmatrix}
+\begin{bmatrix}
+1\\4\\2
+\end{bmatrix}
+=4.
+\]
+
+\end{frame}
+
+
+% =========================================================
+% GEOMETRIC DOT PRODUCT
+% =========================================================
+
+\begin{frame}{Geometric Meaning of the Dot Product}
+
+For non-zero vectors,
+
+\[
+\boxed{
+\vect{u}\cdot\vect{v}
+=
+\|\vect{u}\|
+\|\vect{v}\|
+\cos\theta
+}
+\]
+
+where $\theta$ is the angle between the vectors.
+
+Therefore,
+
+\[
+\boxed{
+\cos\theta
+=
+\frac{\vect{u}\cdot\vect{v}}
+{\|\vect{u}\|\|\vect{v}\|}
+}
+\]
+
+The dot product therefore measures the directional
+relationship between two vectors.
+
+\end{frame}
+
+
+% =========================================================
+% ORTHOGONALITY
+% =========================================================
+
+\begin{frame}{Orthogonality}
+
+Two vectors are \textbf{orthogonal} if they are perpendicular.
+
+For non-zero vectors,
+\vspace{-0.1cm}
+\[
+\vect{u}\perp\vect{v}
+\]
+
+precisely when
+\vspace{-0.1cm}
+\[
+\boxed{
+\vect{u}\cdot\vect{v}=0.
+}
+\]
+
+For example,
+\vspace{-0.1cm}
+\[
+\vect{u}
+=
+\begin{bmatrix}
+1\\
+2
+\end{bmatrix},
+\qquad
+\vect{v}
+=
+\begin{bmatrix}
+2\\
+-1
+\end{bmatrix}.
+\]
+
+Then
+\vspace{-0.1cm}
+\[
+\vect{u}\cdot\vect{v}
+=
+(1)(2)+(2)(-1)
+=
+0.
+\]
+
+Hence,
+\vspace{-0.1cm}
+\[
+\boxed{
+\vect{u}\perp\vect{v}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% VECTOR PROJECTION
+% =========================================================
+
+\begin{frame}{Projection of One Vector onto Another}
+
+The projection of $\vect{u}$ onto a non-zero vector $\vect{v}$ is
+
+\[
+\boxed{
+\operatorname{proj}_{\vect{v}}\vect{u}
+=
+\frac{\vect{u}\cdot\vect{v}}
+{\vect{v}\cdot\vect{v}}
+\vect{v}.
+}
+\]
+
+Since
+
+\[
+\vect{v}\cdot\vect{v}
+=
+\|\vect{v}\|^2,
+\]
+
+we may also write
+
+\[
+\boxed{
+\operatorname{proj}_{\vect{v}}\vect{u}
+=
+\frac{\vect{u}\cdot\vect{v}}
+{\|\vect{v}\|^2}
+\vect{v}.
+}
+\]
+
+The result is the component of $\vect{u}$ in the direction
+of $\vect{v}$.
+
+\end{frame}
+
+
+% =========================================================
+% ORTHOGONAL DECOMPOSITION
+% =========================================================
+
+\begin{frame}{Orthogonal Decomposition}
+
+A vector $\vect{u}$ can be decomposed into two components:
+
+\[
+\boxed{
+\vect{u}
+=
+\vect{u}_{\parallel}
++
+\vect{u}_{\perp}.
+}
+\]
+
+Here,
+\vspace{-0.1cm}
+\[
+\vect{u}_{\parallel}
+=
+\operatorname{proj}_{\vect{v}}\vect{u}
+\]
+
+is parallel to $\vect{v}$, while
+\vspace{-0.1cm}
+\[
+\vect{u}_{\perp}
+=
+\vect{u}-\vect{u}_{\parallel}
+\]
+
+is perpendicular to $\vect{v}$.
+
+Therefore,
+
+\[
+\boxed{
+\vect{u}_{\perp}\cdot\vect{v}=0.
+}
+\]
+
+This decomposition is fundamental in geometry,
+optimization, and machine learning.
+
+\end{frame}
+
+
+% =========================================================
+% DOT PRODUCT AS A LINEAR FUNCTIONAL
+% =========================================================
+
+\begin{frame}{Dot Product and Duality}
+
+Fix a vector $\vect{u}$.
+
+The mapping
+
+\[
+f_{\vect{u}}(\vect{x})
+=
+\vect{u}\cdot\vect{x}
+\]
+
+takes a vector as input and produces a scalar.
+
+It is linear because
+
+\[
+f_{\vect{u}}(\alpha\vect{x}+\beta\vect{y})
+=
+\alpha f_{\vect{u}}(\vect{x})
++
+\beta f_{\vect{u}}(\vect{y}).
+\]
+
+Therefore,
+
+\[
+\boxed{
+\vect{x}\mapsto\vect{u}\cdot\vect{x}
+}
+\]
+
+is a \textbf{linear functional}.
+
+\end{frame}
+
+
+% =========================================================
+% DUAL SPACE
+% =========================================================
+
+\begin{frame}{Dual Space}
+
+The set of all linear functionals on a vector space $V$
+forms its \textbf{dual space}, denoted by
+
+\[
+\boxed{
+V^*.
+}
+\]
+
+A vector $\vect{u}$ can define a linear functional through
+
+\[
+\vect{x}
+\mapsto
+\vect{u}^{T}\vect{x}.
+\]
+
+Thus, the dot product provides a natural connection between
+vectors and linear functionals.
+
+\vspace{0.4cm}
+
+\[
+\boxed{
+\text{Vector}
+\quad\longrightarrow\quad
+\text{Linear functional}
+}
+\]
+
+This connection is known as \textbf{duality}.
+
+\end{frame}
+
+
+% =========================================================
+% CROSS PRODUCT
+% =========================================================
+
+\begin{frame}{Cross Product}
+
+For vectors
+\vspace{-0.1cm}
+\[
+\vect{u},\vect{v}\in\mathbb{R}^3,
+\]
+
+the \textbf{cross product}
+\vspace{-0.1cm}
+\[
+\vect{u}\times\vect{v}
+\]
+
+produces another vector in $\mathbb{R}^3$.
+
+If
+\vspace{-0.1cm}
+\[
+\vect{u}
+=
+\begin{bmatrix}
+u_1\\u_2\\u_3
+\end{bmatrix},
+\qquad
+\vect{v}
+=
+\begin{bmatrix}
+v_1\\v_2\\v_3
+\end{bmatrix},
+\]
+
+then
+\vspace{-0.1cm}
+\[
+\boxed{
+\vect{u}\times\vect{v}
+=
+\begin{bmatrix}
+u_2v_3-u_3v_2\\
+u_3v_1-u_1v_3\\
+u_1v_2-u_2v_1
+\end{bmatrix}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% CROSS PRODUCT EXAMPLE
+% =========================================================
+
+\begin{frame}{Example: Cross Product}
+
+Let
+\vspace{-0.1cm}
+\[
+\vect{u}
+=
+\begin{bmatrix}
+1\\2\\3
+\end{bmatrix},
+\qquad
+\vect{v}
+=
+\begin{bmatrix}
+4\\5\\6
+\end{bmatrix}.
+\]
+
+Then
+\vspace{-0.1cm}
+\[
+\vect{u}\times\vect{v}
+=
+\begin{bmatrix}
+2(6)-3(5)\\
+3(4)-1(6)\\
+1(5)-2(4)
+\end{bmatrix}.
+\]
+
+Therefore,
+\vspace{-0.1cm}
+\[
+\boxed{
+\vect{u}\times\vect{v}
+=
+\begin{bmatrix}
+-3\\6\\-3
+\end{bmatrix}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% CROSS PRODUCT ORTHOGONALITY
+% =========================================================
+
+\begin{frame}{Cross Product and Orthogonality}
+
+The cross product is perpendicular to both input vectors:
+
+\[
+\boxed{
+(\vect{u}\times\vect{v})\cdot\vect{u}=0
+}
+\]
+
+and
+
+\[
+\boxed{
+(\vect{u}\times\vect{v})\cdot\vect{v}=0.
+}
+\]
+
+Therefore,
+
+\[
+\boxed{
+\vect{u}\times\vect{v}
+\perp
+\vect{u}
+}
+\]
+
+and
+
+\[
+\boxed{
+\vect{u}\times\vect{v}
+\perp
+\vect{v}.
+}
+\]
+
+The three vectors therefore define a mutually related
+three-dimensional geometry.
+
+\end{frame}
+
+
+% =========================================================
+% MAGNITUDE OF CROSS PRODUCT
+% =========================================================
+
+\begin{frame}{Magnitude of the Cross Product}
+
+The magnitude of the cross product is
+
+\[
+\boxed{
+\|\vect{u}\times\vect{v}\|
+=
+\|\vect{u}\|
+\|\vect{v}\|
+\sin\theta.
+}
+\]
+
+This is equal to the area of the parallelogram formed by
+$\vect{u}$ and $\vect{v}$.
+
+\vspace{0.5cm}
+
+Therefore,
+
+\[
+\boxed{
+\text{Area}
+=
+\|\vect{u}\times\vect{v}\|.
+}
+\]
+
+\vspace{0.3cm}
+
+If the vectors are parallel,
+
+\[
+\theta=0
+\quad\Longrightarrow\quad
+\vect{u}\times\vect{v}=\mathbf{0}.
+\]
+
+\end{frame}
+
+
+% =========================================================
+% RIGHT-HAND RULE
+% =========================================================
+
+\begin{frame}{Direction of the Cross Product}
+
+The direction of
+
+\[
+\vect{u}\times\vect{v}
+\]
+
+is determined by the \textbf{right-hand rule}.
+
+\vspace{0.4cm}
+
+The cross product is anti-commutative:
+
+\[
+\boxed{
+\vect{u}\times\vect{v}
+=
+-(\vect{v}\times\vect{u}).
+}
+\]
+
+Also,
+
+\[
+\boxed{
+\vect{u}\times\vect{u}
+=
+\mathbf{0}.
+}
+\]
+
+Thus, reversing the order reverses the direction of the
+resulting vector.
+
+\end{frame}
+
+
+% =========================================================
+% STANDARD BASIS CROSS PRODUCTS
+% =========================================================
+
+\begin{frame}{Cross Products of Standard Basis Vectors}
+
+For the standard basis vectors
+
+\[
+\hat{\vect{i}},
+\qquad
+\hat{\vect{j}},
+\qquad
+\hat{\vect{k}},
+\]
+
+the fundamental relationships are
+
+\[
+\boxed{
+\hat{\vect{i}}\times\hat{\vect{j}}
+=
+\hat{\vect{k}}
+}
+\]
+
+\[
+\boxed{
+\hat{\vect{j}}\times\hat{\vect{k}}
+=
+\hat{\vect{i}}
+}
+\]
+
+\[
+\boxed{
+\hat{\vect{k}}\times\hat{\vect{i}}
+=
+\hat{\vect{j}}.
+}
+\]
+
+Reversing the order changes the sign.
+
+\end{frame}
+
+
+% =========================================================
+% CROSS PRODUCT AS A MATRIX
+% =========================================================
+
+\begin{frame}{Cross Product as Matrix Multiplication}
+
+Fix
+
+\[
+\vect{u}
+=
+\begin{bmatrix}
+u_1\\
+u_2\\
+u_3
+\end{bmatrix}.
+\]
+
+Define the skew-symmetric matrix
+
+\[
+[\vect{u}]_{\times}
+=
+\begin{bmatrix}
+0&-u_3&u_2\\
+u_3&0&-u_1\\
+-u_2&u_1&0
+\end{bmatrix}.
+\]
+
+Then
+
+\[
+\boxed{
+\vect{u}\times\vect{v}
+=
+[\vect{u}]_{\times}\vect{v}.
+}
+\]
+
+Therefore, for fixed $\vect{u}$, the cross product is a
+\textbf{linear transformation} of $\vect{v}$.
+
+\end{frame}
+
+
+% =========================================================
+% LINEAR TRANSFORMATION VIEW
+% =========================================================
+
+\begin{frame}{Cross Product as a Linear Transformation}
+
+Fix $\vect{u}\in\mathbb{R}^3$ and define
+\vspace{-0.1cm}
+\[
+T(\vect{v})
+=
+\vect{u}\times\vect{v}.
+\]
+
+Then
+
+\[
+T(\alpha\vect{v}+\beta\vect{w})
+=
+\alpha T(\vect{v})
++
+\beta T(\vect{w}).
+\]
+
+Therefore,
+
+\[
+\boxed{
+T:\mathbb{R}^3\rightarrow\mathbb{R}^3
+}
+\]
+
+is a linear transformation.
+
+\vspace{0.4cm}
+
+Its matrix representation is
+
+\[
+\boxed{
+T(\vect{v})
+=
+[\vect{u}]_{\times}\vect{v}.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% KERNEL OF CROSS PRODUCT TRANSFORMATION
+% =========================================================
+
+\begin{frame}{Kernel of the Cross Product Transformation}
+
+Consider
+
+\[
+T(\vect{v})
+=
+\vect{u}\times\vect{v}.
+\]
+
+For $\vect{u}\neq\mathbf{0}$,
+
+\[
+T(\vect{v})=\mathbf{0}
+\]
+
+when $\vect{v}$ is parallel to $\vect{u}$.
+
+Therefore,
+
+\[
+\boxed{
+\operatorname{Null}(T)
+=
+\operatorname{span}\{\vect{u}\}.
+}
+\]
+
+\vspace{0.4cm}
+
+The cross-product transformation therefore collapses
+one direction to zero.
+
+This connects directly with the concept of
+\textbf{null space}.
+
+\end{frame}
+
+
+% =========================================================
+% RANGE OF CROSS PRODUCT TRANSFORMATION
+% =========================================================
+
+\begin{frame}{Range of the Cross Product Transformation}
+
+For
+\vspace{-0.1cm}
+\[
+T(\vect{v})
+=
+\vect{u}\times\vect{v},
+\]
+
+every output is perpendicular to $\vect{u}$.
+
+Therefore,
+\vspace{-0.1cm}
+\[
+\boxed{
+\operatorname{Range}(T)
+=
+\vect{u}^{\perp}.
+}
+\]
+
+The range is the plane through the origin perpendicular
+to $\vect{u}$.
+
+Thus,
+\vspace{-0.1cm}
+\[
+\boxed{
+\dim(\operatorname{Null}(T))=1
+}
+\]
+
+and
+\vspace{-0.1cm}
+\[
+\boxed{
+\dim(\operatorname{Range}(T))=2.
+}
+\]
+
+This satisfies
+\vspace{-0.1cm}
+\[
+1+2=3,
+\]
+
+as predicted by the Rank--Nullity Theorem.
+
+\end{frame}
+
+
+% =========================================================
+% DOT VS CROSS PRODUCT
+% =========================================================
+
+\begin{frame}{Dot Product vs. Cross Product}
+
+\begin{center}
+
+\begin{tabular}{>{\bfseries}lcc}
+\toprule
+ & Dot Product & Cross Product\\
+\midrule
+Input & $\mathbb{R}^n$ & $\mathbb{R}^3$\\
+Output & Scalar & Vector\\
+Notation & $\vect{u}\cdot\vect{v}$ &
+$\vect{u}\times\vect{v}$\\
+Geometric role & Angle / projection &
+Area / perpendicular direction\\
+Zero condition & Orthogonal vectors &
+Parallel vectors\\
+\bottomrule
+\end{tabular}
+
+\end{center}
+
+\vspace{0.4cm}
+
+Both operations provide important geometric information
+about vectors.
+
+\end{frame}

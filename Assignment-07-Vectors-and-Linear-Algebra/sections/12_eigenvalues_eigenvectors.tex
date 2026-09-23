@@ -1,0 +1,831 @@
+% =========================================================
+% 12_eigenvalues_eigenvectors.tex
+% Vectors and Linear Algebra
+% =========================================================
+
+% =========================================================
+% SECTION DIVIDER
+% =========================================================
+
+\section{Eigenvalues and Eigenvectors}
+
+% =========================================================
+% EIGENVECTOR
+% =========================================================
+
+\begin{frame}{Eigenvectors}
+
+Let
+
+\[
+A:\mathbb{R}^n\rightarrow\mathbb{R}^n
+\]
+
+be a linear transformation.
+
+A non-zero vector $\vect{v}$ is an \textbf{eigenvector} of $A$
+if
+
+\[
+\boxed{
+A\vect{v}=\lambda\vect{v}
+}
+\]
+
+for some scalar $\lambda$.
+
+The scalar $\lambda$ is called the corresponding
+\textbf{eigenvalue}.
+
+\vspace{0.4cm}
+
+Thus, an eigenvector is a direction that is preserved by
+the transformation, although its magnitude and possibly
+its orientation may change.
+
+\end{frame}
+
+
+% =========================================================
+% EIGENVALUE INTERPRETATION
+% =========================================================
+
+\begin{frame}{Meaning of an Eigenvalue}
+
+If
+
+\[
+A\vect{v}=\lambda\vect{v},
+\]
+
+then:
+
+\begin{itemize}
+    \item $\lambda>1$ stretches $\vect{v}$.
+    \item $0<\lambda<1$ shrinks $\vect{v}$.
+    \item $\lambda=1$ leaves $\vect{v}$ unchanged.
+    \item $\lambda=0$ maps $\vect{v}$ to $\mathbf{0}$.
+    \item $\lambda<0$ reverses the direction.
+\end{itemize}
+
+\vspace{0.3cm}
+
+The important property is that
+
+\[
+\boxed{
+\vect{v}\text{ remains on the same line after transformation.}
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% EXAMPLE
+% =========================================================
+
+\begin{frame}{Example: An Eigenvector}
+
+Consider
+\vspace{-0.1cm}
+\[
+A=
+\begin{bmatrix}
+2&0\\
+0&3
+\end{bmatrix}
+\]
+
+and
+\vspace{-0.1cm}
+\[
+\vect{v}
+=
+\begin{bmatrix}
+1\\0
+\end{bmatrix}.
+\]
+
+Then
+\vspace{-0.1cm}
+\[
+A\vect{v}
+=
+\begin{bmatrix}
+2&0\\
+0&3
+\end{bmatrix}
+\begin{bmatrix}
+1\\0
+\end{bmatrix}
+=
+\begin{bmatrix}
+2\\0
+\end{bmatrix}.
+\]
+
+Therefore,
+\vspace{-0.1cm}
+\[
+\boxed{
+A\vect{v}=2\vect{v}.
+}
+\]
+
+Hence,
+
+\[
+\boxed{
+\vect{v}
+\text{ is an eigenvector with eigenvalue }
+\lambda=2.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% FINDING EIGENVALUES
+% =========================================================
+
+\begin{frame}{Finding Eigenvalues}
+
+Starting from
+\vspace{-0.1cm}
+\[
+A\vect{v}=\lambda\vect{v},
+\]
+
+we obtain
+\vspace{-0.1cm}
+\[
+A\vect{v}-\lambda\vect{v}
+=
+\mathbf{0}.
+\]
+
+Therefore,
+\vspace{-0.1cm}
+\[
+(A-\lambda I)\vect{v}
+=
+\mathbf{0}.
+\]
+
+For a non-zero solution $\vect{v}$ to exist,
+\vspace{-0.1cm}
+\[
+\boxed{
+\det(A-\lambda I)=0.
+}
+\]
+
+This equation is called the
+\vspace{-0.1cm}
+\[
+\boxed{
+\text{characteristic equation}.
+}
+\]
+
+Its roots are the eigenvalues of $A$.
+
+\end{frame}
+
+
+% =========================================================
+% CHARACTERISTIC POLYNOMIAL
+% =========================================================
+
+\begin{frame}{Characteristic Polynomial}
+
+The polynomial
+
+\[
+\boxed{
+p(\lambda)=\det(A-\lambda I)
+}
+\]
+
+is called the \textbf{characteristic polynomial}.
+
+The eigenvalues satisfy
+
+\[
+\boxed{
+p(\lambda)=0.
+}
+\]
+
+For an $n\times n$ matrix, the characteristic polynomial
+has degree $n$.
+
+\vspace{0.4cm}
+
+Therefore, finding eigenvalues involves:
+
+\[
+\boxed{
+\text{Matrix}
+\rightarrow
+\text{Characteristic polynomial}
+\rightarrow
+\text{Roots}
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% 2x2 EIGENVALUE EXAMPLE
+% =========================================================
+
+\begin{frame}{Example: Finding Eigenvalues}
+
+Consider
+\vspace{-0.1cm}
+\[
+A=
+\begin{bmatrix}
+2&1\\
+1&2
+\end{bmatrix}.
+\]
+
+The characteristic equation is
+\vspace{-0.1cm}
+\[
+\det(A-\lambda I)=0.
+\]
+
+Thus,
+\vspace{-0.1cm}
+\[
+\det
+\begin{bmatrix}
+2-\lambda&1\\
+1&2-\lambda
+\end{bmatrix}
+=0.
+\]
+
+Therefore,
+\vspace{-0.1cm}
+\[
+(2-\lambda)^2-1=0.
+\]
+
+Hence,
+\vspace{-0.1cm}
+\[
+(\lambda-1)(\lambda-3)=0.
+\]
+
+The eigenvalues are
+\vspace{-0.1cm}
+\[
+\boxed{
+\lambda_1=1,
+\qquad
+\lambda_2=3.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% FINDING EIGENVECTORS
+% =========================================================
+
+\begin{frame}{Finding Eigenvectors}
+
+Once an eigenvalue $\lambda$ is known, substitute it into
+\vspace{-0.1cm}
+\[
+\boxed{
+(A-\lambda I)\vect{v}=\mathbf{0}.
+}
+\]
+
+The non-zero solutions form the eigenvectors associated
+with $\lambda$.
+
+For
+\vspace{-0.1cm}
+\[
+A=
+\begin{bmatrix}
+2&1\\
+1&2
+\end{bmatrix},
+\]
+
+consider $\lambda=3$:
+\vspace{-0.1cm}
+\[
+A-3I
+=
+\begin{bmatrix}
+-1&1\\
+1&-1
+\end{bmatrix}.
+\]
+
+Solving
+\vspace{-0.2cm}
+\[
+(A-3I)\vect{v}=\mathbf{0}
+\]
+
+gives
+\vspace{-0.2cm}
+\[
+\boxed{
+\vect{v}
+=
+t
+\begin{bmatrix}
+1\\1
+\end{bmatrix},
+\quad t\neq0.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% EIGENSPACE
+% =========================================================
+
+\begin{frame}{Eigenspace}
+
+For an eigenvalue $\lambda$, the corresponding
+\textbf{eigenspace} is
+\vspace{-0.1cm}
+\[
+\boxed{
+E_{\lambda}
+=
+\operatorname{Null}(A-\lambda I).
+}
+\]
+
+Thus, an eigenspace contains
+\vspace{-0.1cm}
+\[
+\text{the zero vector}
+\]
+
+and all eigenvectors associated with $\lambda$.
+
+For example, if
+\vspace{-0.1cm}
+\[
+E_{\lambda}
+=
+\operatorname{span}
+\left\{
+\begin{bmatrix}
+1\\1
+\end{bmatrix}
+\right\},
+\]
+
+then every non-zero vector of the form
+\vspace{-0.1cm}
+\[
+t
+\begin{bmatrix}
+1\\1
+\end{bmatrix}
+\]
+
+is an eigenvector corresponding to $\lambda$.
+
+\end{frame}
+
+
+% =========================================================
+% EIGENVECTORS AND NULL SPACE
+% =========================================================
+
+\begin{frame}{Eigenvectors and the Null Space}
+
+The eigenvector equation can be written as
+
+\[
+(A-\lambda I)\vect{v}
+=
+\mathbf{0}.
+\]
+
+Therefore,
+
+\[
+\boxed{
+\vect{v}
+\in
+\operatorname{Null}(A-\lambda I).
+}
+\]
+
+Hence,
+
+\[
+\boxed{
+E_{\lambda}
+=
+\operatorname{Null}(A-\lambda I).
+}
+\]
+
+This connects eigenvectors directly to the concepts of
+null space and homogeneous systems.
+
+\end{frame}
+
+
+% =========================================================
+% DISTINCT EIGENVALUES
+% =========================================================
+
+\begin{frame}{Eigenvectors with Distinct Eigenvalues}
+
+Suppose
+\vspace{-0.1cm}
+\[
+A\vect{v}_1=\lambda_1\vect{v}_1
+\]
+
+and
+\vspace{-0.1cm}
+\[
+A\vect{v}_2=\lambda_2\vect{v}_2,
+\]
+
+where
+\vspace{-0.1cm}
+\[
+\lambda_1\neq\lambda_2.
+\]
+
+Then $\vect{v}_1$ and $\vect{v}_2$ are linearly independent.
+
+More generally,
+
+\[
+\boxed{
+\text{Eigenvectors corresponding to distinct eigenvalues
+are linearly independent.}
+}
+\]
+
+This result is important for constructing an eigenvector basis.
+
+\end{frame}
+
+
+% =========================================================
+% EIGENVECTOR BASIS
+% =========================================================
+
+\begin{frame}{Eigenbasis}
+
+Suppose an $n\times n$ matrix has $n$ linearly independent
+eigenvectors:
+
+\[
+\vect{v}_1,\vect{v}_2,\ldots,\vect{v}_n.
+\]
+
+Then these vectors form a basis of $\mathbb{R}^n$.
+
+Construct
+
+\[
+\boxed{
+P=
+\begin{bmatrix}
+|&|&&|\\
+\vect{v}_1&\vect{v}_2&\cdots&\vect{v}_n\\
+|&|&&|
+\end{bmatrix}.
+}
+\]
+
+The eigenvectors provide a coordinate system in which
+the transformation becomes particularly simple.
+
+\end{frame}
+
+
+% =========================================================
+% DIAGONAL MATRIX
+% =========================================================
+
+\begin{frame}{Diagonalization}
+
+Let
+\vspace{-0.1cm}
+\[
+P=
+\begin{bmatrix}
+|&|&&|\\
+\vect{v}_1&\vect{v}_2&\cdots&\vect{v}_n\\
+|&|&&|
+\end{bmatrix}
+\]
+
+contain linearly independent eigenvectors.
+
+Let
+\vspace{-0.1cm}
+\[
+D=
+\begin{bmatrix}
+\lambda_1&0&\cdots&0\\
+0&\lambda_2&\cdots&0\\
+\vdots&\vdots&\ddots&\vdots\\
+0&0&\cdots&\lambda_n
+\end{bmatrix}.
+\]
+
+Then
+\vspace{-0.1cm}
+\[
+\boxed{
+A=PDP^{-1}.
+}
+\]
+
+This is called \textbf{diagonalization}.
+
+\end{frame}
+
+
+% =========================================================
+% WHY DIAGONALIZATION
+% =========================================================
+
+\begin{frame}{Why Diagonalization is Useful}
+
+For a diagonalizable matrix,
+
+\[
+A=PDP^{-1}.
+\]
+
+Therefore,
+
+\[
+A^k
+=
+PD^kP^{-1}.
+\]
+
+Since $D$ is diagonal,
+
+\[
+D^k
+=
+\begin{bmatrix}
+\lambda_1^k&0&\cdots&0\\
+0&\lambda_2^k&\cdots&0\\
+\vdots&\vdots&\ddots&\vdots\\
+0&0&\cdots&\lambda_n^k
+\end{bmatrix}.
+\]
+
+Thus, powers of $A$ can be computed through simple powers
+of its eigenvalues.
+
+\end{frame}
+
+
+% =========================================================
+% GEOMETRIC INTERPRETATION
+% =========================================================
+
+\begin{frame}{Geometric Interpretation}
+
+A general linear transformation may change both the
+direction and magnitude of a vector.
+
+Eigenvectors identify special directions for which
+
+\[
+\boxed{
+A\vect{v}=\lambda\vect{v}.
+}
+\]
+
+The direction is preserved while the magnitude is scaled
+by $|\lambda|$.
+
+\vspace{0.4cm}
+
+Therefore, eigenvectors reveal the transformation's
+\textbf{intrinsic directions}.
+
+\end{frame}
+
+
+% =========================================================
+% EIGENVALUE ZERO
+% =========================================================
+
+\begin{frame}{Eigenvalue $\lambda=0$}
+
+If
+\vspace{-0.1cm}
+\[
+A\vect{v}=0\vect{v}=\mathbf{0},
+\]
+
+for a non-zero $\vect{v}$, then
+\vspace{-0.1cm}
+\[
+\boxed{
+\lambda=0
+}
+\]
+
+is an eigenvalue.
+
+This means that
+
+\[
+\vect{v}\in\operatorname{Null}(A).
+\]
+
+Therefore,
+\vspace{-0.1cm}
+\[
+\boxed{
+0\text{ is an eigenvalue}
+\iff
+\operatorname{Null}(A)\neq\{\mathbf{0}\}.
+}
+\]
+
+For a square matrix, this is also equivalent to
+
+\[
+\boxed{
+\det(A)=0.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% INVERTIBILITY AND EIGENVALUES
+% =========================================================
+
+\begin{frame}{Eigenvalues and Invertibility}
+
+For a square matrix $A$,
+
+\[
+A\text{ is invertible}
+\]
+
+if and only if
+
+\[
+\det(A)\neq0.
+\]
+
+Since
+
+\[
+\det(A)
+=
+\lambda_1\lambda_2\cdots\lambda_n,
+\]
+
+when the eigenvalues are counted with algebraic
+multiplicity,
+
+\[
+\boxed{
+A\text{ is invertible}
+\iff
+0\text{ is not an eigenvalue}.
+}
+\]
+
+Thus, determinants and eigenvalues provide two different
+ways to study invertibility.
+
+\end{frame}
+
+
+% =========================================================
+% TRACE
+% =========================================================
+
+\begin{frame}{Trace and Eigenvalues}
+
+The \textbf{trace} of a square matrix is the sum of its
+diagonal entries:
+
+\[
+\boxed{
+\operatorname{tr}(A)
+=
+a_{11}+a_{22}+\cdots+a_{nn}.
+}
+\]
+
+The trace is equal to the sum of the eigenvalues:
+
+\[
+\boxed{
+\operatorname{tr}(A)
+=
+\lambda_1+\lambda_2+\cdots+\lambda_n.
+}
+\]
+
+Similarly,
+
+\[
+\boxed{
+\det(A)
+=
+\lambda_1\lambda_2\cdots\lambda_n.
+}
+\]
+
+These relationships connect eigenvalues with two fundamental
+matrix quantities.
+
+\end{frame}
+
+
+% =========================================================
+% SYMMETRIC MATRICES
+% =========================================================
+
+\begin{frame}{Eigenvectors of Symmetric Matrices}
+
+A real matrix is symmetric if
+
+\[
+\boxed{
+A=A^T.
+}
+\]
+
+For real symmetric matrices:
+
+\begin{itemize}
+    \item all eigenvalues are real,
+    \item eigenvectors corresponding to distinct eigenvalues
+    are orthogonal,
+    \item an orthonormal basis of eigenvectors exists.
+\end{itemize}
+
+Therefore, a real symmetric matrix can be written as
+
+\[
+\boxed{
+A=QDQ^T,
+}
+\]
+
+where $Q$ is an orthogonal matrix.
+
+\end{frame}
+
+
+% =========================================================
+% EIGENVALUES IN COMPUTING
+% =========================================================
+
+\begin{frame}{Applications of Eigenvalues}
+
+Eigenvalues and eigenvectors appear throughout computing.
+
+\begin{itemize}
+    \item \textbf{Principal Component Analysis (PCA)}
+    \item \textbf{Dimensionality reduction}
+    \item \textbf{Image processing}
+    \item \textbf{Graph and network analysis}
+    \item \textbf{Differential equations}
+    \item \textbf{Stability analysis}
+\end{itemize}
+
+\vspace{0.4cm}
+
+The central idea is to identify directions in which a
+transformation acts by simple scaling.
+
+\end{frame}

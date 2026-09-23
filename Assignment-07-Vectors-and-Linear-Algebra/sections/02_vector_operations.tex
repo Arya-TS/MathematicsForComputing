@@ -1,0 +1,541 @@
+% =========================================================
+% 02_vector_operations.tex
+% Vectors and Linear Algebra
+% =========================================================
+
+% =========================================================
+% SECTION DIVIDER
+% =========================================================
+
+\section{Dot Products and Geometry}
+
+\begin{frame}{Dot Product}
+
+For two vectors
+\[
+\vect{u}
+=
+\begin{bmatrix}
+u_1\\
+u_2\\
+\vdots\\
+u_n
+\end{bmatrix},
+\qquad
+\vect{v}
+=
+\begin{bmatrix}
+v_1\\
+v_2\\
+\vdots\\
+v_n
+\end{bmatrix},
+\]
+
+their \textbf{dot product} is
+\[
+\boxed{
+\vect{u}\cdot\vect{v}
+=
+\sum_{i=1}^{n}u_i v_i
+}
+\]
+
+or equivalently,
+
+\[
+\boxed{
+\vect{u}\cdot\vect{v}
+=
+\vect{u}^{T}\vect{v}
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% EXAMPLE
+% =========================================================
+
+\begin{frame}{Dot Product: Example}
+
+Consider
+
+\[
+\vect{u}
+=
+\begin{bmatrix}
+2\\
+3
+\end{bmatrix},
+\qquad
+\vect{v}
+=
+\begin{bmatrix}
+4\\
+-1
+\end{bmatrix}.
+\]
+
+Then
+
+\[
+\begin{aligned}
+\vect{u}\cdot\vect{v}
+&=
+(2)(4)+(3)(-1)\\
+&=8-3\\
+&=5.
+\end{aligned}
+\]
+
+Therefore,
+
+\[
+\boxed{\vect{u}\cdot\vect{v}=5}
+\]
+
+The dot product of two vectors is a \textbf{scalar}, not a vector.
+
+\end{frame}
+
+
+% =========================================================
+% GEOMETRIC FORM
+% =========================================================
+
+\begin{frame}{Geometric Interpretation of the Dot Product}
+
+The dot product can also be expressed as
+
+\[
+\boxed{
+\vect{u}\cdot\vect{v}
+=
+\|\vect{u}\|
+\|\vect{v}\|
+\cos\theta
+}
+\]
+
+where $\theta$ is the angle between the vectors.
+
+\vspace{0.4cm}
+
+Therefore,
+
+\[
+\boxed{
+\cos\theta
+=
+\frac{
+\vect{u}\cdot\vect{v}
+}{
+\|\vect{u}\|\|\vect{v}\|
+}
+}
+\]
+
+\vspace{0.3cm}
+
+The dot product therefore connects:
+
+\[
+\text{algebra}
+\quad\longleftrightarrow\quad
+\text{geometry}.
+\]
+
+\end{frame}
+
+
+% =========================================================
+% ANGLE BETWEEN VECTORS
+% =========================================================
+
+\begin{frame}{Angle Between Two Vectors}
+
+For non-zero vectors $\vect{u}$ and $\vect{v}$,
+
+\[
+\boxed{
+\theta
+=
+\cos^{-1}
+\left(
+\frac{
+\vect{u}\cdot\vect{v}
+}{
+\|\vect{u}\|\|\vect{v}\|
+}
+\right)
+}
+\]
+
+\vspace{0.5cm}
+
+The sign of the dot product provides useful geometric information:
+
+\begin{itemize}
+    \item $\vect{u}\cdot\vect{v}>0$: acute angle
+    \item $\vect{u}\cdot\vect{v}=0$: right angle
+    \item $\vect{u}\cdot\vect{v}<0$: obtuse angle
+\end{itemize}
+
+\end{frame}
+
+
+% =========================================================
+% ORTHOGONALITY
+% =========================================================
+
+\begin{frame}{Orthogonal Vectors}
+
+Two vectors are \textbf{orthogonal} if they are perpendicular.
+
+For vectors $\vect{u}$ and $\vect{v}$,
+
+\vspace{-0.5cm}
+\[
+\boxed{
+\vect{u}\cdot\vect{v}=0
+}
+\]
+
+implies
+
+\vspace{-0.5cm}
+\[
+\boxed{
+\vect{u}\perp\vect{v}
+}
+\]
+
+provided both vectors are non-zero.
+
+\begin{exampleblock}{Example}
+\[
+\vect{u}
+=
+\begin{bmatrix}
+2\\
+1
+\end{bmatrix},
+\qquad
+\vect{v}
+=
+\begin{bmatrix}
+1\\
+-2
+\end{bmatrix}
+\]
+
+\vspace{-0.2cm}
+
+Since
+\[
+\vect{u}\cdot\vect{v}
+=
+2(1)+1(-2)=0,
+\]
+the vectors are orthogonal.
+
+\end{exampleblock}
+
+\end{frame}
+
+
+% =========================================================
+% ORTHOGONAL PROJECTION
+% =========================================================
+
+\begin{frame}{Orthogonal Projection}
+
+The projection of $\vect{u}$ onto a non-zero vector $\vect{v}$ is
+
+\[
+\boxed{
+\operatorname{proj}_{\vect{v}}(\vect{u})
+=
+\frac{
+\vect{u}\cdot\vect{v}
+}{
+\vect{v}\cdot\vect{v}
+}
+\vect{v}
+}
+\]
+
+\vspace{0.5cm}
+
+The projection gives the component of $\vect{u}$ that lies in the direction of $\vect{v}$.
+
+\vspace{0.3cm}
+
+It is useful in:
+
+\begin{itemize}
+    \item geometry
+    \item least-squares methods
+    \item computer graphics
+    \item machine learning
+\end{itemize}
+
+\end{frame}
+
+
+% =========================================================
+% VECTOR DECOMPOSITION
+% =========================================================
+
+\begin{frame}{Decomposing a Vector}
+
+A vector can be separated into components parallel and perpendicular to another vector.
+
+\[
+\boxed{
+\vect{u}
+=
+\operatorname{proj}_{\vect{v}}(\vect{u})
++
+\vect{u}_{\perp}
+}
+\]
+
+where
+
+\[
+\vect{u}_{\perp}
+=
+\vect{u}
+-
+\operatorname{proj}_{\vect{v}}(\vect{u}).
+\]
+
+\vspace{0.4cm}
+
+The two components satisfy
+
+\[
+\boxed{
+\vect{u}_{\perp}\cdot\vect{v}=0.
+}
+\]
+
+\end{frame}
+
+
+% =========================================================
+% DOT PRODUCT AND DISTANCE
+% =========================================================
+
+\begin{frame}{Dot Product and Distance}
+
+The dot product can also be used to express the squared distance between two vectors.
+
+For $\vect{u},\vect{v}\in\mathbb{R}^n$,
+
+\[
+\|\vect{u}-\vect{v}\|^2
+=
+(\vect{u}-\vect{v})^T
+(\vect{u}-\vect{v}).
+\]
+
+Expanding,
+
+\[
+\boxed{
+\|\vect{u}-\vect{v}\|^2
+=
+\vect{u}^T\vect{u}
++
+\vect{v}^T\vect{v}
+-
+2\vect{u}^T\vect{v}
+}
+\]
+
+Thus the dot product is closely connected to both:
+
+\[
+\text{length}
+\qquad\text{and}\qquad
+\text{distance}.
+\]
+
+\end{frame}
+
+
+% =========================================================
+% DOT PRODUCT AS A FUNCTION
+% =========================================================
+
+\begin{frame}{Dot Product and Duality}
+
+For a fixed vector $\vect{w}$, consider
+
+\[
+f(\vect{x})
+=
+\vect{w}^{T}\vect{x}.
+\]
+
+This takes a vector $\vect{x}$ and produces a scalar.
+
+\vspace{0.4cm}
+
+\[
+\boxed{
+\vect{x}
+\longrightarrow
+\vect{w}^{T}\vect{x}
+}
+\]
+
+Such a function is a \textbf{linear functional}.
+
+\vspace{0.4cm}
+
+This provides a connection between:
+
+\[
+\boxed{
+\text{vectors}
+\quad\longleftrightarrow\quad
+\text{linear functions}
+}
+\]
+
+and leads naturally to the idea of \textbf{duality}.
+
+\end{frame}
+
+
+% =========================================================
+% WEIGHT VECTORS
+% =========================================================
+
+\begin{frame}{Weight Vectors}
+
+A weight vector can define a linear function
+\[
+f(\vect{x})
+=
+\vect{w}^{T}\vect{x}.
+\]
+
+For
+\[
+\vect{w}
+=
+\begin{bmatrix}
+w_1\\
+w_2
+\end{bmatrix},
+\qquad
+\vect{x}
+=
+\begin{bmatrix}
+x_1\\
+x_2
+\end{bmatrix},
+\]
+
+we obtain
+\[
+f(\vect{x})
+=
+w_1x_1+w_2x_2.
+\]
+
+In machine learning, weight vectors are fundamental to:
+
+\begin{itemize}
+    \item linear models
+    \item linear classifiers
+    \item perceptrons
+\end{itemize}
+
+\end{frame}
+
+
+% =========================================================
+% HYPERPLANE
+% =========================================================
+
+\begin{frame}{Hyperplanes}
+
+A vector $\vect{w}$ can define a hyperplane through
+
+\[
+\boxed{
+\vect{w}^{T}\vect{x}=c
+}
+\]
+
+where $c$ is a constant.
+
+\vspace{0.2cm}
+
+The vector $\vect{w}$ is \textbf{normal} to the hyperplane.
+
+\vspace{0.2cm}
+
+In two dimensions:
+
+\[
+w_1x_1+w_2x_2=c
+\]
+
+represents a line.
+
+In three dimensions:
+\[
+w_1x_1+w_2x_2+w_3x_3=c
+\]
+
+represents a plane.
+
+\end{frame}
+
+
+% =========================================================
+% CLASSIFICATION INTERPRETATION
+% =========================================================
+
+\begin{frame}{Hyperplanes in Classification}
+
+A linear classifier can use
+
+\[
+f(\vect{x})
+=
+\vect{w}^{T}\vect{x}+b.
+\]
+
+The decision boundary is
+
+\[
+\boxed{
+\vect{w}^{T}\vect{x}+b=0
+}
+\]
+
+\vspace{0.4cm}
+
+The space can then be divided according to the sign of $f(\vect{x})$:
+
+\[
+\begin{cases}
+f(\vect{x})>0 & \text{one side}\\
+f(\vect{x})<0 & \text{other side}.
+\end{cases}
+\]
+
+\vspace{0.4cm}
+
+This is the geometric foundation of models such as the \textbf{perceptron}.
+
+\end{frame}
