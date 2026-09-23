@@ -1,0 +1,391 @@
+\documentclass[aspectratio=169,12pt]{beamer}
+
+% =========================================================
+% THEME
+% =========================================================
+
+\usetheme{Madrid}
+
+% =========================================================
+% PACKAGES
+% =========================================================
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{mathtools}
+
+\usetikzlibrary{
+    arrows.meta,
+    positioning,
+    shapes.geometric,
+    calc,
+    matrix,
+    decorations.pathreplacing
+}
+
+% =========================================================
+% PASTEL PROFESSIONAL COLORS
+% =========================================================
+
+\definecolor{PastelBlue}{RGB}{91,135,166}
+\definecolor{PastelLavender}{RGB}{125,118,155}
+\definecolor{LightBlue}{RGB}{235,242,247}
+\definecolor{LightLavender}{RGB}{242,240,247}
+\definecolor{DarkText}{RGB}{55,65,75}
+
+\setbeamercolor{structure}{fg=PastelBlue}
+
+\setbeamercolor{normal text}{
+    fg=DarkText,
+    bg=white
+}
+
+\setbeamercolor{frametitle}{
+    fg=PastelBlue,
+    bg=LightBlue
+}
+
+\setbeamercolor{block title}{
+    fg=white,
+    bg=PastelBlue
+}
+
+\setbeamercolor{block body}{
+    fg=DarkText,
+    bg=LightBlue
+}
+
+\setbeamercolor{block title example}{
+    fg=white,
+    bg=PastelLavender
+}
+
+\setbeamercolor{block body example}{
+    fg=DarkText,
+    bg=LightLavender
+}
+
+% =========================================================
+% ADDITIONAL BLOCK STYLES
+% =========================================================
+
+\setbeamercolor{block title alerted}{
+    fg=white,
+    bg=PastelLavender
+}
+
+\setbeamercolor{block body alerted}{
+    fg=DarkText,
+    bg=LightLavender
+}
+
+% =========================================================
+% FONTS
+% =========================================================
+
+\setbeamerfont{frametitle}{
+    size=\large,
+    series=\bfseries
+}
+
+\setbeamerfont{block title}{
+    series=\bfseries
+}
+
+% =========================================================
+% FOOTER
+% =========================================================
+
+\setbeamertemplate{footline}
+{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[
+            wd=.33\paperwidth,
+            ht=2.5ex,
+            dp=1.125ex,
+            leftskip=.3cm
+        ]{author in head/foot}
+            \usebeamerfont{author in head/foot}
+            \insertshortauthor
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[
+            wd=.34\paperwidth,
+            ht=2.5ex,
+            dp=1.125ex,
+            center
+        ]{title in head/foot}
+            \usebeamerfont{title in head/foot}
+            \insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[
+            wd=.33\paperwidth,
+            ht=2.5ex,
+            dp=1.125ex,
+            rightskip=.3cm
+        ]{date in head/foot}
+            \usebeamerfont{date in head/foot}
+            \hfill\insertshortdate\hspace{0.2cm}
+        \end{beamercolorbox}%
+    }%
+    \vskip0pt%
+}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% =========================================================
+% ITEMIZE STYLE
+% =========================================================
+
+\setbeamertemplate{itemize item}{
+    \color{PastelBlue}$\blacktriangleright$
+}
+
+\setbeamertemplate{itemize subitem}{
+    \color{PastelLavender}$\bullet$
+}
+
+% =========================================================
+% MATHEMATICAL COMMANDS
+% =========================================================
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\vect}[1]{\bm{#1}}
+\newcommand{\mat}[1]{\mathbf{#1}}
+
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\nullity}{\operatorname{nullity}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\Col}{\operatorname{Col}}
+
+% =========================================================
+% DOCUMENT INFORMATION
+% =========================================================
+
+\title{Vectors and Linear Algebra}
+\subtitle{Mathematics for Computing}
+
+% Short author name used in the footer
+\author[Arya T S]{Arya T S}
+
+% Full institute information shown on the title page
+\institute{
+    M.Tech Artificial Intelligence \& Software Engineering\\
+    Cochin University of Science and Technology (CUSAT)
+}
+
+\date{September 2026}
+
+% =========================================================
+% DOCUMENT
+% =========================================================
+
+\begin{document}
+
+% =========================================================
+% TITLE SLIDE
+% =========================================================
+
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+
+% =========================================================
+% MODULE OVERVIEW -- SLIDE 1
+% =========================================================
+
+\begin{frame}{Module Overview}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+% ---------- LEFT COLUMN ----------
+\begin{column}{0.48\textwidth}
+
+\begin{block}{Part I -- Vectors and Geometry}
+
+\begin{itemize}
+    \item Coordinate Systems
+    \item Vectors
+    \item Vector Addition
+    \item Scalar Multiplication
+    \item Magnitude and Distance
+    \item Dot Products
+    \item Orthogonality
+\end{itemize}
+
+\end{block}
+
+\end{column}
+
+% ---------- RIGHT COLUMN ----------
+\begin{column}{0.48\textwidth}
+
+\begin{block}{Part II -- Linear Combinations}
+
+\begin{itemize}
+    \item Linear Combinations
+    \item Span
+    \item Linear Independence
+    \item Linear Dependence
+    \item Basis
+    \item Dimension
+    \item Vector Spaces
+\end{itemize}
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+% =========================================================
+% MODULE OVERVIEW -- SLIDE 2
+% =========================================================
+
+\begin{frame}{Module Overview}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+% ---------- LEFT COLUMN ----------
+\begin{column}{0.48\textwidth}
+
+\begin{block}{Part III -- Matrices and Transformations}
+
+\begin{itemize}
+    \item Matrix Multiplication
+    \item Composition of Transformations
+    \item Three-Dimensional Transformations
+    \item Nonsquare Matrices
+    \item Linear Transformations
+    \item Rotation, Scaling and Reflection
+\end{itemize}
+
+\end{block}
+
+\end{column}
+
+% ---------- RIGHT COLUMN ----------
+\begin{column}{0.48\textwidth}
+
+\begin{block}{Part IV -- Linear Systems}
+
+\begin{itemize}
+    \item Systems of Linear Equations
+    \item Matrix Form \(A\mathbf{x}=\mathbf{b}\)
+    \item Consistency of Solutions
+    \item Gaussian Elimination
+    \item Inverse Matrix Method
+    \item Cramer's Rule
+\end{itemize}
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+% =========================================================
+% MODULE OVERVIEW -- SLIDE 3
+% =========================================================
+
+\begin{frame}{Module Overview}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+% ---------- LEFT COLUMN ----------
+\begin{column}{0.48\textwidth}
+
+\begin{block}{Part V -- Determinants and Vector Spaces}
+
+\begin{itemize}
+    \item Determinants
+    \item Inverse Matrices
+    \item Column Space
+    \item Null Space
+    \item Rank and Nullity
+    \item Rank--Nullity Theorem
+\end{itemize}
+
+\end{block}
+
+\end{column}
+
+% ---------- RIGHT COLUMN ----------
+\begin{column}{0.48\textwidth}
+
+\begin{block}{Part VI -- Advanced Topics and Applications}
+
+\begin{itemize}
+    \item Cross Products
+    \item Cross Products and Transformations
+    \item Change of Basis
+    \item Eigenvectors and Eigenvalues
+    \item Applications in Computing and AI
+    \item Summary and References
+\end{itemize}
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+% =========================================================
+% CONTENT FILES
+% =========================================================
+
+\input{sections/01_vectors_foundations}
+\input{sections/02_vector_operations}
+\input{sections/03_linear_combinations}
+\input{sections/04_vector_spaces_basis}
+\input{sections/05_matrices_transformations}
+\input{sections/06_systems_linear_equations}
+\input{sections/07_gaussian_elimination}
+\input{sections/08_determinants_inverse}
+\input{sections/09_column_null_spaces}
+\input{sections/10_dot_cross_products}
+\input{sections/11_change_of_basis}
+\input{sections/12_eigenvalues_eigenvectors}
+\input{sections/13_applications}
+\input{sections/14-conclusion}
+
+% =========================================================
+% REFERENCES
+% =========================================================
+
+\begin{frame}{References}
+
+\nocite{*}
+
+\bibliographystyle{plain}
+\bibliography{references/references}
+
+\end{frame}
+
+% =========================================================
+% THANK YOU
+% =========================================================
+
+\input{sections/15-thank-you}
+
+% =========================================================
+
+\end{document}
