@@ -1,0 +1,559 @@
+% =========================================================
+% 01_vectors_foundations.tex
+% Vectors and Linear Algebra
+% =========================================================
+
+% =========================================================
+% SECTION DIVIDER
+% =========================================================
+
+\section{Vectors and Coordinate Systems}
+
+\begin{frame}{Vectors and Coordinate Systems}
+
+\begin{center}
+
+\vspace{0.5cm}
+
+{\Large\color{PastelBlue}\textbf{Vectors}}
+
+\vspace{0.2cm}
+
+{\large
+Objects used to represent
+magnitude, direction, position, and features
+}
+
+\vspace{0.8cm}
+
+\begin{tikzpicture}[
+    >=Latex,
+    scale=0.9
+]
+
+% Axes
+\draw[->, thick, gray] (-3,0) -- (3.5,0) node[right] {$x$};
+\draw[->, thick, gray] (0,-2) -- (0,2.5) node[above] {$y$};
+
+% Vector
+\draw[->, very thick, PastelBlue]
+    (0,0) -- (2.4,1.6)
+    node[midway, above] {$\vect{v}$};
+
+% Point
+\fill[PastelLavender] (2.4,1.6) circle (2pt);
+\node[above right] at (2.4,1.6) {$\vect{v}=(v_1,v_2)$};
+
+\end{tikzpicture}
+
+\end{center}
+
+\end{frame}
+
+
+% =========================================================
+% WHAT IS A VECTOR?
+% =========================================================
+
+\begin{frame}{What Is a Vector?}
+
+A \textbf{vector} is a mathematical object that has:
+
+\begin{itemize}
+    \item magnitude
+    \item direction
+\end{itemize}
+
+\vspace{0.3cm}
+
+A vector in two-dimensional space can be represented as
+
+\[
+\vect{v}
+=
+\begin{bmatrix}
+v_1\\
+v_2
+\end{bmatrix}.
+\]
+
+\vspace{0.3cm}
+
+\begin{block}{Key Idea}
+The entries of a vector are its \textbf{components} with respect to a chosen coordinate system.
+\end{block}
+
+\end{frame}
+
+
+% =========================================================
+% COORDINATE SYSTEM
+% =========================================================
+
+\begin{frame}{Coordinate Systems}
+
+A coordinate system provides a reference for describing vectors and points.
+
+\vspace{0.2cm}
+
+For the standard two-dimensional Cartesian system:
+
+\begin{columns}[c,totalwidth=\textwidth]
+
+% ---------- LEFT COLUMN ----------
+\begin{column}{0.40\textwidth}
+
+\begin{center}
+
+\raisebox{0.60cm}{%
+$\displaystyle
+\vect{v}
+=
+\begin{bmatrix}
+v_x\\
+v_y
+\end{bmatrix}
+$
+}
+
+\end{center}
+
+\end{column}
+
+% ---------- RIGHT COLUMN ----------
+\begin{column}{0.60\textwidth}
+
+\begin{center}
+
+\begin{tikzpicture}[
+    >=Latex,
+    scale=0.75
+]
+
+% Grid
+\draw[step=1cm, gray!20, very thin]
+    (-3,-2) grid (3,3);
+
+% Axes
+\draw[->, thick, gray]
+    (-3,0) -- (3.5,0)
+    node[right] {$x$};
+
+\draw[->, thick, gray]
+    (0,-2) -- (0,3.5)
+    node[above] {$y$};
+
+% Vector
+\draw[->, very thick, PastelBlue]
+    (0,0) -- (2,2.5);
+
+% Point
+\fill[PastelLavender]
+    (2,2.5) circle (2.5pt);
+
+% Vector label
+\node[above right] at (2,2.5)
+    {$\vect{v}=(v_x,v_y)$};
+
+\end{tikzpicture}
+
+\end{center}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+% =========================================================
+% VECTOR AS A COLUMN
+% =========================================================
+
+\begin{frame}{Representing Vectors}
+
+Vectors are commonly written as column vectors:
+\[
+\vect{v}
+=
+\begin{bmatrix}
+v_1\\
+v_2\\
+v_3
+\end{bmatrix}
+\in \mathbb{R}^3.
+\]
+
+More generally,
+\[
+\vect{v}
+=
+\begin{bmatrix}
+v_1\\
+v_2\\
+\vdots\\
+v_n
+\end{bmatrix}
+\in \mathbb{R}^n.
+\]
+
+\begin{block}{Interpretation}
+A vector in $\mathbb{R}^n$ has $n$ components and can be viewed as a point or a directed quantity in an $n$-dimensional space.
+\end{block}
+
+\end{frame}
+
+
+% =========================================================
+% VECTOR ADDITION
+% =========================================================
+
+\begin{frame}{Vector Addition}
+
+Two vectors of the same dimension can be added component-wise.
+
+\[
+\vect{u}
+=
+\begin{bmatrix}
+u_1\\
+u_2
+\end{bmatrix},
+\qquad
+\vect{v}
+=
+\begin{bmatrix}
+v_1\\
+v_2
+\end{bmatrix}
+\]
+
+give
+
+\[
+\boxed{
+\vect{u}+\vect{v}
+=
+\begin{bmatrix}
+u_1+v_1\\
+u_2+v_2
+\end{bmatrix}
+}
+\]
+
+\vspace{0.4cm}
+
+\begin{exampleblock}{Example}
+\[
+\begin{bmatrix}
+2\\
+1
+\end{bmatrix}
++
+\begin{bmatrix}
+3\\
+4
+\end{bmatrix}
+=
+\begin{bmatrix}
+5\\
+5
+\end{bmatrix}
+\]
+\end{exampleblock}
+
+\end{frame}
+
+
+% =========================================================
+% GEOMETRIC VECTOR ADDITION
+% =========================================================
+
+\begin{frame}{Geometric Interpretation of Addition}
+
+Vector addition can be visualized using the \textbf{parallelogram rule}.
+
+\vspace{0.2cm}
+
+\begin{center}
+
+\begin{tikzpicture}[
+    >=Latex,
+    scale=0.85
+]
+
+\coordinate (O) at (0,0);
+\coordinate (U) at (3,1);
+\coordinate (V) at (1,2);
+\coordinate (W) at (4,3);
+
+\draw[->, very thick, PastelBlue]
+    (O) -- (U)
+    node[midway, below] {$\vect{u}$};
+
+\draw[->, very thick, PastelLavender]
+    (O) -- (V)
+    node[midway, left] {$\vect{v}$};
+
+\draw[dashed, gray]
+    (U) -- (W);
+
+\draw[dashed, gray]
+    (V) -- (W);
+
+\draw[->, very thick]
+    (O) -- (W)
+    node[midway, above] {$\vect{u}+\vect{v}$};
+
+\fill (O) circle (1.5pt);
+\fill (W) circle (1.5pt);
+
+\end{tikzpicture}
+
+\end{center}
+
+\end{frame}
+
+
+% =========================================================
+% SCALAR MULTIPLICATION
+% =========================================================
+
+\begin{frame}{Scalar Multiplication}
+
+A \textbf{scalar} is a number that can scale a vector.
+
+For a scalar $c$,
+
+\begin{columns}[c,totalwidth=\textwidth]
+
+% ---------- LEFT ----------
+\begin{column}{0.45\textwidth}
+
+\begin{center}
+
+\[
+\vect{v}
+=
+\begin{bmatrix}
+v_1\\
+v_2\\
+\vdots\\
+v_n
+\end{bmatrix}
+\]
+
+\end{center}
+
+\end{column}
+
+% ---------- RIGHT ----------
+\begin{column}{0.45\textwidth}
+
+\begin{center}
+
+\[
+c\vect{v}
+=
+\begin{bmatrix}
+cv_1\\
+cv_2\\
+\vdots\\
+cv_n
+\end{bmatrix}
+\]
+
+\end{center}
+
+\end{column}
+
+\end{columns}
+
+\vspace{0.4cm}
+
+\begin{itemize}
+    \item $|c|>1$   : vector is stretched
+    \item $0<|c|<1$ : vector is shortened
+    \item $c<0$     : direction is reversed
+\end{itemize}
+
+\end{frame}
+
+% =========================================================
+% VECTOR MAGNITUDE
+% =========================================================
+
+\begin{frame}{Magnitude of a Vector}
+
+The magnitude or Euclidean norm measures the length of a vector.
+
+For
+\vspace{-0.5cm}
+
+\begin{center}
+
+\[
+\vect{v}
+=
+\begin{bmatrix}
+v_1\\
+v_2
+\end{bmatrix}
+\qquad
+\boxed{
+\|\vect{v}\|
+=
+\sqrt{v_1^2+v_2^2}
+}
+\]
+
+\end{center}
+
+\vspace{-0.5cm}
+
+\noindent For $\vect{v}\in\mathbb{R}^n$,
+
+\begin{center}
+
+\[
+\boxed{
+\|\vect{v}\|
+=
+\sqrt{
+\sum_{i=1}^{n} v_i^2
+}
+}
+\]
+
+\end{center}
+
+\vspace{-0.2cm}
+
+\begin{exampleblock}{Example}
+
+\[
+\vect{v}
+=
+\begin{bmatrix}
+3\\
+4
+\end{bmatrix}
+\quad\Longrightarrow\quad
+\|\vect{v}\|
+=
+\sqrt{3^2+4^2}
+=
+5
+\]
+
+\end{exampleblock}
+
+\end{frame}
+
+
+% =========================================================
+% DISTANCE BETWEEN VECTORS
+% =========================================================
+
+\begin{frame}{Distance Between Vectors}
+
+The distance between two vectors is the magnitude of their difference.
+
+For $\vect{u},\vect{v}\in\mathbb{R}^n$,
+
+\[
+\boxed{
+d(\vect{u},\vect{v})
+=
+\|\vect{u}-\vect{v}\|
+}
+\]
+
+\vspace{0.5cm}
+
+For example,
+
+\[
+\vect{u}
+=
+\begin{bmatrix}
+3\\
+4
+\end{bmatrix},
+\qquad
+\vect{v}
+=
+\begin{bmatrix}
+1\\
+1
+\end{bmatrix}
+\]
+
+give
+
+\[
+d(\vect{u},\vect{v})
+=
+\left\|
+\begin{bmatrix}
+2\\
+3
+\end{bmatrix}
+\right\|
+=
+\sqrt{13}.
+\]
+
+\end{frame}
+
+
+% =========================================================
+% VECTORS IN COMPUTING
+% =========================================================
+
+\begin{frame}{Vectors in Computing}
+
+Vectors provide a common representation for numerical information.
+
+\vspace{0.3cm}
+
+\begin{columns}[T,totalwidth=\textwidth]
+
+\begin{column}{0.31\textwidth}
+
+\begin{block}{Machine Learning}
+Feature vectors represent measurable properties of an observation.
+\end{block}
+
+\end{column}
+
+\begin{column}{0.31\textwidth}
+
+\begin{block}{Computer Graphics}
+Coordinates and transformations can be represented using vectors.
+\end{block}
+
+\end{column}
+
+\begin{column}{0.31\textwidth}
+
+\begin{block}{Data Representation}
+Objects such as documents or records can be represented numerically.
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\vspace{0.5cm}
+
+\begin{center}
+\[
+\boxed{
+\text{Real-world information}
+\quad\longrightarrow\quad
+\text{Numerical vector}
+}
+\]
+\end{center}
+
+\end{frame}
