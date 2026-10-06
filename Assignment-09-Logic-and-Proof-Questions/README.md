@@ -68,5 +68,3 @@ Logic-and-Proof/
     ├── 19_strong_induction.tex
     └── 20_structural_induction.tex
 ```
-```
-```
