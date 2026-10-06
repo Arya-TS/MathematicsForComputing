@@ -1,0 +1,343 @@
+\begin{frame}{Proving IFF}
+\begin{center}
+\vspace{1.5cm}
+{\Huge\textbf{Proving IFF}}
+\end{center}
+\end{frame}
+
+% --------------------------------------------------
+% Question 1
+% --------------------------------------------------
+
+\begin{frame}{Question 1}
+A software system claims that an integer $n$ is even if and only if
+$n^2$ is even.
+
+Prove the claim.
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+To prove:
+
+$$
+n\text{ is even}\iff n^2\text{ is even}
+$$
+
+we must prove both directions.
+
+First:
+
+$$
+n\text{ even}\Rightarrow n^2\text{ even}
+$$
+
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+Let:
+
+$$
+n=2k
+$$
+
+Then:
+
+$$
+n^2=(2k)^2=4k^2
+$$
+
+$$
+n^2=2(2k^2)
+$$
+
+Therefore, $n^2$ is even.
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+For the reverse direction, assume:
+
+$$
+n^2\text{ is even}
+$$
+
+Suppose $n$ were odd. Then:
+
+$$
+n=2k+1
+$$
+
+and:
+
+$$
+n^2=4k^2+4k+1
+$$
+
+which is odd.
+
+This is a contradiction.
+
+Therefore, $n$ is even.
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+Both directions have been proved.
+
+Hence:
+
+$$
+\boxed{n\text{ is even}\iff n^2\text{ is even}}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 2
+% --------------------------------------------------
+
+\begin{frame}{Question 2}
+A database stores an integer value $n$. A validation rule states that $n$
+is divisible by $6$ if and only if it is divisible by both $2$ and $3$.
+
+Prove the rule.
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+We prove both directions.
+
+First:
+
+$$
+6\mid n\Rightarrow(2\mid n\land3\mid n)
+$$
+
+If:
+
+$$
+n=6k
+$$
+
+then:
+
+$$
+n=2(3k)=3(2k)
+$$
+
+Therefore, $2\mid n$ and $3\mid n$.
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+For the reverse direction, assume:
+
+$$
+2\mid n
+$$
+
+and:
+
+$$
+3\mid n
+$$
+
+Since $2$ and $3$ are relatively prime, their product divides $n$.
+
+Therefore:
+
+$$
+6\mid n
+$$
+
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+Thus both directions hold:
+
+$$
+\boxed{6\mid n\iff(2\mid n\land3\mid n)}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 3
+% --------------------------------------------------
+
+\begin{frame}{Question 3}
+A programming system uses an integer $n$. Prove that $n$ is odd if and only
+if $n+1$ is even.
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+First direction:
+
+$$
+n\text{ odd}\Rightarrow n+1\text{ even}
+$$
+
+Let:
+
+$$
+n=2k+1
+$$
+
+Then:
+
+$$
+n+1=2k+2=2(k+1)
+$$
+
+Therefore, $n+1$ is even.
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+Reverse direction:
+
+$$
+n+1\text{ even}\Rightarrow n\text{ odd}
+$$
+
+Let:
+
+$$
+n+1=2k
+$$
+
+Then:
+
+$$
+n=2k-1
+$$
+
+$$
+n=2(k-1)+1
+$$
+
+Therefore, $n$ is odd.
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+Both directions hold.
+
+Hence:
+
+$$
+\boxed{n\text{ is odd}\iff n+1\text{ is even}}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 4
+% --------------------------------------------------
+
+\begin{frame}{Question 4}
+A network system uses two integer parameters $a$ and $b$.
+
+Prove that:
+
+$$
+a+b\text{ is even}
+$$
+
+if and only if $a$ and $b$ have the same parity.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+First assume $a$ and $b$ have the same parity.
+
+If both are even:
+
+$$
+a=2m,\qquad b=2n
+$$
+
+Then:
+
+$$
+a+b=2(m+n)
+$$
+
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+If both are odd:
+
+$$
+a=2m+1,\qquad b=2n+1
+$$
+
+Then:
+
+$$
+a+b=2(m+n+1)
+$$
+
+Thus, in either case, $a+b$ is even.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+Now assume:
+
+$$
+a+b\text{ is even}
+$$
+
+If $a$ and $b$ had different parity, one would be even and the other odd.
+
+Their sum would then be odd.
+
+This contradicts the assumption.
+
+Therefore, $a$ and $b$ have the same parity.
+
+Hence:
+
+$$
+\boxed{a+b\text{ is even}\iff
+a\text{ and }b\text{ have the same parity}}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 5
+% --------------------------------------------------
+
+\begin{frame}{Question 5}
+A data structure contains an integer number of elements $n$.
+
+Show that $n(n-1)$ is even if and only if at least one of $n$ and $n-1$
+is even.
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+First, suppose at least one of $n$ and $n-1$ is even.
+
+Since:
+
+$$
+n(n-1)
+$$
+
+is a product containing an even factor, the product is even.
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+For the reverse direction, suppose:
+
+$$
+n(n-1)\text{ is even}
+$$
+
+Two consecutive integers cannot both be odd.
+
+Therefore, among $n$ and $n-1$, at least one must be even.
+
+Thus:
+
+$$
+\boxed{n(n-1)\text{ is even}
+\iff
+n\text{ or }n-1\text{ is even}}
+$$
+
+\end{frame}

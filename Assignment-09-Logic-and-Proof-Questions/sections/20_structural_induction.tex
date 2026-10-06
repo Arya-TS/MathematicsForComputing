@@ -1,0 +1,428 @@
+\section{Structural Induction}
+
+\begin{frame}
+\centering
+\Huge\textbf{Structural Induction}
+\end{frame}
+
+% --------------------------------------------------
+% Question 1
+% --------------------------------------------------
+
+\begin{frame}{Question 1}
+A programming language defines arithmetic expressions recursively:
+
+\begin{itemize}
+\item Every variable is an expression.
+\item If $E$ and $F$ are expressions, then $(E+F)$ is an expression.
+\end{itemize}
+
+\textbf{Question:} Prove by structural induction that every expression contains an equal number of opening and closing parentheses.
+\end{frame}
+
+\begin{frame}{Answer 1}
+Let $P(E)$ be the statement:
+
+\textit{Expression $E$ contains the same number of opening and closing parentheses.}
+
+\textbf{Base case:}
+
+A variable such as $x$ contains no parentheses.
+
+Therefore,
+
+$$
+0=0.
+$$
+
+Hence, $P(E)$ is true for every basic variable expression.
+\end{frame}
+
+\begin{frame}{Answer 1}
+\textbf{Inductive step:}
+
+Assume $E$ and $F$ are expressions satisfying $P$.
+
+Therefore, each has an equal number of opening and closing parentheses.
+
+The new expression is
+
+$$
+(E+F).
+$$
+
+This adds one opening parenthesis and one closing parenthesis.
+
+Thus, equality is preserved.
+\end{frame}
+
+\begin{frame}{Answer 1}
+Therefore, the resulting expression also contains equal numbers of opening and closing parentheses.
+
+Hence, by structural induction,
+
+$$
+\boxed{
+\text{Every valid expression has equally many opening and closing parentheses.}
+}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 2
+% --------------------------------------------------
+
+\begin{frame}{Question 2}
+Consider a recursively defined set of binary strings:
+
+\begin{itemize}
+\item The empty string $\epsilon$ belongs to the set.
+\item If $s$ belongs to the set, then $0s1$ also belongs to the set.
+\end{itemize}
+
+\textbf{Question:} Prove by structural induction that every string in the set contains the same number of $0$s and $1$s.
+\end{frame}
+
+\begin{frame}{Answer 2}
+Let $P(s)$ be:
+
+$$
+\#0(s)=\#1(s).
+$$
+
+\textbf{Base case:}
+
+For the empty string,
+
+$$
+s=\epsilon.
+$$
+
+It contains no $0$s and no $1$s.
+
+Therefore,
+
+$$
+\#0(\epsilon)=\#1(\epsilon)=0.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 2}
+\textbf{Inductive step:}
+
+Assume
+
+$$
+\#0(s)=\#1(s).
+$$
+
+The construction rule creates
+
+$$
+0s1.
+$$
+
+This adds exactly one $0$ and one $1$.
+
+Therefore,
+$$
+\#0(0s1)=\#0(s)+1
+$$
+and
+$$
+\#1(0s1)=\#1(s)+1.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 2}
+Since
+
+$$
+\#0(s)=\#1(s),
+$$
+
+we obtain
+
+$$
+\#0(0s1)=\#1(0s1).
+$$
+
+Hence, by structural induction,
+
+$$
+\boxed{
+\text{Every string in the set contains equally many }0\text{s and }1\text{s}.
+}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 3
+% --------------------------------------------------
+
+\begin{frame}{Question 3}
+A simple expression language is defined recursively:
+
+\begin{itemize}
+\item Every integer constant is an expression.
+\item If $E$ and $F$ are expressions, then $(E-F)$ is an expression.
+\end{itemize}
+
+\textbf{Question:} Prove by structural induction that every expression contains an equal number of opening and closing parentheses.
+\end{frame}
+
+\begin{frame}{Answer 3}
+Let $P(E)$ denote:
+
+\textit{$E$ contains the same number of opening and closing parentheses.}
+
+\textbf{Base case:}
+
+An integer constant such as $5$ contains no parentheses.
+
+Thus,
+
+$$
+0=0.
+$$
+
+Therefore, the property holds for every basic expression.
+\end{frame}
+
+\begin{frame}{Answer 3}
+\textbf{Inductive step:}
+
+Assume $E$ and $F$ satisfy the property.
+
+Construct
+
+$$
+(E-F).
+$$
+
+The expressions $E$ and $F$ already contain equal numbers of both types of parentheses.
+
+The construction adds exactly one opening and one closing parenthesis.
+
+Therefore, the equality remains true.
+\end{frame}
+
+\begin{frame}{Answer 3}
+Hence, the new expression satisfies the property.
+
+By structural induction,
+
+$$
+\boxed{
+\text{every expression contains equally many opening and closing parentheses.}
+}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 4
+% --------------------------------------------------
+
+\begin{frame}{Question 4}
+A programming language defines binary trees recursively:
+
+\begin{itemize}
+\item A single node is a binary tree.
+\item If $T_1$ and $T_2$ are binary trees, a new tree can be formed with a root and $T_1,T_2$ as its subtrees.
+\end{itemize}
+
+\textbf{Question:} Prove by structural induction that every binary tree contains one more node than the number of edges.
+\end{frame}
+
+\begin{frame}{Answer 4}
+Let
+
+$$
+P(T):\quad
+\text{number of nodes}
+=
+\text{number of edges}+1.
+$$
+
+\textbf{Base case:}
+
+A single-node tree has
+
+$$
+1\text{ node}
+$$
+
+and
+
+$$
+0\text{ edges}.
+$$
+
+Therefore,
+
+$$
+1=0+1.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 4}
+\textbf{Inductive hypothesis:}
+
+Assume $T_1$ and $T_2$ satisfy
+
+$$
+N_1=E_1+1
+$$
+
+and
+
+$$
+N_2=E_2+1.
+$$
+
+Construct a new tree with a root and subtrees $T_1,T_2$.
+
+The number of nodes is
+
+$$
+N=1+N_1+N_2.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 4}
+The number of edges is
+
+$$
+E=2+E_1+E_2,
+$$
+
+because the root contributes two edges to the two subtrees.
+
+Using the inductive hypotheses,
+
+$$
+N
+=
+1+(E_1+1)+(E_2+1)
+$$
+$$
+=E_1+E_2+3
+$$
+
+and
+$$
+E+1
+=
+(E_1+E_2+2)+1
+=
+E_1+E_2+3.
+$$
+
+Therefore,
+$$
+N=E+1.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 4}
+Hence, by structural induction,
+
+$$
+\boxed{
+\text{Every binary tree has exactly one more node than edges.}
+}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 5
+% --------------------------------------------------
+
+\begin{frame}{Question 5}
+A recursively defined set of expressions is generated as follows:
+
+\begin{itemize}
+\item Every variable is an expression.
+\item If $E$ is an expression, then $(E)$ is an expression.
+\item If $E$ and $F$ are expressions, then $(E+F)$ is an expression.
+\end{itemize}
+
+\textbf{Question:} Prove by structural induction that every expression contains at least one variable.
+\end{frame}
+
+\begin{frame}{Answer 5}
+Let $P(E)$ denote:
+
+\textit{$E$ contains at least one variable.}
+
+\textbf{Base case:}
+
+Every variable is an expression.
+
+For example,
+
+$$
+x
+$$
+
+contains one variable.
+
+Therefore, $P(E)$ is true for every basic expression.
+\end{frame}
+
+\begin{frame}{Answer 5}
+\textbf{Inductive step 1:}
+
+Assume $E$ contains at least one variable.
+
+The construction rule produces
+
+$$
+(E).
+$$
+
+Parentheses do not remove the variable from $E$.
+
+Therefore, $(E)$ still contains at least one variable.
+\end{frame}
+
+\begin{frame}{Answer 5}
+\textbf{Inductive step 2:}
+
+Assume $E$ and $F$ each contain at least one variable.
+
+The construction
+
+$$
+(E+F)
+$$
+
+contains all variables from both $E$ and $F$.
+
+Therefore, it contains at least one variable.
+
+Hence, by structural induction,
+
+$$
+\boxed{
+\text{Every expression contains at least one variable.}
+}
+$$
+
+\end{frame}
+
+\begin{frame}
+\centering
+\vfill
+{\Huge\textbf{Thank You}}
+\vfill
+\end{frame}

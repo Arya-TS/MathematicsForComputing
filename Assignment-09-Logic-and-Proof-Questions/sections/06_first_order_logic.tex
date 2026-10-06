@@ -1,0 +1,294 @@
+\begin{frame}{First Order Logic}
+\begin{center}
+\vspace{1.5cm}
+{\Huge\textbf{First Order Logic}}
+\end{center}
+\end{frame}
+
+% --------------------------------------------------
+% Question 1
+% --------------------------------------------------
+
+\begin{frame}{Question 1}
+A university maintains a database of students enrolled in a programming
+course.
+
+Let:
+
+$$
+P(x) = \text{$x$ has completed the programming course}
+$$
+
+Express the following requirement using first order logic:
+
+\begin{center}
+\textit{Every student enrolled in the course has completed the programming
+course.}
+\end{center}
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+The statement applies to every student in the course.
+
+Therefore, we use the universal quantifier:
+
+$$
+\forall x
+$$
+
+The predicate is:
+
+$$
+P(x) = \text{$x$ has completed the programming course}
+$$
+
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+The required statement is:
+
+$$
+\boxed{\forall x\,P(x)}
+$$
+
+This means that for every student $x$ in the relevant domain,
+$x$ has completed the programming course.
+\end{frame}
+
+% --------------------------------------------------
+% Question 2
+% --------------------------------------------------
+
+\begin{frame}{Question 2}
+A cloud computing system contains several servers. The system requirement
+states:
+
+\begin{center}
+\textit{At least one server must be operational before a service can be
+provided.}
+\end{center}
+
+Let:
+
+$$
+P(x) = \text{$x$ is an operational server}
+$$
+
+Express this requirement using first order logic.
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+The phrase \textit{at least one} indicates that we need an existential
+quantifier.
+
+The existential quantifier is:
+
+$$
+\exists x
+$$
+
+The predicate is:
+
+$$
+P(x) = \text{$x$ is an operational server}
+$$
+
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+Therefore, the requirement can be written as:
+
+$$
+\boxed{\exists x\,P(x)}
+$$
+
+This states that there exists at least one server that is operational.
+\end{frame}
+
+% --------------------------------------------------
+% Question 3
+% --------------------------------------------------
+
+\begin{frame}{Question 3}
+A company's authentication system records user login attempts.
+
+Let:
+
+$$
+P(x) = \text{$x$ is a successful login}
+$$
+
+$$
+Q(x) = \text{$x$ is associated with an authorized user}
+$$
+
+The security requirement states:
+
+\begin{center}
+\textit{Every successful login must be associated with an authorized user.}
+\end{center}
+
+Express the requirement using first order logic.
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+The statement applies to every login attempt.
+
+Therefore, we use:
+
+$$
+\forall x
+$$
+
+The condition that must hold for every successful login is:
+
+$$
+P(x) \rightarrow Q(x)
+$$
+
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+Combining the universal quantifier with the implication gives:
+
+$$
+\boxed{\forall x\,[P(x)\rightarrow Q(x)]}
+$$
+
+This means that whenever a login is successful, it must be associated
+with an authorized user.
+\end{frame}
+
+% --------------------------------------------------
+% Question 4
+% --------------------------------------------------
+
+\begin{frame}{Question 4}
+An artificial intelligence system processes a collection of training
+records.
+
+Let:
+
+$$
+P(x) = \text{$x$ contains missing values}
+$$
+
+$$
+Q(x) = \text{$x$ is removed from the training dataset}
+$$
+
+The preprocessing requirement states:
+
+\begin{center}
+\textit{Every record containing missing values is removed from the
+training dataset.}
+\end{center}
+
+Express the requirement using first order logic.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+The statement applies to every training record.
+
+Therefore, we use:
+
+$$
+\forall x
+$$
+
+If a record contains missing values, it must be removed.
+
+This gives the implication:
+
+$$
+P(x)\rightarrow Q(x)
+$$
+
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+Therefore, the complete first order logic expression is:
+
+$$
+\boxed{\forall x\,[P(x)\rightarrow Q(x)]}
+$$
+
+The expression states that every record satisfying $P(x)$ must also
+satisfy $Q(x)$.
+\end{frame}
+
+% --------------------------------------------------
+% Question 5
+% --------------------------------------------------
+
+\begin{frame}{Question 5}
+A software testing system contains a collection of test cases.
+
+Let:
+
+$$
+P(x) = \text{$x$ exposes a software defect}
+$$
+
+The testing report claims:
+
+\begin{center}
+\textit{No test case exposes a software defect.}
+\end{center}
+
+Express this statement using first order logic and give an equivalent
+form using an existential quantifier.
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+The statement says that every test case does not expose a defect.
+
+Therefore, we can use the universal quantifier:
+
+$$
+\forall x
+$$
+
+The statement becomes:
+
+$$
+\boxed{\forall x\,\neg P(x)}
+$$
+
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+The statement can also be expressed by saying that there does not exist
+a test case that exposes a defect.
+
+Using the existential quantifier:
+
+$$
+\boxed{\neg\exists x\,P(x)}
+$$
+
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+Therefore, the two equivalent forms are:
+
+$$
+\forall x\,\neg P(x)
+$$
+
+and
+
+$$
+\neg\exists x\,P(x)
+$$
+
+Hence:
+
+$$
+\boxed{\forall x\,\neg P(x)
+\equiv
+\neg\exists x\,P(x)}
+$$
+
+Both statements mean that no test case exposes a software defect.
+\end{frame}

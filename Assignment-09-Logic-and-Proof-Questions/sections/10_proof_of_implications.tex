@@ -1,0 +1,316 @@
+\section{Proof of an Implication}
+
+\begin{frame}{Proof of an Implication}
+\begin{center}
+\vspace{1.5cm}
+{\Huge\textbf{Proof of an Implication}}
+\end{center}
+\end{frame}
+
+% --------------------------------------------------
+% Question 1
+% --------------------------------------------------
+
+\begin{frame}{Question 1}
+A software system claims that if a user's access score is divisible by $4$,
+then the score is even.
+
+Prove the implication directly for every integer access score.
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+Let $n$ be an integer such that:
+
+$$
+4\mid n
+$$
+
+Then, by the definition of divisibility, there exists an integer $k$ such
+that:
+
+$$
+n=4k
+$$
+
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+Rewrite $n$ as:
+
+$$
+n=2(2k)
+$$
+
+Since $2k$ is an integer, $n$ has the form $2m$ for an integer $m$.
+
+Therefore, $n$ is even.
+
+Hence:
+
+$$
+\boxed{4\mid n\Rightarrow2\mid n}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 2
+% --------------------------------------------------
+
+\begin{frame}{Question 2}
+A cloud security system follows the rule:
+
+\begin{center}
+\textit{If a server passes authentication, then it is allowed to access the network.}
+\end{center}
+
+A particular server has passed authentication.
+
+\textbf{Question:} Using Modus Ponens, determine whether the server is
+allowed to access the network.
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+Let:
+
+$$
+P=\text{The server passes authentication}
+$$
+
+and
+
+$$
+Q=\text{The server is allowed to access the network}
+$$
+
+The security rule is:
+
+$$
+P\rightarrow Q
+$$
+
+The given information states:
+
+$$
+P
+$$
+
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+We therefore have:
+
+$$
+P\rightarrow Q
+$$
+
+and
+
+$$
+P
+$$
+
+Modus Ponens states:
+
+$$
+P\rightarrow Q,\quad P
+\quad\therefore\quad Q
+$$
+
+Therefore:
+
+$$
+\boxed{Q}
+$$
+
+The server is allowed to access the network.
+\end{frame}
+
+% --------------------------------------------------
+% Question 3
+% --------------------------------------------------
+
+\begin{frame}{Question 3}
+A machine-learning deployment system follows the rule:
+
+\begin{center}
+\textit{If a model is deployed, then it has passed all required tests.}
+\end{center}
+
+An administrator verifies that the model has \textbf{not} passed all the
+required tests.
+
+\textbf{Question:} Using Modus Tollens, determine whether the model can be
+considered deployed under this rule.
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+Let:
+
+$$
+P=\text{The model is deployed}
+$$
+
+and
+
+$$
+Q=\text{The model has passed all required tests}
+$$
+
+The rule is:
+
+$$
+P\rightarrow Q
+$$
+
+The given information is:
+
+$$
+\neg Q
+$$
+
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+Modus Tollens states:
+
+$$
+P\rightarrow Q,\quad\neg Q
+\quad\therefore\quad\neg P
+$$
+
+Since the model has not passed all required tests,
+
+$$
+\neg Q
+$$
+
+Therefore:
+
+$$
+\boxed{\neg P}
+$$
+
+The model cannot be considered deployed under the given rule.
+\end{frame}
+
+% --------------------------------------------------
+% Question 4
+% --------------------------------------------------
+
+\begin{frame}{Question 4}
+A program produces the value:
+
+$$
+f(n)=n^2+n
+$$
+
+for an integer input $n$.
+
+Prove that $f(n)$ is even for every integer $n$.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+We need to prove:
+
+$$
+n\in\mathbb Z\Rightarrow n^2+n\text{ is even}
+$$
+
+Factor the expression:
+
+$$
+n^2+n=n(n+1)
+$$
+
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+Among any two consecutive integers, one must be even.
+
+Therefore, either:
+
+$$
+2\mid n
+$$
+
+or:
+
+$$
+2\mid(n+1)
+$$
+
+Thus, the product
+
+$$
+n(n+1)
+$$
+
+must be even.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+Hence:
+
+$$
+\boxed{n^2+n\text{ is even}}
+$$
+
+for every integer $n$.
+\end{frame}
+
+% --------------------------------------------------
+% Question 5
+% --------------------------------------------------
+
+\begin{frame}{Question 5}
+A computing system represents a positive integer $n$ using its binary
+representation.
+
+Prove that if $n$ is odd, then its binary representation must end in $1$.
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+Every positive integer can be written as:
+
+$$
+n=2q+r
+$$
+
+where:
+
+$$
+r\in\{0,1\}
+$$
+
+The remainder $r$ determines the last binary digit.
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+If $n$ is odd, then division by $2$ gives remainder $1$.
+
+Therefore:
+
+$$
+n=2q+1
+$$
+
+Hence:
+
+$$
+r=1
+$$
+
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+In binary representation, the remainder obtained after division by $2$
+corresponds to the least significant bit.
+
+Therefore:
+
+$$
+\boxed{\text{An odd integer has a binary representation ending in }1}
+$$
+
+\end{frame}

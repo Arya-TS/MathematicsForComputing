@@ -1,0 +1,584 @@
+\section{Predicates and Quantifiers}
+
+% =========================================================
+% TOPIC TITLE
+% =========================================================
+
+\begin{frame}{Predicates and Quantifiers}
+
+\begin{center}
+\vspace{1cm}
+{\Huge\textbf{Predicates and Quantifiers}}
+
+\vspace{0.6cm}
+
+
+\end{center}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 1
+% =========================================================
+
+\begin{frame}{Predicates and Quantifiers -- Question 1}
+
+\begin{block}{Question}
+
+A university maintains a database of students enrolled in a
+programming course.
+
+Let
+
+$$
+P(x):\text{$x$ has submitted the programming assignment}.
+$$
+
+Consider the statement:
+
+$$
+\text{Every student has submitted the programming assignment.}
+$$
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Predicates and Quantifiers -- Question 1 (Continued)}
+
+\begin{block}{Question}
+
+\begin{enumerate}
+\item Express the statement using a universal quantifier.
+\item State what the predicate $P(x)$ represents.
+\end{enumerate}
+
+\end{block}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 1 -- PART 1
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 1: Answer}
+
+\begin{exampleblock}{Step 1: Identify the Predicate}
+
+The predicate is
+
+$$
+P(x):\text{$x$ has submitted the programming assignment}.
+$$
+
+Here, $x$ represents a student in the course.
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 1 -- PART 2
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 1: Answer (Continued)}
+
+\begin{exampleblock}{Step 2: Interpret the Predicate}
+
+The predicate becomes either true or false depending on whether a
+particular student has submitted the assignment.
+
+The statement says that this property is true for every student.
+
+Therefore, we use the universal quantifier.
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 1 -- PART 3
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 1: Answer (Conclusion)}
+
+\begin{exampleblock}{Step 3: Apply the Universal Quantifier}
+
+The universal quantifier is
+
+$$
+\forall x.
+$$
+
+Therefore,
+
+$$
+\boxed{\forall x\,P(x)}
+$$
+
+where $x$ ranges over all students enrolled in the course.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 2
+% =========================================================
+
+\begin{frame}{Predicates and Quantifiers -- Question 2}
+
+\begin{block}{Question}
+
+A cloud service monitors a collection of servers.
+
+Let
+
+$$
+P(x):\text{server $x$ is operational}.
+$$
+
+The administrator wants to verify whether at least one server is
+currently operational.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Predicates and Quantifiers -- Question 2 (Continued)}
+
+\begin{block}{Question}
+
+\begin{enumerate}
+\item Express this requirement using an existential quantifier.
+\item Explain what the resulting statement means.
+\end{enumerate}
+
+\end{block}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 2 -- PART 1
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 2: Answer}
+
+\begin{exampleblock}{Step 1: Identify the Requirement}
+
+The requirement is that \textbf{at least one} server is operational.
+
+The phrase ``at least one'' indicates the use of the existential
+quantifier.
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 2 -- PART 2
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 2: Answer (Continued)}
+
+\begin{exampleblock}{Step 2: Apply the Existential Quantifier}
+
+The predicate is
+
+$$
+P(x):\text{server $x$ is operational}.
+$$
+
+The existential quantifier is
+
+$$
+\exists x.
+$$
+
+Therefore,
+
+$$
+\boxed{\exists x\,P(x)}.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 2 -- PART 3
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 2: Answer (Conclusion)}
+
+\begin{exampleblock}{Interpretation}
+
+The statement
+
+$$
+\exists x\,P(x)
+$$
+
+means that there exists at least one server $x$ for which $P(x)$ is
+true.
+
+Hence,
+
+$$
+\boxed{\text{At least one server is operational.}}
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 3
+% =========================================================
+
+\begin{frame}{Predicates and Quantifiers -- Question 3}
+
+\begin{block}{Question}
+
+A security system checks every login attempt.
+
+Let
+
+$$
+P(x):\text{login attempt $x$ is from an authorized user},
+$$
+
+$$
+Q(x):\text{login attempt $x$ is successful}.
+$$
+
+The security policy states:
+
+$$
+\text{Every successful login is from an authorized user.}
+$$
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Predicates and Quantifiers -- Question 3 (Continued)}
+
+\begin{block}{Question}
+
+Express this policy using predicates, logical implication, and a
+universal quantifier.
+
+\end{block}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 3 -- PART 1
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 3: Answer}
+
+\begin{exampleblock}{Step 1: Translate the Policy}
+
+The statement says that a successful login must be from an authorized
+user.
+
+Therefore, for any login attempt $x$,
+
+$$
+Q(x)\rightarrow P(x).
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 3 -- PART 2
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 3: Answer (Continued)}
+
+\begin{exampleblock}{Step 2: Apply the Universal Quantifier}
+
+The policy applies to \textbf{every} login attempt.
+
+Therefore, we use
+
+$$
+\forall x.
+$$
+
+Combining the quantifier with the implication gives
+
+$$
+\boxed{\forall x\,[Q(x)\rightarrow P(x)]}.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 3 -- PART 3
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 3: Answer (Conclusion)}
+
+\begin{exampleblock}{Interpretation}
+
+The expression
+
+$$
+\forall x\,[Q(x)\rightarrow P(x)]
+$$
+
+means that for every login attempt, if the login is successful, then
+the user must be authorized.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 4
+% =========================================================
+
+\begin{frame}{Predicates and Quantifiers -- Question 4}
+
+\begin{block}{Question}
+
+A machine-learning dataset contains a collection of records.
+
+Let
+
+$$
+P(x):\text{record $x$ contains missing values},
+$$
+
+$$
+Q(x):\text{record $x$ is removed during preprocessing}.
+$$
+
+The preprocessing rule is:
+
+$$
+\text{Every record containing missing values is removed.}
+$$
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Predicates and Quantifiers -- Question 4 (Continued)}
+
+\begin{block}{Question}
+
+Express this rule using predicates, implication, and a universal
+quantifier.
+
+\end{block}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 4 -- PART 1
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 4: Answer}
+
+\begin{exampleblock}{Step 1: Identify the Logical Relationship}
+
+The rule states that whenever a record contains missing values, that
+record is removed.
+
+Therefore, for any record $x$,
+
+$$
+P(x)\rightarrow Q(x).
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 4 -- PART 2
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 4: Answer (Continued)}
+
+\begin{exampleblock}{Step 2: Apply the Universal Quantifier}
+
+The preprocessing rule applies to every record in the dataset.
+
+Therefore, we use
+
+$$
+\forall x.
+$$
+
+Combining the quantifier with the implication gives
+
+$$
+\boxed{\forall x\,[P(x)\rightarrow Q(x)]}.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 4 -- PART 3
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 4: Answer (Conclusion)}
+
+\begin{exampleblock}{Interpretation}
+
+The expression
+
+$$
+\forall x\,[P(x)\rightarrow Q(x)]
+$$
+
+means that for every record $x$, if $x$ contains missing values, then
+$x$ is removed during preprocessing.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 5
+% =========================================================
+
+\begin{frame}{Predicates and Quantifiers -- Question 5}
+
+\begin{block}{Question}
+
+A software testing system examines a set of test cases.
+
+Let
+
+$$
+P(x):\text{test case $x$ exposes a software defect}.
+$$
+
+The testing report states:
+
+$$
+\text{No test case exposes a software defect.}
+$$
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Predicates and Quantifiers -- Question 5 (Continued)}
+
+\begin{block}{Question}
+
+Express this statement using a universal quantifier and predicate
+negation.
+
+\end{block}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 5 -- PART 1
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 5: Answer}
+
+\begin{exampleblock}{Step 1: Interpret the Statement}
+
+The statement says that for every test case, the predicate $P(x)$ is
+false.
+
+Therefore, we can express the statement as
+
+$$
+\forall x\,\neg P(x).
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 5 -- PART 2
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 5: Answer (Continued)}
+
+\begin{exampleblock}{Step 2: Interpret the Expression}
+
+The expression
+
+$$
+\forall x\,\neg P(x)
+$$
+
+means that every test case fails to satisfy the predicate $P(x)$.
+
+In other words, no test case exposes a software defect.
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 5 -- PART 3
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 5: Answer (Continued)}
+
+\begin{exampleblock}{Step 3: Equivalent Form}
+
+The statement can also be expressed by saying that there does not
+exist a test case for which $P(x)$ is true.
+
+Therefore,
+
+$$
+\boxed{\forall x\,\neg P(x)
+\equiv
+\neg\exists x\,P(x)}
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 5 -- PART 4
+% ---------------------------------------------------------
+
+\begin{frame}{Predicates and Quantifiers -- Question 5: Answer (Conclusion)}
+
+\begin{exampleblock}{Final Interpretation}
+
+Both expressions represent the same statement:
+
+$$
+\forall x\,\neg P(x)
+$$
+
+and
+
+$$
+\neg\exists x\,P(x).
+$$
+
+Hence,
+
+$$
+\boxed{\text{No test case exposes a software defect.}}
+$$
+
+\end{exampleblock}
+
+\end{frame}

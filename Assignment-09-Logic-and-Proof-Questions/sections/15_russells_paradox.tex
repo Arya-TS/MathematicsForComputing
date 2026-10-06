@@ -1,0 +1,320 @@
+\section{Russell's Paradox}
+
+\begin{frame}
+\centering
+\Huge\textbf{Russell's Paradox}
+\end{frame}
+
+% --------------------------------------------------
+% Question 1
+% --------------------------------------------------
+
+\begin{frame}{Question 1}
+Consider the collection
+
+$$
+R=\{x\mid x\notin x\}.
+$$
+
+In other words, $R$ is intended to contain exactly those sets that do not contain themselves.
+
+\textbf{Question:} Determine whether
+
+$$
+R\in R
+$$
+
+can consistently be true or false.
+\end{frame}
+
+\begin{frame}{Answer 1}
+Assume first that
+
+$$
+R\in R.
+$$
+
+By the definition of $R$, every element of $R$ must satisfy
+
+$$
+x\notin x.
+$$
+
+Therefore,
+
+$$
+R\notin R.
+$$
+
+This contradicts the assumption
+
+$$
+R\in R.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 1}
+Now assume
+
+$$
+R\notin R.
+$$
+
+Since $R$ satisfies the defining condition
+
+$$
+x\notin x,
+$$
+
+it should therefore belong to $R$.
+
+Hence,
+$$
+R\in R.
+$$
+
+This again produces a contradiction.
+
+Therefore, neither assumption gives a consistent result.
+
+$$
+\boxed{\text{The definition of }R\text{ leads to a contradiction.}}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 2
+% --------------------------------------------------
+
+\begin{frame}{Question 2}
+A hypothetical programming language allows a collection to contain any object, including itself.
+
+Define
+
+$$
+S=\{x\mid x\text{ is a collection that does not contain itself}\}.
+$$
+
+\textbf{Question:} Explain why allowing unrestricted collection formation creates a logical problem when considering whether $S$ contains itself.
+\end{frame}
+
+\begin{frame}{Answer 2}
+Suppose
+
+$$
+S\in S.
+$$
+
+By the definition of $S$, an element can belong to $S$ only if it does not contain itself.
+
+Therefore,
+
+$$
+S\notin S.
+$$
+
+This contradicts the assumption.
+
+Conversely, suppose
+$$
+S\notin S.
+$$
+
+Then $S$ satisfies the defining condition for membership in $S$, so
+$$
+S\in S.
+$$
+
+Thus, both possibilities lead to contradiction.
+\end{frame}
+
+\begin{frame}{Answer 2}
+The problem arises because the language permits a collection to be defined using a condition that refers to its own membership.
+
+The resulting condition is self-referential:
+
+$$
+S\in S
+\iff
+S\notin S.
+$$
+
+Therefore, unrestricted collection formation cannot provide a consistent set corresponding to this definition.
+
+$$
+\boxed{\text{Unrestricted self-referential set formation is problematic.}}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 3
+% --------------------------------------------------
+
+\begin{frame}{Question 3}
+A database system attempts to create a set containing all database tables that do not contain themselves as a table.
+
+Let
+
+$$
+T=\{x\mid x\notin x\}.
+$$
+
+The database designer claims that $T$ can simply be treated as an ordinary set.
+
+\textbf{Question:} Use Russell's paradox to show why this claim is problematic.
+\end{frame}
+
+\begin{frame}{Answer 3}
+Consider whether
+$$
+T\in T.
+$$
+If
+$$
+T\in T,
+$$
+
+then by the definition of $T$,
+$$
+T\notin T.
+$$
+Contradiction.
+
+If instead
+$$
+T\notin T,
+$$
+
+then $T$ satisfies the condition required for membership in $T$.
+
+Therefore,
+$$
+T\in T.
+$$
+
+Again, contradiction.
+\end{frame}
+
+\begin{frame}{Answer 3}
+Therefore, the database designer cannot consistently treat $T$ as an ordinary set satisfying the given definition.
+
+The contradiction comes from allowing the collection to refer to its own membership.
+
+$$
+\boxed{
+T\in T\iff T\notin T
+}
+$$
+
+Thus, the proposed definition is not a valid unrestricted set construction.
+\end{frame}
+
+% --------------------------------------------------
+% Question 4
+% --------------------------------------------------
+
+\begin{frame}{Question 4}
+Consider a software repository containing collections of objects.
+
+Suppose a rule attempts to create
+
+$$
+R=\{\text{all collections that do not contain themselves}\}.
+$$
+
+\textbf{Question:} Is the contradiction caused by the particular objects stored in the collections, or by the definition of $R$ itself? Justify your answer using Russell's paradox.
+\end{frame}
+
+\begin{frame}{Answer 4}
+The contradiction does not depend on the particular objects stored in the collections.
+
+It arises from the definition
+
+$$
+R=\{x\mid x\notin x\}.
+$$
+
+Membership of $R$ is determined by whether an object contains itself.
+
+Therefore, the definition directly creates the condition
+
+$$
+R\in R
+\iff
+R\notin R.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 4}
+Thus, changing the objects contained in the collections does not remove the fundamental contradiction.
+
+The issue is the unrestricted self-reference in the definition.
+
+$$
+\boxed{\text{The contradiction is caused by the definition of }R.}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 5
+% --------------------------------------------------
+
+\begin{frame}{Question 5}
+A programmer proposes the following rule for a collection type:
+
+\textit{Create a collection containing exactly those collections that do not contain themselves.}
+
+\textbf{Question:} Explain why a type system that permits this construction without restrictions would be logically inconsistent.
+\end{frame}
+
+\begin{frame}{Answer 5}
+Let the proposed collection be
+
+$$
+R=\{x\mid x\notin x\}.
+$$
+
+There are two possibilities.
+
+If
+$$
+R\in R,
+$$
+
+then the definition requires
+$$
+R\notin R.
+$$
+
+If
+$$
+R\notin R,
+$$
+then $R$ satisfies the condition for membership, giving
+$$
+R\in R.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 5}
+Thus,
+
+$$
+R\in R\iff R\notin R.
+$$
+
+Both possible membership assignments lead to contradiction.
+
+Therefore, a logical system or type system cannot permit unrestricted construction of such a collection while remaining consistent.
+
+$$
+\boxed{\text{The self-referential construction must be restricted.}}
+$$
+
+\end{frame}

@@ -1,0 +1,417 @@
+\begin{frame}{Truth Tables}
+\begin{center}
+\vspace{1.5cm}
+{\Huge\textbf{Truth Tables}}
+\end{center}
+\end{frame}
+
+% --------------------------------------------------
+% Question 1
+% --------------------------------------------------
+
+\begin{frame}{Question 1}
+A software system grants access only when a user enters a valid password
+and successfully completes two-factor authentication.
+
+Let:
+
+$$
+P = \text{Valid password}
+$$
+
+$$
+Q = \text{Two-factor authentication successful}
+$$
+
+Represent the access condition using a logical expression and construct its
+truth table. Identify the conditions under which access is granted.
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+The system requires both conditions to be satisfied.
+
+Therefore, the logical expression is:
+
+$$
+P \land Q
+$$
+
+There are four possible combinations of truth values for $P$ and $Q$.
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+The truth table is:
+
+$$
+\begin{matrix}
+P & Q & P\land Q \\
+T & T & T \\
+T & F & F \\
+F & T & F \\
+F & F & F
+\end{matrix}
+$$
+
+The expression is true only when both $P$ and $Q$ are true.
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+Therefore, access is granted only when:
+
+$$
+P=T,\qquad Q=T
+$$
+
+This means:
+
+\begin{center}
+\textit{The password is valid and two-factor authentication is successful.}
+\end{center}
+
+For every other combination, access is denied.
+\end{frame}
+
+% --------------------------------------------------
+% Question 2
+% --------------------------------------------------
+
+\begin{frame}{Question 2}
+A backup system raises an alert when either the primary storage device
+fails or the backup storage device fails.
+
+Let:
+
+$$
+P = \text{Primary storage fails}
+$$
+
+$$
+Q = \text{Backup storage fails}
+$$
+
+Represent the alert condition using a logical expression and construct its
+truth table. Determine when the alert is not raised.
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+The alert is raised when at least one of the two storage devices fails.
+
+Therefore, the logical expression is:
+
+$$
+P \lor Q
+$$
+
+There are four possible combinations of truth values for $P$ and $Q$.
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+The truth table is:
+
+$$
+\begin{matrix}
+P & Q & P\lor Q \\
+T & T & T \\
+T & F & T \\
+F & T & T \\
+F & F & F
+\end{matrix}
+$$
+
+The expression is false only when both $P$ and $Q$ are false.
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+Therefore, the alert is not raised only when:
+
+$$
+P=F,\qquad Q=F
+$$
+
+This means:
+
+\begin{center}
+\textit{Neither the primary nor the backup storage device has failed.}
+\end{center}
+\end{frame}
+
+% --------------------------------------------------
+% Question 3
+% --------------------------------------------------
+
+\begin{frame}{Question 3}
+An intrusion detection system follows the rule:
+
+\begin{center}
+\textit{If suspicious activity is detected, the security team must be notified.}
+\end{center}
+
+Let:
+
+$$
+P = \text{Suspicious activity is detected}
+$$
+
+$$
+Q = \text{Security team is notified}
+$$
+
+Represent the rule using an implication and construct its truth table.
+Identify the condition that represents a violation of the rule.
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+The rule has the form:
+
+\begin{center}
+\textit{If $P$, then $Q$.}
+\end{center}
+
+Therefore, the logical expression is:
+
+$$
+P \rightarrow Q
+$$
+
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+The truth table is:
+
+$$
+\begin{matrix}
+P & Q & P\rightarrow Q \\
+T & T & T \\
+T & F & F \\
+F & T & T \\
+F & F & T
+\end{matrix}
+$$
+
+An implication is false only when the antecedent is true and the
+consequent is false.
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+The rule is violated when:
+
+$$
+P=T,\qquad Q=F
+$$
+
+Therefore:
+
+\begin{center}
+\textit{Suspicious activity is detected, but the security team is not notified.}
+\end{center}
+
+This is the only combination that makes the implication false.
+\end{frame}
+
+% --------------------------------------------------
+% Question 4
+% --------------------------------------------------
+
+\begin{frame}{Question 4}
+A cloud service considers a server healthy when both its CPU usage is within
+the permitted range and its memory usage is within the permitted range.
+
+However, an emergency override can also declare the server healthy.
+\end{frame}
+
+\begin{frame}{Question 4}
+Let:
+
+$$
+P = \text{CPU usage is within the permitted range}
+$$
+
+$$
+Q = \text{Memory usage is within the permitted range}
+$$
+
+$$
+R = \text{Emergency override is active}
+$$
+
+The health condition is:
+
+$$
+(P \land Q) \lor R
+$$
+
+Construct the complete truth table and determine how many combinations
+result in the server being considered healthy.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+The logical expression is:
+
+$$
+(P \land Q) \lor R
+$$
+
+There are three propositions.
+
+Therefore, the number of possible combinations is:
+
+$$
+2^3=8
+$$
+
+So, the complete truth table contains eight rows.
+\end{frame}
+
+
+\begin{frame}{Question 4 -- Answer}
+The truth table is:
+
+$$
+\begin{matrix}
+P & Q & R & P\land Q & (P\land Q)\lor R \\
+T & T & T & T & T \\
+T & T & F & T & T \\
+T & F & T & F & T \\
+T & F & F & F & F \\
+F & T & T & F & T \\
+F & T & F & F & F \\
+F & F & T & F & T \\
+F & F & F & F & F
+\end{matrix}
+$$
+
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+The final column is true in four cases.
+
+Therefore:
+
+$$
+\boxed{4\text{ combinations}}
+$$
+
+result in the server being considered healthy.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+The server is considered healthy when either:
+
+\begin{itemize}
+\item both CPU and memory conditions are satisfied, or
+\item the emergency override is active.
+\end{itemize}
+
+The truth table examines every possible combination of the three
+conditions.
+\end{frame}
+
+% --------------------------------------------------
+% Question 5
+% --------------------------------------------------
+
+\begin{frame}{Question 5}
+An autonomous vehicle follows a safety policy:
+
+\begin{center}
+\textit{If an obstacle is detected, then the vehicle must either brake or
+change direction.}
+\end{center}
+
+Let:
+
+$$
+P = \text{Obstacle is detected}
+$$
+
+$$
+Q = \text{Vehicle brakes}
+$$
+
+$$
+R = \text{Vehicle changes direction}
+$$
+
+Represent the policy using a logical expression and construct its complete
+truth table. Identify all situations in which the safety policy is violated.
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+The vehicle must brake or change direction whenever an obstacle is detected.
+
+Therefore, the consequent is:
+
+$$
+Q \lor R
+$$
+
+The complete policy is:
+
+$$
+P \rightarrow (Q \lor R)
+$$
+
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+Since there are three propositions, the truth table contains:
+
+$$
+2^3=8
+$$
+
+possible combinations.
+
+We first evaluate:
+
+$$
+Q\lor R
+$$
+
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+The complete truth table is:
+
+$$
+\begin{matrix}
+P & Q & R & Q\lor R & P\rightarrow(Q\lor R) \\
+T & T & T & T & T \\
+T & T & F & T & T \\
+T & F & T & T & T \\
+T & F & F & F & F \\
+F & T & T & T & T \\
+F & T & F & T & T \\
+F & F & T & T & T \\
+F & F & F & F & T
+\end{matrix}
+$$
+
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+The policy is violated only when:
+
+$$
+P=T,\qquad Q=F,\qquad R=F
+$$
+
+In this situation:
+
+\begin{center}
+\textit{An obstacle is detected, but the vehicle neither brakes nor changes
+direction.}
+\end{center}
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+Therefore, the safety policy is violated in exactly one of the eight
+possible situations.
+
+$$
+\boxed{P=T,\;Q=F,\;R=F}
+$$
+
+This shows how a truth table can systematically identify unsafe
+combinations of system conditions.
+\end{frame}

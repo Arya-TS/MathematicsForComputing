@@ -1,0 +1,265 @@
+\section{Well-Ordering Principle}
+
+\begin{frame}
+\centering
+\Huge\textbf{Well-Ordering Principle}
+\end{frame}
+
+% --------------------------------------------------
+% Question 1
+% --------------------------------------------------
+
+\begin{frame}{Question 1}
+A software system assigns positive integer IDs to tasks.
+
+Suppose a collection of pending tasks is represented by a non-empty subset
+
+$$
+S\subseteq\mathbb{Z}^+.
+$$
+
+\textbf{Question:} What property guarantees that there is a task with the smallest ID?
+\end{frame}
+
+\begin{frame}{Answer 1}
+The required property is the \textbf{Well-Ordering Principle}.
+
+It states that every non-empty subset of the positive integers contains a least element.
+
+Since
+
+$$
+S\subseteq\mathbb{Z}^+
+$$
+
+and $S$ is non-empty,
+
+$$
+\boxed{\exists m\in S\text{ such that }m\leq x
+\text{ for every }x\in S.}
+$$
+
+Therefore, the pending tasks have a smallest ID.
+\end{frame}
+
+% --------------------------------------------------
+% Question 2
+% --------------------------------------------------
+
+\begin{frame}{Question 2}
+A distributed system records retry attempts using positive integer numbers.
+
+Let $S$ be the set of retry numbers for which a particular event succeeds.
+
+Suppose at least one successful retry exists.
+
+\textbf{Question:} Explain why there must be a first successful retry.
+\end{frame}
+
+\begin{frame}{Answer 2}
+Since at least one successful retry exists,
+
+$$
+S\neq\varnothing.
+$$
+
+Also,
+
+$$
+S\subseteq\mathbb{Z}^+.
+$$
+
+By the Well-Ordering Principle, every non-empty subset of positive integers has a least element.
+
+Therefore, there exists
+$$
+m\in S
+$$
+
+such that
+$$
+m\leq x
+\qquad\forall x\in S.
+$$
+Hence, $m$ is the first successful retry.
+\end{frame}
+
+% --------------------------------------------------
+% Question 3
+% --------------------------------------------------
+
+\begin{frame}{Question 3}
+Consider the set
+
+$$
+S=\{n\in\mathbb{Z}^+\mid n^2>20\}.
+$$
+
+A program searches for the smallest positive integer satisfying the condition.
+
+\textbf{Question:} Use the Well-Ordering Principle to justify why a smallest valid value exists.
+\end{frame}
+
+\begin{frame}{Answer 3}
+First, observe that $S$ is non-empty because
+
+$$
+5^2=25>20.
+$$
+
+Therefore,
+
+$$
+5\in S.
+$$
+
+Also,
+
+$$
+S\subseteq\mathbb{Z}^+.
+$$
+
+By the Well-Ordering Principle, $S$ must contain a least element.
+\end{frame}
+
+\begin{frame}{Answer 3}
+We can identify the least element directly.
+
+For positive integers less than $5$,
+
+$$
+1^2=1,\quad
+2^2=4,\quad
+3^2=9,\quad
+4^2=16.
+$$
+
+None is greater than $20$.
+
+But
+
+$$
+5^2=25>20.
+$$
+
+Therefore,
+
+$$
+\boxed{\min(S)=5}.
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 4
+% --------------------------------------------------
+
+\begin{frame}{Question 4}
+A programmer claims:
+
+\textit{Every non-empty subset of the integers has a smallest element.}
+
+\textbf{Question:} Is this statement true? If not, provide a counterexample and explain why the Well-Ordering Principle does not apply.
+\end{frame}
+
+\begin{frame}{Answer 4}
+The statement is false for arbitrary subsets of the integers.
+
+Consider
+
+$$
+S=\{\ldots,-3,-2,-1\}.
+$$
+
+This set is non-empty, but it has no smallest element.
+
+For any
+
+$$
+n\in S,
+$$
+
+the integer
+$$
+n-1
+$$
+
+also belongs to $S$ and satisfies
+$$
+n-1<n.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 4}
+The Well-Ordering Principle applies specifically to non-empty subsets of the positive integers.
+
+It does not state that every non-empty subset of $\mathbb{Z}$ has a least element.
+
+Therefore,
+
+$$
+\boxed{\text{The programmer's claim is false.}}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 5
+% --------------------------------------------------
+
+\begin{frame}{Question 5}
+A search algorithm examines positive integer candidate values and succeeds for at least one candidate.
+
+Let $S$ be the set of successful candidate values.
+
+The algorithm always chooses the smallest successful candidate.
+
+\textbf{Question:} Explain mathematically why this strategy is well-defined.
+\end{frame}
+
+\begin{frame}{Answer 5}
+Since the algorithm succeeds for at least one candidate,
+
+$$
+S\neq\varnothing.
+$$
+
+Every candidate is a positive integer, so
+
+$$
+S\subseteq\mathbb{Z}^+.
+$$
+
+By the Well-Ordering Principle, $S$ contains a least element.
+
+Therefore,
+
+$$
+\exists m\in S
+$$
+
+such that
+
+$$
+m\leq x
+\qquad\forall x\in S.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 5}
+Hence, the instruction
+
+\textit{choose the smallest successful candidate}
+
+is mathematically well-defined.
+
+The algorithm can select
+
+$$
+\boxed{m=\min(S)}.
+$$
+
+The existence of this minimum follows from the Well-Ordering Principle.
+\end{frame}

@@ -1,0 +1,481 @@
+\section{Induction}
+
+\begin{frame}
+\centering
+\Huge\textbf{Induction}
+\end{frame}
+
+% --------------------------------------------------
+% Question 1
+% --------------------------------------------------
+
+\begin{frame}{Question 1}
+A program processes $n$ records. The number of elementary processing steps is modeled by
+
+$$
+T(n)=1+2+\cdots+n.
+$$
+
+A developer claims that
+
+$$
+T(n)=\frac{n(n+1)}{2}
+$$
+
+for every positive integer $n$.
+
+\textbf{Question:} Prove the claim using mathematical induction.
+\end{frame}
+
+\begin{frame}{Answer 1}
+Define the statement
+
+$$
+P(n):\quad
+1+2+\cdots+n=\frac{n(n+1)}{2}.
+$$
+
+\textbf{Base case:} $n=1$
+
+$$
+1=\frac{1(1+1)}{2}=1.
+$$
+
+Therefore, $P(1)$ is true.
+\end{frame}
+
+\begin{frame}{Answer 1}
+\textbf{Inductive hypothesis:}
+
+Assume $P(k)$ is true:
+
+$$
+1+2+\cdots+k
+=
+\frac{k(k+1)}{2}.
+$$
+
+We must prove $P(k+1)$:
+
+$$
+1+2+\cdots+k+(k+1)
+=
+\frac{(k+1)(k+2)}{2}.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 1}
+Using the inductive hypothesis,
+
+$$
+1+2+\cdots+k+(k+1)
+$$
+$$
+=
+\frac{k(k+1)}{2}+(k+1)
+$$
+$$
+=
+\frac{k(k+1)+2(k+1)}{2}
+$$
+$$
+=
+\frac{(k+1)(k+2)}{2}.
+$$
+Therefore, $P(k+1)$ is true.
+Hence,
+$$
+\boxed{
+1+2+\cdots+n=\frac{n(n+1)}{2}
+}
+$$
+
+for every positive integer $n$.
+\end{frame}
+
+% --------------------------------------------------
+% Question 2
+% --------------------------------------------------
+
+\begin{frame}{Question 2}
+A data structure stores a sequence of nodes. Suppose the number of
+operations required to process the first $n$ nodes is
+
+$$
+T(n)=1+3+5+\cdots+(2n-1).
+$$
+
+\textbf{Question:} Prove using mathematical induction that
+
+$$
+T(n)=n^2
+$$
+
+for every positive integer $n$.
+\end{frame}
+
+\begin{frame}{Answer 2}
+Define
+
+$$
+P(n):\quad
+1+3+5+\cdots+(2n-1)=n^2.
+$$
+
+\textbf{Base case:} $n=1$
+
+$$
+1=1^2.
+$$
+
+Therefore, $P(1)$ is true.
+\end{frame}
+
+\begin{frame}{Answer 2}
+\textbf{Inductive hypothesis:}
+
+Assume
+
+$$
+1+3+5+\cdots+(2k-1)=k^2.
+$$
+
+We must prove
+
+$$
+1+3+5+\cdots+(2k-1)+(2k+1)
+=
+(k+1)^2.
+$$
+
+Using the hypothesis,
+
+$$
+k^2+(2k+1)
+=
+k^2+2k+1
+=
+(k+1)^2.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 2}
+Therefore,
+
+$$
+1+3+5+\cdots+(2k+1)
+=
+(k+1)^2.
+$$
+
+Thus, $P(k+1)$ is true.
+
+Hence, by mathematical induction,
+
+$$
+\boxed{
+1+3+5+\cdots+(2n-1)=n^2
+}
+$$
+
+for every positive integer $n$.
+\end{frame}
+
+% --------------------------------------------------
+% Question 3
+% --------------------------------------------------
+
+\begin{frame}{Question 3}
+A data structure contains a binary tree with $n$ levels. Suppose the maximum
+number of nodes at level $i$ is
+
+$$
+2^{i-1}.
+$$
+
+\textbf{Question:} Prove that the maximum total number of nodes in a binary
+tree with $n$ levels is
+
+$$
+2^n-1.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 3}
+Let
+
+$$
+P(n):\quad
+1+2+2^2+\cdots+2^{n-1}=2^n-1.
+$$
+
+\textbf{Base case:} $n=1$
+
+$$
+1=2^1-1=1.
+$$
+
+Therefore, $P(1)$ is true.
+\end{frame}
+
+\begin{frame}{Answer 3}
+Assume
+
+$$
+1+2+\cdots+2^{k-1}=2^k-1.
+$$
+
+For $k+1$ levels,
+
+$$
+1+2+\cdots+2^{k-1}+2^k.
+$$
+
+Using the hypothesis,
+
+$$
+=(2^k-1)+2^k
+$$
+
+$$
+=2^{k+1}-1.
+$$
+
+Therefore, $P(k+1)$ is true.
+\end{frame}
+
+\begin{frame}{Answer 3}
+Hence, by mathematical induction,
+
+$$
+\boxed{
+1+2+2^2+\cdots+2^{n-1}=2^n-1
+}
+$$
+
+Therefore, the maximum number of nodes in a binary tree with $n$ levels is
+
+$$
+\boxed{2^n-1}.
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 4
+% --------------------------------------------------
+
+\begin{frame}{Question 4}
+A university maintains three sets of students:
+
+$$
+A=\text{students enrolled in Artificial Intelligence},
+$$
+
+$$
+B=\text{students enrolled in Data Science},
+$$
+
+and
+
+$$
+C=\text{students enrolled in Cybersecurity}.
+$$
+
+To avoid counting the same student multiple times, the university uses the
+inclusion--exclusion principle.
+
+\textbf{Question:} Prove the three-set inclusion--exclusion formula using
+mathematical induction as a step toward the general principle.
+\end{frame}
+
+\begin{frame}{Answer 4}
+For three sets, the inclusion--exclusion formula is
+
+$$
+|A\cup B\cup C|
+=
+|A|+|B|+|C|
+-|A\cap B|-|A\cap C|-|B\cap C|
++|A\cap B\cap C|.
+$$
+
+For the general principle, define
+
+$$
+P(n):
+\left|
+\bigcup_{i=1}^{n}A_i
+\right|
+=
+\sum_i|A_i|
+-\sum_{i<j}|A_i\cap A_j|
++\sum_{i<j<k}|A_i\cap A_j\cap A_k|
+-\cdots.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 4}
+The formula follows by counting each element according to the number of
+sets containing it.
+
+Suppose an element belongs to exactly $r$ of the sets.
+
+It is counted:
+$$
+\binom{r}{1}
+$$
+
+times in the single-set terms,
+$$
+\binom{r}{2}
+$$
+
+times in the pairwise terms, and so on.
+
+Therefore, its total contribution is
+$$
+\binom{r}{1}
+-\binom{r}{2}
++\binom{r}{3}
+-\cdots
++(-1)^{r+1}\binom{r}{r}.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 4}
+Using the binomial identity
+
+$$
+(1-1)^r
+=
+\binom{r}{0}
+-\binom{r}{1}
++\binom{r}{2}
+-\cdots
++(-1)^r\binom{r}{r},
+$$
+
+we obtain
+
+$$
+\binom{r}{1}
+-\binom{r}{2}
++\cdots
++(-1)^{r+1}\binom{r}{r}
+=1.
+$$
+
+Thus, every element belonging to the union is counted exactly once.
+
+Hence,
+
+$$
+\boxed{
+\left|\bigcup_{i=1}^{n}A_i\right|
+=
+\sum_{k=1}^{n}
+(-1)^{k+1}
+\sum_{1\le i_1<\cdots<i_k\le n}
+|A_{i_1}\cap\cdots\cap A_{i_k}|
+}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 5
+% --------------------------------------------------
+
+\begin{frame}{Question 5}
+Consider a recursive algorithm defined by
+
+$$
+F(1)=1
+$$
+
+and
+
+$$
+F(n)=F(n-1)+2
+\qquad(n>1).
+$$
+
+A programmer claims that
+
+$$
+F(n)=2n-1.
+$$
+
+\textbf{Question:} Prove the claim using mathematical induction.
+\end{frame}
+
+\begin{frame}{Answer 5}
+Let
+
+$$
+P(n):\quad F(n)=2n-1.
+$$
+
+\textbf{Base case:}
+
+$$
+F(1)=1
+$$
+
+and
+
+$$
+2(1)-1=1.
+$$
+
+Therefore, $P(1)$ is true.
+\end{frame}
+
+\begin{frame}{Answer 5}
+Assume
+
+$$
+F(k)=2k-1.
+$$
+
+Using the recursive definition,
+
+$$
+F(k+1)=F(k)+2.
+$$
+
+By the inductive hypothesis,
+
+$$
+F(k+1)
+=
+(2k-1)+2
+=
+2k+1.
+$$
+
+Therefore,
+
+$$
+F(k+1)=2(k+1)-1.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 5}
+Thus, $P(k+1)$ is true.
+
+Since the base case is true and the inductive step is valid,
+
+$$
+\boxed{F(n)=2n-1}
+$$
+
+for every positive integer $n$.
+\end{frame}

@@ -1,0 +1,430 @@
+\begin{frame}{Satisfiability}
+\begin{center}
+\vspace{1.5cm}
+{\Huge\textbf{Satisfiability}}
+\end{center}
+\end{frame}
+
+% --------------------------------------------------
+% Question 1
+% --------------------------------------------------
+
+\begin{frame}{Question 1}
+A software system has the following access rules:
+
+\begin{itemize}
+\item A user can access the system if the password is valid.
+\item A user cannot access the system if the password is invalid.
+\end{itemize}
+
+Let:
+
+$$
+P = \text{Password is valid}
+$$
+
+$$
+Q = \text{User can access the system}
+$$
+
+Determine whether the following set of conditions is satisfiable:
+
+$$
+P \rightarrow Q
+$$
+
+$$
+\neg P \rightarrow \neg Q
+$$
+
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+Consider the possible values of $P$.
+
+If:
+
+$$
+P=T
+$$
+
+then the first condition requires:
+
+$$
+Q=T
+$$
+
+If:
+
+$$
+P=F
+$$
+
+then the second condition requires:
+
+$$
+Q=F
+$$
+
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+A satisfying assignment is therefore:
+
+$$
+P=T,\qquad Q=T
+$$
+
+Both conditions are true:
+
+$$
+T\rightarrow T = T
+$$
+
+$$
+F\rightarrow F = T
+$$
+
+Therefore:
+
+$$
+\boxed{\text{The set of conditions is satisfiable.}}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 2
+% --------------------------------------------------
+
+\begin{frame}{Question 2}
+A database system has the following requirements:
+
+\begin{itemize}
+\item A transaction must be approved before execution.
+\item The transaction is executed.
+\item The transaction is not approved.
+\end{itemize}
+
+Let:
+
+$$
+P = \text{Transaction is approved}
+$$
+
+$$
+Q = \text{Transaction is executed}
+$$
+
+Determine whether the following conditions are satisfiable:
+$$
+P\rightarrow Q
+$$
+$$
+Q
+$$
+$$
+\neg P
+$$
+
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+The conditions require:
+
+$$
+Q=T
+$$
+
+and:
+
+$$
+P=F
+$$
+
+Substituting these values into the implication gives:
+
+$$
+F\rightarrow T = T
+$$
+
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+Therefore, the assignment
+
+$$
+P=F,\qquad Q=T
+$$
+
+satisfies all three conditions.
+
+Thus:
+
+$$
+\boxed{\text{The conditions are satisfiable.}}
+$$
+
+The implication does not require $P$ to be true whenever $Q$ is true.
+\end{frame}
+
+% --------------------------------------------------
+% Question 3
+% --------------------------------------------------
+
+\begin{frame}{Question 3}
+An authentication system has the following rules:
+
+\begin{itemize}
+\item If a user is authenticated, access is granted.
+\item Access is granted.
+\item The user is not authenticated.
+\end{itemize}
+
+Let:
+
+$$
+P = \text{User is authenticated}
+$$
+
+$$
+Q = \text{Access is granted}
+$$
+
+Determine whether the following set of statements is satisfiable:
+$$
+P\rightarrow Q
+$$
+$$
+Q
+$$
+$$
+\neg P
+$$
+
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+The conditions require:
+
+$$
+Q=T
+$$
+
+and:
+
+$$
+P=F
+$$
+
+The implication becomes:
+
+$$
+F\rightarrow T=T
+$$
+
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+Therefore:
+
+$$
+P=F,\qquad Q=T
+$$
+
+makes all the statements true.
+
+Hence:
+
+$$
+\boxed{\text{The statements are satisfiable.}}
+$$
+
+This example shows that an implication alone does not allow us to infer
+that its antecedent is true.
+\end{frame}
+
+% --------------------------------------------------
+% Question 4
+% --------------------------------------------------
+
+\begin{frame}{Question 4}
+A cloud service has the following requirements:
+
+\begin{itemize}
+\item A server is operational if and only if it is connected to the
+network.
+\item The server is operational.
+\item The server is not connected to the network.
+\end{itemize}
+
+Let:
+
+$$
+P = \text{Server is operational}
+$$
+
+$$
+Q = \text{Server is connected to the network}
+$$
+
+Determine whether the requirements are satisfiable.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+The first requirement is:
+
+$$
+P\leftrightarrow Q
+$$
+
+The other requirements state:
+
+$$
+P=T
+$$
+
+and:
+
+$$
+Q=F
+$$
+
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+Substituting these values into the biconditional gives:
+
+$$
+T\leftrightarrow F=F
+$$
+
+Therefore, the first requirement is violated.
+
+There is no assignment that can satisfy all three requirements.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+Hence:
+
+$$
+\boxed{\text{The requirements are unsatisfiable.}}
+$$
+
+The contradiction occurs because the biconditional requires $P$ and $Q$
+to have the same truth value.
+\end{frame}
+
+% --------------------------------------------------
+% Question 5
+% --------------------------------------------------
+
+\begin{frame}{Question 5}
+A machine-learning deployment system uses the following policy:
+
+\begin{itemize}
+\item A model is deployed only if it passes testing.
+\item A model is deployed only if its accuracy is at least $90\%$.
+\item The model is deployed.
+\item The model does not pass testing.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Question 5}
+
+Let:
+$$
+P = \text{Model passes testing}
+$$
+$$
+Q = \text{Model accuracy is at least }90\%
+$$
+$$
+R = \text{Model is deployed}
+$$
+
+Determine whether the following set of conditions is satisfiable:
+
+$$
+P\rightarrow R
+$$
+$$
+Q\rightarrow R
+$$
+$$
+R
+$$
+
+$$
+\neg P
+$$
+
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+The given conditions require:
+
+$$
+R=T
+$$
+
+and:
+
+$$
+P=F
+$$
+
+Consider the first implication:
+
+$$
+P\rightarrow R
+$$
+
+Substituting the values gives:
+
+$$
+F\rightarrow T=T
+$$
+
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+The second implication is:
+
+$$
+Q\rightarrow R
+$$
+
+Since $R=T$, this implication is true regardless of the value of $Q$.
+
+For example:
+
+$$
+Q=T
+$$
+
+gives:
+
+$$
+T\rightarrow T=T
+$$
+
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+A satisfying assignment is:
+
+$$
+P=F,\qquad Q=T,\qquad R=T
+$$
+
+All four conditions are satisfied.
+
+Therefore:
+
+$$
+\boxed{\text{The set of conditions is satisfiable.}}
+$$
+
+\end{frame}

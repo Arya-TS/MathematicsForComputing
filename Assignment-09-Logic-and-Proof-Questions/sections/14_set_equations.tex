@@ -1,0 +1,421 @@
+\section{Proving Set Equations}
+
+\begin{frame}
+\centering
+\Huge\textbf{Proving Set Equations}
+\end{frame}
+
+% --------------------------------------------------
+% Question 1
+% --------------------------------------------------
+
+\begin{frame}{Question 1}
+A data-processing system classifies records using two sets $A$ and $B$.
+
+A developer claims that processing records belonging to both sets is equivalent to first finding all records in $A$ and then removing those outside $B$.
+
+\textbf{Question:} Prove the set equation
+
+$$
+A\cap B=A-(A-B).
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 1}
+To prove two sets are equal, we show that an arbitrary element $x$ belongs to the left-hand side exactly when it belongs to the right-hand side.
+
+Let
+
+$$
+x\in A\cap B.
+$$
+
+Then
+
+$$
+x\in A
+\quad\text{and}\quad
+x\in B.
+$$
+
+Since $x\in A$ and $x\notin A-B$,
+
+$$
+x\in A-(A-B).
+$$
+Therefore,
+$$
+A\cap B\subseteq A-(A-B).
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 1}
+Now assume
+$$
+x\in A-(A-B).
+$$
+
+Then
+$$
+x\in A
+$$
+
+and
+$$
+x\notin A-B.
+$$
+
+Since $x\in A$, the fact that $x\notin A-B$ means that $x\in B$.
+
+Therefore,
+$$
+x\in A\cap B.
+$$
+
+Thus,
+$$
+A-(A-B)\subseteq A\cap B.
+$$
+
+Hence,
+$$
+\boxed{A\cap B=A-(A-B)}.
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 2
+% --------------------------------------------------
+
+\begin{frame}{Question 2}
+In a software system, $A$ represents users with administrator privileges and $B$ represents users who are currently active.
+
+A security rule claims:
+
+\textit{The set of active administrators is the same as the active users who are administrators.}
+
+\textbf{Question:} Prove
+
+$$
+A\cap B=B\cap A.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 2}
+Let
+
+$$
+x\in A\cap B.
+$$
+
+Then
+
+$$
+x\in A
+\quad\text{and}\quad
+x\in B.
+$$
+
+Since the order of the conditions does not matter,
+$$
+x\in B
+\quad\text{and}\quad
+x\in A.
+$$
+
+Therefore,
+$$
+x\in B\cap A.
+$$
+
+Hence,
+$$
+A\cap B\subseteq B\cap A.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 2}
+Similarly, let
+
+$$
+x\in B\cap A.
+$$
+
+Then
+
+$$
+x\in B
+\quad\text{and}\quad
+x\in A.
+$$
+
+Therefore,
+$$
+x\in A\cap B.
+$$
+
+Thus,
+$$
+B\cap A\subseteq A\cap B.
+$$
+
+Since both inclusions hold,
+$$
+\boxed{A\cap B=B\cap A}.
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 3
+% --------------------------------------------------
+
+\begin{frame}{Question 3}
+A machine-learning system uses set $A$ for records selected by model 1 and set $B$ for records selected by model 2.
+
+A developer claims that selecting records from either model and then selecting those common to both produces the same result as directly selecting the common records.
+
+\textbf{Question:} Prove
+
+$$
+A\cap(A\cup B)=A.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 3}
+Let
+
+$$
+x\in A\cap(A\cup B).
+$$
+
+Then
+
+$$
+x\in A
+$$
+
+and
+
+$$
+x\in A\cup B.
+$$
+
+The first condition already establishes that
+$$
+x\in A.
+$$
+
+Therefore,
+$$
+A\cap(A\cup B)\subseteq A.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 3}
+Now let
+
+$$
+x\in A.
+$$
+
+Since $x\in A$, it follows that
+
+$$
+x\in A\cup B.
+$$
+
+Therefore,
+
+$$
+x\in A\cap(A\cup B).
+$$
+
+Hence,
+$$
+A\subseteq A\cap(A\cup B).
+$$
+
+Both inclusions hold, so
+$$
+\boxed{A\cap(A\cup B)=A}.
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 4
+% --------------------------------------------------
+
+\begin{frame}{Question 4}
+A database administrator removes records belonging to set $B$ from a collection $A$.
+
+The administrator then claims that removing $B$ from $A$ is equivalent to keeping the records in $A$ that are not in $B$.
+
+\textbf{Question:} Prove
+
+$$
+A-B=A\cap B^c.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 4}
+Let
+
+$$
+x\in A-B.
+$$
+
+By the definition of set difference,
+
+$$
+x\in A
+\quad\text{and}\quad
+x\notin B.
+$$
+
+Since $x\notin B$,
+$$
+x\in B^c.
+$$
+
+Therefore,
+$$
+x\in A\cap B^c.
+$$
+
+Thus,
+$$
+A-B\subseteq A\cap B^c.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 4}
+Now assume
+
+$$
+x\in A\cap B^c.
+$$
+
+Then
+$$
+x\in A
+\quad\text{and}\quad
+x\in B^c.
+$$
+
+Therefore,
+$$
+x\notin B.
+$$
+
+Hence,
+$$
+x\in A-B.
+$$
+
+Thus,
+$$
+A\cap B^c\subseteq A-B.
+$$
+
+Therefore,
+$$
+\boxed{A-B=A\cap B^c}.
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 5
+% --------------------------------------------------
+
+\begin{frame}{Question 5}
+A cybersecurity system uses $A$ for normal network traffic and $B$ for encrypted traffic.
+
+A security analyst claims that the complement of traffic that is either normal or encrypted is exactly the traffic that is neither normal nor encrypted.
+
+\textbf{Question:} Prove
+
+$$
+(A\cup B)^c=A^c\cap B^c.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 5}
+Let
+
+$$
+x\in(A\cup B)^c.
+$$
+
+Then
+
+$$
+x\notin A\cup B.
+$$
+
+Therefore, $x$ is neither in $A$ nor in $B$:
+
+$$
+x\notin A
+\quad\text{and}\quad
+x\notin B.
+$$
+
+Hence,
+$$
+x\in A^c
+\quad\text{and}\quad
+x\in B^c.
+$$
+
+Therefore,
+$$
+x\in A^c\cap B^c.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 5}
+Conversely, suppose
+
+$$
+x\in A^c\cap B^c.
+$$
+
+Then
+
+$$
+x\notin A
+\quad\text{and}\quad
+x\notin B.
+$$
+
+Therefore,
+
+$$
+x\notin A\cup B.
+$$
+
+Hence,
+$$
+x\in(A\cup B)^c.
+$$
+
+Thus,
+$$
+\boxed{(A\cup B)^c=A^c\cap B^c}.
+$$
+
+\end{frame}

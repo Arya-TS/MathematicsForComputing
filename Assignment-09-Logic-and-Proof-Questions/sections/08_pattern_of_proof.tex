@@ -1,0 +1,352 @@
+\begin{frame}{Pattern of Proof}
+\begin{center}
+\vspace{1.5cm}
+{\Huge\textbf{Pattern of Proof}}
+\end{center}
+\end{frame}
+
+% --------------------------------------------------
+% Question 1
+% --------------------------------------------------
+
+\begin{frame}{Question 1}
+A program generates an even number whenever its integer input is doubled.
+
+The output is given by:
+
+$$
+f(n)=2n
+$$
+
+where $n$ is an integer.
+
+Using a direct proof, show that the output of the program is always even.
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+Let $n$ be any integer.
+
+By the definition of an even integer, a number is even if it can be written
+in the form:
+
+$$
+2k
+$$
+
+for some integer $k$.
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+The program produces:
+
+$$
+f(n)=2n
+$$
+
+Since $n$ is an integer, $2n$ has the required form $2k$, where:
+
+$$
+k=n
+$$
+
+Therefore:
+
+$$
+\boxed{f(n)\text{ is even}}
+$$
+
+for every integer $n$.
+\end{frame}
+
+% --------------------------------------------------
+% Question 2
+% --------------------------------------------------
+
+\begin{frame}{Question 2}
+A data validation system accepts an integer identifier only when it is
+divisible by $6$.
+
+A developer claims that every accepted identifier must also be divisible
+by $3$.
+
+Use a direct proof to verify the developer's claim.
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+Let $n$ be an accepted identifier.
+
+Since the system accepts $n$ only when it is divisible by $6$, there exists
+an integer $k$ such that:
+
+$$
+n=6k
+$$
+
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+Rewrite $6k$ as:
+
+$$
+n=3(2k)
+$$
+
+Since $k$ is an integer, $2k$ is also an integer.
+
+Therefore, $n$ is divisible by $3$.
+
+Hence:
+
+$$
+\boxed{6\mid n\Rightarrow3\mid n}
+$$
+
+The developer's claim is proved.
+\end{frame}
+
+% --------------------------------------------------
+% Question 3
+% --------------------------------------------------
+
+\begin{frame}{Question 3}
+A computer system assigns two integer values $a$ and $b$ to two processes.
+Suppose the system guarantees that $a$ and $b$ have the same parity.
+
+A monitoring program claims that $a+b$ must be even.
+
+Prove the claim by considering the possible parity of $a$ and $b$.
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+Since $a$ and $b$ have the same parity, there are two possible cases:
+
+\begin{itemize}
+\item both are even,
+\item both are odd.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+\textbf{Case 1: Both are even}
+
+Let:
+
+$$
+a=2m,\qquad b=2n
+$$
+
+Then:
+
+$$
+a+b=2m+2n
+$$
+
+$$
+a+b=2(m+n)
+$$
+
+Therefore, $a+b$ is even.
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+\textbf{Case 2: Both are odd}
+
+Let:
+
+$$
+a=2m+1,\qquad b=2n+1
+$$
+
+Then:
+
+$$
+a+b=2m+1+2n+1
+$$
+
+$$
+a+b=2(m+n+1)
+$$
+
+Therefore, $a+b$ is even.
+
+Since both possible cases give an even result:
+
+$$
+\boxed{a+b\text{ is always even}}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 4
+% --------------------------------------------------
+
+\begin{frame}{Question 4}
+A software system stores a positive integer $n$ and computes:
+
+$$
+n(n+1)
+$$
+
+A developer claims that the result is always even.
+
+Identify an appropriate pattern of proof and use it to establish the claim.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+The appropriate proof pattern is a \textbf{proof by cases}.
+
+For any integer $n$, exactly one of the following is true:
+
+$$
+n=2k
+$$
+
+or
+
+$$
+n=2k+1
+$$
+
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+\textbf{Case 1: $n=2k$}
+
+Then:
+
+$$
+n(n+1)=2k(2k+1)
+$$
+
+Therefore:
+
+$$
+n(n+1)=2[k(2k+1)]
+$$
+
+So the result is even.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+\textbf{Case 2: $n=2k+1$}
+
+Then:
+
+$$
+n(n+1)=(2k+1)(2k+2)
+$$
+
+Therefore:
+
+$$
+n(n+1)=2[(2k+1)(k+1)]
+$$
+
+So the result is also even.
+
+Hence:
+
+$$
+\boxed{n(n+1)\text{ is always even}}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 5
+% --------------------------------------------------
+
+\begin{frame}{Question 5}
+A distributed computing system contains $n$ processing tasks. The system
+requires at least one communication link between every pair of tasks.
+
+The number of required links is:
+
+$$
+L=\frac{n(n-1)}{2}
+$$
+
+Show that the number of links is always an integer.
+
+Use an appropriate proof pattern based on the parity of $n$.
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+We need to show that:
+
+$$
+\frac{n(n-1)}{2}
+$$
+
+is an integer for every positive integer $n$.
+
+We use a proof by cases based on whether $n$ is even or odd.
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+\textbf{Case 1: $n$ is even}
+
+Let:
+
+$$
+n=2k
+$$
+
+Then:
+
+$$
+\frac{n(n-1)}{2}
+=
+\frac{2k(2k-1)}{2}
+$$
+
+Therefore:
+
+$$
+L=k(2k-1)
+$$
+
+which is an integer.
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+\textbf{Case 2: $n$ is odd}
+
+Let:
+
+$$
+n=2k+1
+$$
+
+Then:
+
+$$
+\frac{n(n-1)}{2}
+=
+\frac{(2k+1)(2k)}{2}
+$$
+
+Therefore:
+
+$$
+L=k(2k+1)
+$$
+
+which is an integer.
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+In both possible cases, the number of links is an integer.
+
+Therefore:
+
+$$
+\boxed{\frac{n(n-1)}{2}\in\mathbb{Z}}
+$$
+
+for every positive integer $n$.
+
+Thus, the formula always gives a valid integer number of communication
+links.
+\end{frame}

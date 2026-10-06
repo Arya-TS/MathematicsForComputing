@@ -1,0 +1,669 @@
+% =========================================================
+% TOPIC 2 -- PROOFS
+% =========================================================
+
+\section{Proofs}
+
+% =========================================================
+% TOPIC TITLE SLIDE
+% =========================================================
+
+\begin{frame}{Proofs}
+
+\begin{center}
+
+\vspace{1cm}
+
+{\Huge\textbf{Proofs}}
+
+\vspace{0.6cm}
+
+\textit{Constructing, evaluating, and communicating mathematical proofs}
+
+\end{center}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 1 -- PART 1
+% =========================================================
+
+\begin{frame}{Proofs -- Question 1}
+
+\begin{block}{Algorithm Correctness}
+
+A programmer claims that the following algorithm correctly determines
+whether an integer $n$ is even:
+
+\[
+\text{If } n \bmod 2 = 0,\text{ return ``Even'';}
+\]
+
+\[
+\text{otherwise, return ``Odd''.}
+\]
+
+The programmer wants to justify that the algorithm is correct for every
+integer input.
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 1 -- PART 2
+% =========================================================
+
+\begin{frame}{Proofs -- Question 1 (Continued)}
+
+\begin{block}{Question}
+
+Construct a mathematical proof that the algorithm correctly classifies
+every integer as either even or odd.
+
+\medskip
+
+Your proof should explain why every integer $n$ must fall into one of the
+two cases represented by the algorithm.
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 1 -- PART 1
+% =========================================================
+
+\begin{frame}{Proofs -- Question 1: Answer}
+
+\begin{exampleblock}{Proof}
+
+Let $n$ be any integer.
+
+By the division algorithm, when $n$ is divided by $2$, the remainder must
+be either $0$ or $1$.
+
+Therefore,
+
+\[
+n=2q
+\]
+
+for some integer $q$, or
+
+\[
+n=2q+1
+\]
+
+for some integer $q$.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 1 -- PART 2A
+% =========================================================
+
+\begin{frame}{Proofs -- Question 1: Answer (Continued)}
+
+\begin{exampleblock}{Proof}
+
+If
+\[
+n=2q,
+\]
+
+then
+\[
+n\bmod 2=0,
+\]
+
+so the algorithm returns ``Even''.
+
+\medskip
+
+If
+\[
+n=2q+1,
+\]
+
+then
+\[
+n\bmod 2=1,
+\]
+
+so the algorithm returns ``Odd''.
+
+\end{exampleblock}
+
+\end{frame}
+
+
+% =========================================================
+% QUESTION 2 -- PART 1
+% =========================================================
+
+\begin{frame}{Proofs -- Question 2}
+
+\begin{block}{Data Validation Rule}
+
+A data-processing system stores integer values that are required to be
+multiples of $3$.
+
+A developer claims:
+
+\begin{center}
+\textit{``The sum of two valid stored values is also a valid stored value.''}
+\end{center}
+
+Suppose $a$ and $b$ are two valid stored values.
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 2 -- PART 2
+% =========================================================
+
+\begin{frame}{Proofs -- Question 2 (Continued)}
+
+\begin{block}{Question}
+
+Prove the developer's claim mathematically.
+
+\medskip
+
+Your proof should begin by expressing $a$ and $b$ as multiples of $3$ and
+show that their sum is also a multiple of $3$.
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 2 -- PART 1
+% =========================================================
+
+\begin{frame}{Proofs -- Question 2: Answer}
+
+\begin{exampleblock}{Proof}
+
+Since $a$ and $b$ are valid stored values, both are multiples of $3$.
+
+Therefore, there exist integers $m$ and $n$ such that
+
+\[
+a=3m
+\]
+
+and
+
+\[
+b=3n.
+\]
+
+Consider their sum:
+
+\[
+a+b=3m+3n.
+\]
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 2 -- PART 2
+% =========================================================
+
+\begin{frame}{Proofs -- Question 2: Answer (Continued)}
+
+\begin{exampleblock}{Proof}
+
+Factor out $3$:
+
+\[
+a+b=3(m+n).
+\]
+
+Since $m+n$ is an integer,
+
+\[
+a+b
+\]
+
+is a multiple of $3$.
+
+Therefore, the sum of two valid stored values is also valid.
+
+\[
+\boxed{a+b\text{ is a multiple of }3}
+\]
+
+Hence, the developer's claim is proved.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 3 -- PART 1
+% =========================================================
+
+\begin{frame}{Proofs -- Question 3}
+
+\begin{block}{Network Identifier Property}
+
+A network system assigns integer identifiers to devices.
+
+A particular subsystem uses only identifiers of the form
+
+\[
+2k+1,
+\]
+
+where $k$ is an integer.
+
+An engineer observes that combining two such identifiers by addition
+always produces an even number.
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 3 -- PART 2
+% =========================================================
+
+\begin{frame}{Proofs -- Question 3 (Continued)}
+
+\begin{block}{Question}
+
+Prove that the sum of any two identifiers of the form $2k+1$ is even.
+
+\medskip
+
+Let the two identifiers be
+
+\[
+a=2m+1
+\]
+
+and
+
+\[
+b=2n+1,
+\]
+
+where $m,n\in\mathbb{Z}$.
+
+Show that $a+b$ can be written in the form $2r$ for some integer $r$.
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 3 -- PART 1
+% =========================================================
+
+\begin{frame}{Proofs -- Question 3: Answer}
+\vspace{-0.5cm}
+\begin{exampleblock}{Proof}
+
+Let
+\[
+a=2m+1
+\]
+
+and
+\[
+b=2n+1,
+\]
+
+where
+\[
+m,n\in\mathbb{Z}.
+\]
+
+Their sum is
+\[
+a+b=(2m+1)+(2n+1).
+\]
+
+Simplifying,
+\[
+a+b=2m+2n+2.
+\]
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 3 -- PART 2
+% =========================================================
+
+\begin{frame}{Proofs -- Question 3: Answer (Continued)}
+
+\begin{exampleblock}{Proof}
+
+Factor out $2$:
+\[
+a+b=2(m+n+1).
+\]
+
+Since $m$, $n$, and $1$ are integers,
+\[
+m+n+1\in\mathbb{Z}.
+\]
+
+Let
+\[
+r=m+n+1.
+\]
+
+Then
+\[
+a+b=2r.
+\]
+
+Therefore, $a+b$ is even.
+\[
+\boxed{\text{The sum of two odd integers is even.}}
+\]
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 4 -- PART 1
+% =========================================================
+
+\begin{frame}{Proofs -- Question 4}
+
+\begin{block}{Software Access Rule}
+
+A software system assigns each user an integer access score.
+
+The security team claims:
+
+\begin{center}
+\textit{``If a user's access score is divisible by $4$, then it is even.''}
+\end{center}
+
+A developer attempts to prove this by saying:
+
+\begin{center}
+\textit{``All even numbers are divisible by $4$, so any number divisible
+by $4$ is even.''}
+\end{center}
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 4 -- PART 2
+% =========================================================
+
+\begin{frame}{Proofs -- Question 4 (Continued)}
+
+\begin{block}{Question}
+
+Determine whether the developer's reasoning is a valid proof.
+
+\medskip
+
+If it is not valid, identify the error in the reasoning and provide a
+correct proof of the security team's claim.
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 4 -- PART 1
+% =========================================================
+
+\begin{frame}{Proofs -- Question 4: Answer}
+
+\begin{exampleblock}{Analysis}
+
+The developer's reasoning is not valid.
+
+The statement
+
+\[
+\text{``All even numbers are divisible by }4\text{''}
+\]
+
+is false.
+
+For example,
+
+\[
+2
+\]
+
+is even, but $2$ is not divisible by $4$.
+
+Therefore, the starting statement used by the developer is incorrect.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 4 -- PART 2
+% =========================================================
+
+\begin{frame}{Proofs -- Question 4: Answer (Continued)}
+\vspace{-0.5cm}
+\begin{exampleblock}{Correct Proof}
+
+Let $n$ be an integer divisible by $4$.
+
+Then there exists an integer $k$ such that
+\[
+n=4k.
+\]
+Since
+\[
+4k=2(2k),
+\]
+
+we can write
+\[
+n=2(2k).
+\]
+
+Because $2k$ is an integer, $n$ is even.
+
+Therefore,
+\[
+\boxed{4\mid n\Rightarrow 2\mid n}.
+\]
+
+Hence, the security team's claim is true.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 5 -- PART 1
+% =========================================================
+
+\begin{frame}{Proofs -- Question 5}
+
+\begin{block}{Hashing System Property}
+
+A hashing system maps an integer input $n$ to
+
+\[
+h(n)=n^2+n.
+\]
+
+A developer claims that the hash value $h(n)$ is always even, regardless
+of the integer input.
+
+\medskip
+
+For example,
+
+\[
+h(3)=3^2+3=12.
+\]
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 5 -- PART 2
+% =========================================================
+
+\begin{frame}{Proofs -- Question 5 (Continued)}
+
+\begin{block}{Question}
+
+Prove that
+
+\[
+n^2+n
+\]
+
+is even for every integer $n$.
+
+\medskip
+
+Your proof should consider the possible parity of $n$ and show that the
+result is even in every case.
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 5 -- PART 1
+% =========================================================
+
+\begin{frame}{Proofs -- Question 5: Answer}
+
+\begin{exampleblock}{Proof}
+
+Let $n$ be any integer.
+
+Every integer is either even or odd.
+
+\medskip
+
+\textbf{Case 1: $n$ is even}
+
+Then there exists an integer $k$ such that
+
+\[
+n=2k.
+\]
+
+Therefore,
+
+\[
+n^2+n
+=
+(2k)^2+2k
+=
+4k^2+2k.
+\]
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 5 -- PART 2
+% =========================================================
+
+\begin{frame}{Proofs -- Question 5: Answer (Continued)}
+\vspace{-0.5cm}
+\begin{exampleblock}{Proof}
+
+Factor out $2$:
+\[
+n^2+n
+=
+2(2k^2+k).
+\]
+
+Therefore, $n^2+n$ is even.
+
+\medskip
+
+\textbf{Case 2: $n$ is odd}
+
+Let
+\[
+n=2k+1.
+\]
+
+Then
+\[
+n^2+n
+=
+(2k+1)^2+(2k+1)
+\]
+\[
+=4k^2+6k+2
+\]
+\[
+=2(2k^2+3k+1).
+\]
+
+Therefore, $n^2+n$ is even.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 5 -- PART 3
+% =========================================================
+
+\begin{frame}{Proofs -- Question 5: Answer (Final)}
+
+\begin{exampleblock}{Conclusion}
+
+In both possible cases,
+
+\[
+n^2+n
+\]
+
+is even.
+
+Therefore,
+
+\[
+\boxed{n^2+n\text{ is even for every }n\in\mathbb{Z}.}
+\]
+
+Hence, the developer's claim about the hashing function is correct.
+
+\medskip
+
+\textbf{Proof idea:}
+
+The argument uses a proof by cases based on whether the integer is even
+or odd.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% END OF TOPIC 2
+% =========================================================

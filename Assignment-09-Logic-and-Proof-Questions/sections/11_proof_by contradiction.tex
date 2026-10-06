@@ -1,0 +1,316 @@
+\begin{frame}{Proof by Contradiction}
+\begin{center}
+\vspace{1.5cm}
+{\Huge\textbf{Proof by Contradiction}}
+\end{center}
+\end{frame}
+
+% --------------------------------------------------
+% Question 1
+% --------------------------------------------------
+
+\begin{frame}{Question 1}
+A scheduling algorithm claims that there is no smallest positive integer.
+
+Determine whether this claim is correct. Use proof by contradiction to
+justify your conclusion.
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+The claim is false because $1$ is the smallest positive integer.
+
+Assume, for contradiction, that there is no smallest positive integer.
+
+Then there must be some positive integer $n$ that is smaller than every
+positive integer.
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+Since $n$ is positive:
+
+$$
+n\geq1
+$$
+
+But $1$ is also a positive integer.
+
+If $n>1$, then:
+
+$$
+1<n
+$$
+
+which contradicts the assumption that $n$ is smaller than every positive
+integer.
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+Therefore, the assumption leads to a contradiction.
+
+Hence:
+
+$$
+\boxed{1\text{ is the smallest positive integer}}
+$$
+
+and the original claim is false.
+\end{frame}
+
+% --------------------------------------------------
+% Question 2
+% --------------------------------------------------
+
+\begin{frame}{Question 2}
+A database system uses integer identifiers. A developer claims that there
+can be two consecutive integers that are both even.
+
+Prove that this is impossible using contradiction.
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+Assume, for contradiction, that two consecutive integers $n$ and $n+1$
+are both even.
+
+Then there exist integers $a$ and $b$ such that:
+
+$$
+n=2a
+$$
+
+and:
+
+$$
+n+1=2b
+$$
+
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+Subtract the two equations:
+
+$$
+(n+1)-n=2b-2a
+$$
+
+Therefore:
+
+$$
+1=2(b-a)
+$$
+
+The right-hand side is even, while the left-hand side is odd.
+
+This is a contradiction.
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+Therefore, two consecutive integers cannot both be even.
+
+Hence:
+
+$$
+\boxed{\text{No two consecutive integers are both even.}}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 3
+% --------------------------------------------------
+
+\begin{frame}{Question 3}
+A software system requires every integer value in a particular set to be
+both even and odd.
+
+Show that such an integer cannot exist.
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+Assume, for contradiction, that an integer $n$ is both even and odd.
+
+Since $n$ is even:
+
+$$
+n=2a
+$$
+
+for some integer $a$.
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+Since $n$ is also odd:
+
+$$
+n=2b+1
+$$
+
+for some integer $b$.
+
+Therefore:
+
+$$
+2a=2b+1
+$$
+
+which gives:
+
+$$
+2(a-b)=1
+$$
+
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+The left-hand side is even, but the right-hand side is odd.
+
+This is impossible.
+
+Therefore:
+
+$$
+\boxed{\text{No integer is both even and odd.}}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 4
+% --------------------------------------------------
+
+\begin{frame}{Question 4}
+A network engineer claims that the sum of two odd integers can be odd.
+
+Determine whether the claim is possible. Prove your conclusion by
+contradiction.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+Assume, for contradiction, that two odd integers $a$ and $b$ have an odd
+sum.
+
+Since both are odd:
+
+$$
+a=2m+1
+$$
+
+and:
+
+$$
+b=2n+1
+$$
+
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+Their sum is:
+
+$$
+a+b=2m+1+2n+1
+$$
+
+Therefore:
+
+$$
+a+b=2(m+n+1)
+$$
+
+Thus, $a+b$ is even.
+
+This contradicts the assumption that the sum is odd.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+Hence:
+
+$$
+\boxed{\text{The sum of two odd integers is always even.}}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 5
+% --------------------------------------------------
+
+\begin{frame}{Question 5}
+A computing algorithm claims that the square root of $2$ can be represented
+exactly as a rational number.
+
+Prove that this is impossible using contradiction.
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+Assume, for contradiction, that:
+
+$$
+\sqrt{2}=\frac{p}{q}
+$$
+
+where $p$ and $q$ are integers with no common factor.
+
+Squaring both sides:
+
+$$
+2=\frac{p^2}{q^2}
+$$
+
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+Therefore:
+
+$$
+p^2=2q^2
+$$
+
+Hence $p^2$ is even.
+
+Therefore $p$ must be even.
+
+Let:
+
+$$
+p=2k
+$$
+
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+Substitute into:
+
+$$
+p^2=2q^2
+$$
+
+giving:
+
+$$
+(2k)^2=2q^2
+$$
+
+$$
+4k^2=2q^2
+$$
+
+Therefore:
+
+$$
+q^2=2k^2
+$$
+
+So $q$ is also even.
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+Thus both $p$ and $q$ are even.
+
+This contradicts the assumption that $p$ and $q$ have no common factor.
+
+Therefore:
+
+$$
+\boxed{\sqrt{2}\text{ is irrational}}
+$$
+
+\end{frame}

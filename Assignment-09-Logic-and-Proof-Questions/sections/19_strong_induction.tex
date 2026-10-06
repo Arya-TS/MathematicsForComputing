@@ -1,0 +1,386 @@
+\section{Strong Induction}
+
+\begin{frame}
+\centering
+\Huge\textbf{Strong Induction}
+\end{frame}
+
+% --------------------------------------------------
+% Question 1
+% --------------------------------------------------
+
+\begin{frame}{Question 1}
+A recursive algorithm can solve a problem of size $n$ by using a solution to any smaller positive problem size.
+
+Suppose every integer $n\geq2$ can be reduced to either $n-1$ or $n-2$.
+
+\textbf{Question:} Prove using strong induction that every positive integer can be reached from $1$ by repeatedly adding $1$ or $2$.
+\end{frame}
+
+\begin{frame}{Answer 1}
+Let $P(n)$ be the statement:
+
+\textit{$n$ can be reached from $1$ by repeatedly adding $1$ or $2$.}
+
+\textbf{Base cases:}
+
+$$
+1
+$$
+
+is already reached.
+
+Also,
+
+$$
+1+1=2.
+$$
+
+Thus, $P(1)$ and $P(2)$ are true.
+\end{frame}
+
+\begin{frame}{Answer 1}
+\textbf{Strong inductive hypothesis:}
+
+Assume that
+
+$$
+P(1),P(2),\ldots,P(k)
+$$
+
+are all true.
+
+We must prove $P(k+1)$.
+
+Since $k+1\geq2$, we can obtain it from the smaller integer $k$ by adding $1$:
+
+$$
+k+1=k+1.
+$$
+
+By the inductive hypothesis, $k$ can be reached from $1$.
+\end{frame}
+
+\begin{frame}{Answer 1}
+Therefore, after reaching $k$, adding $1$ reaches $k+1$.
+
+Hence $P(k+1)$ is true.
+
+Thus, by strong induction,
+
+$$
+\boxed{\text{every positive integer can be reached from }1.}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 2
+% --------------------------------------------------
+
+\begin{frame}{Question 2}
+A system represents an integer amount using coins of denominations $1$ and $2$.
+
+\textbf{Question:} Prove using strong induction that every positive integer amount can be represented using these coins.
+\end{frame}
+
+\begin{frame}{Answer 2}
+Let $P(n)$ denote:
+
+\textit{$n$ can be represented using coins of denominations $1$ and $2$.}
+
+\textbf{Base cases:}
+
+$$
+1=1
+$$
+
+and
+
+$$
+2=2.
+$$
+
+Therefore, $P(1)$ and $P(2)$ are true.
+\end{frame}
+
+\begin{frame}{Answer 2}
+Assume that
+
+$$
+P(1),P(2),\ldots,P(k)
+$$
+
+are all true.
+
+Consider $k+1$.
+
+Since $k\geq2$,
+
+$$
+k+1=k+1.
+$$
+
+By the inductive hypothesis, $k$ can be represented using the available coins.
+
+Adding one coin of denomination $1$ gives a representation of $k+1$.
+\end{frame}
+
+\begin{frame}{Answer 2}
+Therefore, $P(k+1)$ is true.
+
+Hence, by strong induction,
+
+$$
+\boxed{\text{every positive integer can be represented using coins of denominations }1\text{ and }2.}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 3
+% --------------------------------------------------
+
+\begin{frame}{Question 3}
+A recursive program solves a problem of size $n$ by first solving problems of sizes smaller than $n$.
+
+Suppose the program can solve the problem directly for sizes $1$ and $2$, and for every $n\geq3$, a solution for size $n-1$ is sufficient.
+
+\textbf{Question:} Explain why strong induction is suitable for proving that the program works for every positive integer input size.
+\end{frame}
+
+\begin{frame}{Answer 3}
+Let $P(n)$ denote:
+
+\textit{The program correctly solves the problem for input size $n$.}
+
+The base cases are
+
+$$
+P(1)
+\quad\text{and}\quad
+P(2).
+$$
+
+For the inductive step, assume
+
+$$
+P(1),P(2),\ldots,P(k)
+$$
+
+are all true.
+\end{frame}
+
+\begin{frame}{Answer 3}
+For input size $k+1$, the program requires a correct solution for a smaller input size, specifically $k$.
+
+Since
+
+$$
+P(k)
+$$
+
+is included in the strong inductive hypothesis, the required smaller problem is known to be solvable.
+
+Therefore,
+
+$$
+P(k+1)
+$$
+
+is true.
+
+Hence, strong induction proves correctness for every positive input size.
+\end{frame}
+
+% --------------------------------------------------
+% Question 4
+% --------------------------------------------------
+
+\begin{frame}{Question 4}
+Consider the Fibonacci sequence:
+
+$$
+F_1=1,\qquad F_2=1
+$$
+
+and
+
+$$
+F_n=F_{n-1}+F_{n-2}.
+$$
+
+\textbf{Question:} Prove using strong induction that
+
+$$
+F_n<2^n
+$$
+
+for every positive integer $n$.
+\end{frame}
+
+\begin{frame}{Answer 4}
+Let
+
+$$
+P(n):\quad F_n<2^n.
+$$
+
+For $n=1$,
+
+$$
+F_1=1<2.
+$$
+
+For $n=2$,
+
+$$
+F_2=1<4.
+$$
+
+Thus, the base cases are true.
+\end{frame}
+
+\begin{frame}{Answer 4}
+Assume strongly that
+
+$$
+F_i<2^i
+$$
+
+for every
+
+$$
+1\leq i\leq k.
+$$
+
+We prove the statement for $k+1$.
+
+Using the recurrence,
+$$
+F_{k+1}=F_k+F_{k-1}.
+$$
+
+By the inductive hypothesis,
+$$
+F_k<2^k
+$$
+
+and
+$$
+F_{k-1}<2^{k-1}.
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 4}
+Therefore,
+
+$$
+F_{k+1}
+<
+2^k+2^{k-1}
+$$
+
+$$
+<2^k+2^k
+$$
+$$
+=2^{k+1}.
+$$
+
+Hence,
+$$
+F_{k+1}<2^{k+1}.
+$$
+
+Therefore,
+$$
+\boxed{F_n<2^n}
+$$
+
+for every positive integer $n$.
+\end{frame}
+
+% --------------------------------------------------
+% Question 5
+% --------------------------------------------------
+
+\begin{frame}{Question 5}
+A file-compression algorithm represents files using blocks of size $2$ or $3$ units.
+
+\textbf{Question:} Prove using strong induction that every integer $n\geq2$ can be represented as a sum of $2$s and $3$s, except $n=1$.
+\end{frame}
+
+\begin{frame}{Answer 5}
+Let $P(n)$ denote:
+
+\textit{$n$ can be expressed as a sum of $2$s and $3$s.}
+
+The initial cases are
+
+$$
+2=2,
+$$
+
+$$
+3=3,
+$$
+
+and
+$$
+4=2+2.
+$$
+
+Therefore,
+$$
+P(2),P(3),P(4)
+$$
+
+are true.
+\end{frame}
+
+\begin{frame}{Answer 5}
+Assume strongly that
+
+$$
+P(2),P(3),\ldots,P(k)
+$$
+
+are all true.
+
+Consider $k+1$.
+
+For $k+1\geq5$,
+
+$$
+k+1=(k-1)+2.
+$$
+
+Since
+
+$$
+k-1\geq4,
+$$
+
+the strong inductive hypothesis guarantees that $k-1$ can be represented using $2$s and $3$s.
+\end{frame}
+
+\begin{frame}{Answer 5}
+Adding one more $2$ gives a representation of $k+1$.
+
+Therefore,
+
+$$
+P(k+1)
+$$
+
+is true.
+
+Hence, by strong induction,
+
+$$
+\boxed{\text{every integer }n\geq2\text{ can be represented using }2\text{s and }3\text{s}.}
+$$
+
+\end{frame}

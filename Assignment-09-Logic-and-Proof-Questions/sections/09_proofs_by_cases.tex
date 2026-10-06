@@ -1,0 +1,457 @@
+\begin{frame}{Proofs by Cases}
+\begin{center}
+\vspace{1.5cm}
+{\Huge\textbf{Proofs by Cases}}
+\end{center}
+\end{frame}
+
+% --------------------------------------------------
+% Question 1
+% --------------------------------------------------
+
+\begin{frame}{Question 1}
+A software program accepts any integer input $n$ and computes:
+
+$$
+f(n)=|n|
+$$
+
+Show that:
+
+$$
+|n|\geq 0
+$$
+
+for every integer $n$ by considering the possible cases for $n$.
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+The two possible cases are:
+
+\begin{itemize}
+\item $n\geq 0$
+\item $n<0$
+\end{itemize}
+
+We examine the absolute value separately in each case.
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+\textbf{Case 1: $n\geq0$}
+
+By definition:
+
+$$
+|n|=n
+$$
+
+Since $n\geq0$:
+
+$$
+|n|\geq0
+$$
+
+\end{frame}
+
+\begin{frame}{Question 1 -- Answer}
+\textbf{Case 2: $n<0$}
+
+By definition:
+
+$$
+|n|=-n
+$$
+
+Since $n<0$:
+
+$$
+-n>0
+$$
+
+Therefore:
+
+$$
+|n|\geq0
+$$
+
+Hence, in both cases:
+
+$$
+\boxed{|n|\geq0}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 2
+% --------------------------------------------------
+
+\begin{frame}{Question 2}
+A hashing algorithm produces a hash value using:
+
+$$
+h(n)=n^2
+$$
+
+For an integer input $n$, determine whether the hash value has the same
+parity as $n$.
+
+Prove your conclusion by considering the cases where $n$ is even and
+where $n$ is odd.
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+There are two possible cases.
+
+\begin{itemize}
+\item $n$ is even
+\item $n$ is odd
+\end{itemize}
+
+We examine the parity of $n^2$ in each case.
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+\textbf{Case 1: $n$ is even}
+
+Let:
+
+$$
+n=2k
+$$
+
+Then:
+
+$$
+n^2=(2k)^2
+$$
+
+$$
+n^2=4k^2=2(2k^2)
+$$
+
+Therefore, $n^2$ is even.
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+\textbf{Case 2: $n$ is odd}
+
+Let:
+
+$$
+n=2k+1
+$$
+
+Then:
+
+$$
+n^2=(2k+1)^2
+$$
+
+$$
+n^2=4k^2+4k+1
+$$
+
+$$
+n^2=2(2k^2+2k)+1
+$$
+
+Therefore, $n^2$ is odd.
+
+Hence, $n^2$ has the same parity as $n$.
+\end{frame}
+
+\begin{frame}{Question 2 -- Answer}
+Therefore:
+
+$$
+\boxed{n^2\text{ has the same parity as }n}
+$$
+
+for every integer $n$.
+\end{frame}
+
+% --------------------------------------------------
+% Question 3
+% --------------------------------------------------
+
+\begin{frame}{Question 3}
+A scheduling system assigns an integer priority value $n$ to a task.
+The system calculates:
+
+$$
+g(n)=n(n+1)
+$$
+
+Show that the calculated value is always even by considering the two
+possible parity cases for $n$.
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+There are two cases:
+
+\begin{itemize}
+\item $n$ is even
+\item $n$ is odd
+\end{itemize}
+
+We prove that $n(n+1)$ is even in both cases.
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+\textbf{Case 1: $n$ is even}
+
+Let:
+
+$$
+n=2k
+$$
+
+Then:
+
+$$
+n(n+1)=2k(2k+1)
+$$
+
+Therefore:
+
+$$
+n(n+1)=2[k(2k+1)]
+$$
+
+Hence, the result is even.
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+\textbf{Case 2: $n$ is odd}
+
+Let:
+
+$$
+n=2k+1
+$$
+
+Then:
+
+$$
+n(n+1)=(2k+1)(2k+2)
+$$
+
+Therefore:
+
+$$
+n(n+1)=2[(2k+1)(k+1)]
+$$
+
+Hence, the result is also even.
+\end{frame}
+
+\begin{frame}{Question 3 -- Answer}
+Since both possible cases produce an even result:
+
+$$
+\boxed{n(n+1)\text{ is always even}}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 4
+% --------------------------------------------------
+
+\begin{frame}{Question 4}
+A computer program compares two integers $a$ and $b$ and returns the
+larger value:
+
+$$
+\max(a,b)
+$$
+
+Prove that:
+
+$$
+\max(a,b)\geq a
+$$
+
+for all integers $a$ and $b$ by considering the possible relationships
+between $a$ and $b$.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+There are two cases:
+
+\begin{itemize}
+\item $a\geq b$
+\item $a<b$
+\end{itemize}
+
+We consider the value returned by the program in each case.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+\textbf{Case 1: $a\geq b$}
+
+In this case:
+
+$$
+\max(a,b)=a
+$$
+
+Therefore:
+
+$$
+\max(a,b)\geq a
+$$
+
+because equality holds.
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+\textbf{Case 2: $a<b$}
+
+In this case:
+
+$$
+\max(a,b)=b
+$$
+
+Since:
+
+$$
+a<b
+$$
+
+we have:
+
+$$
+b>a
+$$
+
+Therefore:
+
+$$
+\max(a,b)>a
+$$
+
+\end{frame}
+
+\begin{frame}{Question 4 -- Answer}
+Both possible cases satisfy the required inequality.
+
+Hence:
+
+$$
+\boxed{\max(a,b)\geq a}
+$$
+
+for all integers $a$ and $b$.
+\end{frame}
+
+% --------------------------------------------------
+% Question 5
+% --------------------------------------------------
+
+\begin{frame}{Question 5}
+A data-processing algorithm assigns a cost to an integer input $n$ using:
+
+$$
+C(n)=
+\begin{cases}
+n+2, & n\geq0\\
+-n+2, & n<0
+\end{cases}
+$$
+
+Show that:
+
+$$
+C(n)\geq2
+$$
+
+for every integer $n$ by proving the result separately for the two
+possible cases.
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+The definition of $C(n)$ naturally gives two cases:
+
+\begin{itemize}
+\item $n\geq0$
+\item $n<0$
+\end{itemize}
+
+We prove the required inequality in each case.
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+\textbf{Case 1: $n\geq0$}
+
+The function is:
+
+$$
+C(n)=n+2
+$$
+
+Since:
+
+$$
+n\geq0
+$$
+
+we obtain:
+
+$$
+n+2\geq2
+$$
+
+Therefore:
+
+$$
+C(n)\geq2
+$$
+
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+\textbf{Case 2: $n<0$}
+
+The function is:
+$$
+C(n)=-n+2
+$$
+
+Since:
+$$
+n<0
+$$
+
+we have:
+$$
+-n>0
+$$
+
+Therefore:
+$$
+-n+2>2
+$$
+
+and hence:
+$$
+C(n)\geq2
+$$
+
+\end{frame}
+
+\begin{frame}{Question 5 -- Answer}
+Both possible cases satisfy the required condition.
+
+Therefore:
+
+$$
+\boxed{C(n)\geq2}
+$$
+
+for every integer $n$.
+
+The result follows by examining all cases defined by the function.
+\end{frame}

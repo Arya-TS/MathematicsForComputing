@@ -1,0 +1,792 @@
+\section{Propositions}
+
+% =========================================================
+% TOPIC TITLE
+% =========================================================
+
+\begin{frame}{Propositions}
+
+\begin{center}
+\vspace{1cm}
+{\Huge\textbf{Propositions}}
+
+\vspace{0.6cm}
+
+{\Large Representing and evaluating statements in computing contexts}
+
+\end{center}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 1
+% =========================================================
+
+\begin{frame}{Propositions -- Question 1}
+
+\begin{block}{Question}
+
+A software system checks whether a user can access a protected
+database. The following conditions are defined:
+
+\begin{itemize}
+\item $P$: The user has entered a valid password.
+\item $Q$: The user has completed two-factor authentication.
+\end{itemize}
+
+The system grants access only when both conditions are satisfied.
+
+\medskip
+
+\begin{enumerate}
+\item Express the access rule as a proposition.
+\item Determine whether the user is granted access if
+$P$ is true and $Q$ is false.
+\end{enumerate}
+
+\end{block}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 1 -- PART 1
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 1: Answer}
+
+\begin{exampleblock}{Step 1: Represent the Rule}
+
+The system grants access only when both conditions are satisfied.
+
+Therefore, the access rule is
+
+$$
+P\land Q.
+$$
+
+Here,
+
+$$
+P=\text{valid password},
+$$
+
+and
+
+$$
+Q=\text{two-factor authentication completed}.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 1 -- PART 2
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 1: Answer (Continued)}
+
+\begin{exampleblock}{Step 2: Evaluate the Rule}
+
+The given values are
+
+$$
+P=\text{True},
+\qquad
+Q=\text{False}.
+$$
+
+Therefore,
+
+$$
+P\land Q
+=
+\text{True}\land\text{False}
+=
+\text{False}.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 1 -- PART 3
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 1: Answer (Conclusion)}
+
+\begin{exampleblock}{Conclusion}
+
+Since the access condition is false, the user is not granted access.
+
+$$
+\boxed{\text{Access Denied}}
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 2
+% =========================================================
+
+\begin{frame}{Propositions -- Question 2}
+
+\begin{block}{Question}
+
+An intrusion detection system raises an alert when either a suspicious
+login location or an unusual login time is detected.
+
+Let
+
+$$
+P:\text{suspicious login location is detected},
+$$
+
+$$
+Q:\text{unusual login time is detected}.
+$$
+
+The system records that the login occurred from a suspicious location,
+but at a normal time.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Propositions -- Question 2 (Continued)}
+
+\begin{block}{Question}
+
+\begin{enumerate}
+\item Express the alert condition as a proposition.
+\item Determine whether an alert is raised.
+\end{enumerate}
+
+\end{block}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 2 -- PART 1
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 2: Answer}
+
+\begin{exampleblock}{Step 1: Represent the Rule}
+
+The system raises an alert when either condition occurs.
+
+Therefore, the alert condition is
+
+$$
+P\lor Q.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 2 -- PART 2
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 2: Answer (Continued)}
+
+\begin{exampleblock}{Step 2: Evaluate the Conditions}
+
+The recorded values are
+
+$$
+P=\text{True},
+\qquad
+Q=\text{False}.
+$$
+
+Thus,
+
+$$
+P\lor Q
+=
+\text{True}\lor\text{False}
+=
+\text{True}.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 2 -- PART 3
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 2: Answer (Conclusion)}
+
+\begin{exampleblock}{Conclusion}
+
+Since the alert condition is true, the intrusion detection system
+raises an alert.
+
+$$
+\boxed{\text{Alert Raised}}
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 3
+% =========================================================
+
+\begin{frame}{Propositions -- Question 3}
+
+\begin{block}{Question}
+
+A machine-learning service accepts a model for deployment only if the
+model has completed testing and has an accuracy of at least $90%$.
+
+Let
+
+$$
+P:\text{the model has completed testing},
+$$
+
+$$
+Q:\text{the model has accuracy at least }90\%.
+$$
+
+A model has completed testing, but its accuracy is only $87%$.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Propositions -- Question 3 (Continued)}
+
+\begin{block}{Question}
+
+Determine whether the model can be deployed and justify your answer
+using a compound proposition.
+
+\end{block}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 3 -- PART 1
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 3: Answer}
+
+\begin{exampleblock}{Step 1: Identify the Conditions}
+
+Both conditions are required for deployment.
+
+Therefore, the deployment condition is
+
+$$
+P\land Q.
+$$
+
+For the given model,
+
+$$
+P=\text{True}.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 3 -- PART 2
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 3: Answer (Continued)}
+
+\begin{exampleblock}{Step 2: Evaluate Accuracy}
+
+The model has an accuracy of $87%$.
+
+Since
+
+$$
+87\% < 90\%,
+$$
+
+the accuracy condition is false:
+
+$$
+Q=\text{False}.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 3 -- PART 3
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 3: Answer (Continued)}
+
+\begin{exampleblock}{Step 3: Evaluate the Proposition}
+
+Using
+
+$$
+P=\text{True},
+\qquad
+Q=\text{False},
+$$
+
+we obtain
+
+$$
+P\land Q
+=
+\text{True}\land\text{False}
+=
+\text{False}.
+$$
+
+Therefore, the deployment condition is false.
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 3 -- PART 4
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 3: Answer (Conclusion)}
+
+\begin{exampleblock}{Conclusion}
+
+The model does not satisfy both conditions required for deployment.
+
+Hence,
+
+$$
+\boxed{\text{The model cannot be deployed.}}
+$$
+
+The compound proposition
+
+$$
+P\land Q
+$$
+
+represents a rule in which all required conditions must be satisfied.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 4
+% =========================================================
+
+\begin{frame}{Propositions -- Question 4}
+
+\begin{block}{Question}
+
+A cloud server is considered operational when it is either in the
+\textit{Running} state or in the \textit{Standby} state.
+
+Let
+
+$$
+P:\text{server is in the Running state},
+$$
+
+$$
+Q:\text{server is in the Standby state}.
+$$
+
+A monitoring system reports that the server is neither running nor in
+standby mode.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Propositions -- Question 4 (Continued)}
+
+\begin{block}{Question}
+
+\begin{enumerate}
+\item Represent the operational condition as a proposition.
+\item Determine whether the server is operational.
+\item State the negation of the operational condition.
+\end{enumerate}
+
+\end{block}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 4 -- PART 1
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 4: Answer}
+
+\begin{exampleblock}{Step 1: Represent the Condition}
+
+The server is operational when it is in either state.
+
+Therefore,
+
+$$
+P\lor Q.
+$$
+
+The monitoring system reports
+
+$$
+P=\text{False},
+\qquad
+Q=\text{False}.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 4 -- PART 2
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 4: Answer (Continued)}
+
+\begin{exampleblock}{Step 2: Determine the State}
+
+Using the given values,
+
+$$
+P\lor Q
+=
+\text{False}\lor\text{False}
+=
+\text{False}.
+$$
+
+Therefore, the server does not satisfy the operational condition.
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 4 -- PART 3
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 4: Answer (Continued)}
+
+\begin{exampleblock}{Step 3: Negate the Condition}
+
+The operational condition is
+
+$$
+P\lor Q.
+$$
+
+Its negation is
+
+$$
+\neg(P\lor Q).
+$$
+
+Using De Morgan's law,
+
+$$
+\neg(P\lor Q)
+\equiv
+\neg P\land\neg Q.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 4 -- PART 4
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 4: Answer (Conclusion)}
+
+\begin{exampleblock}{Interpretation}
+
+The expression
+
+$$
+\neg P\land\neg Q
+$$
+
+means that the server is neither in the Running state nor in the
+Standby state.
+
+Therefore,
+
+$$
+\boxed{\neg(P\lor Q)\equiv\neg P\land\neg Q}
+$$
+
+is the required negation.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 5
+% =========================================================
+
+\begin{frame}{Propositions -- Question 5}
+
+\begin{block}{Question}
+
+A data-processing pipeline performs a backup when the following rule is
+satisfied:
+
+$$
+\text{Backup occurs if the dataset is modified and the storage system
+is available.}
+$$
+
+Let
+
+$$
+P:\text{dataset is modified},
+$$
+
+$$
+Q:\text{storage system is available},
+$$
+
+$$
+R:\text{backup occurs}.
+$$
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Propositions -- Question 5 (Continued)}
+
+\begin{block}{Question}
+
+The system records that the dataset was modified and the storage system
+was unavailable.
+
+\medskip
+
+\begin{enumerate}
+\item Express the backup rule as a proposition.
+\item Determine whether the backup should occur.
+\end{enumerate}
+
+\end{block}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 5 -- PART 1
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 5: Answer}
+
+\begin{exampleblock}{Step 1: Identify the Conditions}
+
+The backup rule contains three propositions:
+
+$$
+P:\text{dataset is modified},
+$$
+
+$$
+Q:\text{storage system is available},
+$$
+
+$$
+R:\text{backup occurs}.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 5 -- PART 2
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 5: Answer (Continued)}
+
+\begin{exampleblock}{Step 2: Represent the Rule}
+
+The dataset must be modified and the storage system must be available.
+
+Therefore, the required condition is
+
+$$
+P\land Q.
+$$
+
+If this condition is satisfied, a backup occurs.
+
+Thus,
+
+$$
+\boxed{(P\land Q)\rightarrow R}.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 5 -- PART 3
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 5: Answer (Continued)}
+
+\begin{exampleblock}{Step 3: Use the Recorded Values}
+
+The dataset was modified.
+
+Therefore,
+
+$$
+P=\text{True}.
+$$
+
+The storage system was unavailable.
+
+Therefore,
+
+$$
+Q=\text{False}.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 5 -- PART 4
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 5: Answer (Continued)}
+
+\begin{exampleblock}{Step 4: Evaluate the Antecedent}
+
+The antecedent is
+
+$$
+P\land Q.
+$$
+
+Substituting the recorded values,
+
+$$
+P\land Q
+=
+\text{True}\land\text{False}
+=
+\text{False}.
+$$
+
+Therefore,
+
+$$
+\boxed{P\land Q=\text{False}}.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 5 -- PART 5
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 5: Answer (Continued)}
+
+\begin{exampleblock}{Step 5: Evaluate the Implication}
+
+The complete proposition is
+
+$$
+(P\land Q)\rightarrow R.
+$$
+
+Since
+
+$$
+P\land Q=\text{False},
+$$
+
+the proposition becomes
+
+$$
+\text{False}\rightarrow R.
+$$
+
+An implication with a false antecedent is true.
+
+Therefore,
+
+$$
+\boxed{(P\land Q)\rightarrow R=\text{True}}.
+$$
+
+\end{exampleblock}
+
+\end{frame}
+
+% ---------------------------------------------------------
+% ANSWER 5 -- PART 6
+% ---------------------------------------------------------
+
+\begin{frame}{Propositions -- Question 5: Answer (Conclusion)}
+
+\begin{exampleblock}{Interpretation}
+
+The truth of the implication does not mean that a backup actually
+occurred.
+
+The required condition
+
+$$
+P\land Q
+$$
+
+was false because the storage system was unavailable.
+
+Therefore, the backup rule was not violated.
+
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}{Propositions -- Question 5: Answer (Conclusion)}
+
+\begin{exampleblock}{Final Result}
+
+The system cannot require a backup when the storage system is
+unavailable.
+
+Hence,
+
+$$
+\boxed{\text{The backup rule is satisfied, but no backup is required.}}
+$$
+
+\end{exampleblock}
+
+\end{frame}

@@ -1,0 +1,272 @@
+\section{Sets}
+
+\begin{frame}
+\centering
+\Huge\textbf{Sets}
+\end{frame}
+
+% --------------------------------------------------
+% Question 1
+% --------------------------------------------------
+
+\begin{frame}{Question 1}
+A university maintains two sets of students:
+
+$$
+A=\{\text{students enrolled in AI}\}
+$$
+
+$$
+B=\{\text{students enrolled in Data Science}\}
+$$
+
+A student belongs to both programs if they are present in both sets.
+
+\textbf{Question:} Express the set of students enrolled in at least one of the two programs using set notation.
+\end{frame}
+
+\begin{frame}{Question 1}
+Using the given sets:
+
+$$
+A=\{\text{AI students}\}
+$$
+
+$$
+B=\{\text{Data Science students}\}
+$$
+
+The students enrolled in at least one program belong to the union of the two sets.
+
+\textbf{Find:}
+
+$$
+A\cup B
+$$
+
+\end{frame}
+
+\begin{frame}{Answer 1}
+The union of two sets contains elements belonging to either set or to both sets.
+
+Therefore,
+
+$$
+A\cup B
+=
+\{x\mid x\in A\text{ or }x\in B\}
+$$
+
+Hence,
+
+$$
+\boxed{A\cup B}
+$$
+
+represents all students enrolled in AI, Data Science, or both.
+\end{frame}
+
+% --------------------------------------------------
+% Question 2
+% --------------------------------------------------
+
+\begin{frame}{Question 2}
+A software company maintains two sets:
+
+$$
+A=\{\text{employees trained in Python}\}
+$$
+
+$$
+B=\{\text{employees trained in Machine Learning}\}
+$$
+
+Only employees trained in both areas are assigned to a particular AI project.
+
+\textbf{Question:} Which set operation identifies the eligible employees?
+\end{frame}
+
+\begin{frame}{Answer 2}
+The required employees must belong to both sets simultaneously.
+
+Therefore, the required set is the intersection:
+
+$$
+A\cap B
+$$
+
+where
+
+$$
+A\cap B
+=
+\{x\mid x\in A\text{ and }x\in B\}
+$$
+
+Hence,
+
+$$
+\boxed{A\cap B}
+$$
+
+represents employees trained in both Python and Machine Learning.
+\end{frame}
+
+% --------------------------------------------------
+% Question 3
+% --------------------------------------------------
+
+\begin{frame}{Question 3}
+A database contains records represented by the universal set
+
+$$
+U=\{1,2,3,4,5,6,7,8\}.
+$$
+
+The records containing missing values are
+
+$$
+A=\{2,4,6,8\}.
+$$
+
+\textbf{Question:} Determine the records that do not contain missing values.
+\end{frame}
+
+\begin{frame}{Answer 3}
+The records without missing values are the elements of the universal set that are not in $A$.
+
+Therefore, we use the complement:
+
+$$
+A^c=U-A
+$$
+
+Substituting the values,
+
+$$
+A^c
+=
+\{1,3,5,7\}
+$$
+
+Hence,
+
+$$
+\boxed{A^c=\{1,3,5,7\}}
+$$
+
+\end{frame}
+
+% --------------------------------------------------
+% Question 4
+% --------------------------------------------------
+
+\begin{frame}{Question 4}
+A machine-learning dataset contains 100 records.
+
+Let
+
+$$
+A=\{\text{records containing missing values}\}
+$$
+
+and
+
+$$
+B=\{\text{records containing duplicate values}\}.
+$$
+
+Suppose
+
+$$
+|A|=30,\qquad |B|=20,\qquad |A\cap B|=8.
+$$
+
+\textbf{Question:} Determine the number of records requiring at least one type of preprocessing.
+\end{frame}
+
+\begin{frame}{Answer 4}
+Records requiring at least one type of preprocessing belong to
+
+$$
+A\cup B
+$$
+
+Using the inclusion-exclusion principle,
+
+$$
+|A\cup B|
+=
+|A|+|B|-|A\cap B|
+$$
+
+Therefore,
+$$
+|A\cup B|
+=
+30+20-8
+$$
+$$
+=42
+$$
+
+Hence,
+
+$$
+\boxed{42}
+$$
+
+records require at least one type of preprocessing.
+\end{frame}
+
+% --------------------------------------------------
+% Question 5
+% --------------------------------------------------
+
+\begin{frame}{Question 5}
+A cybersecurity system monitors two types of events.
+
+Let
+
+$$
+A=\{\text{failed login events}\}
+$$
+
+and
+
+$$
+B=\{\text{suspicious network events}\}.
+$$
+
+An administrator wants to investigate events that are either failed logins or suspicious network events, but not both.
+
+\textbf{Question:} Express this set using set operations.
+\end{frame}
+
+\begin{frame}{Answer 5}
+Events belonging to $A$ but not $B$ are
+
+$$
+A-B
+$$
+
+Events belonging to $B$ but not $A$ are
+
+$$
+B-A
+$$
+
+Therefore, events belonging to exactly one of the two sets are
+
+$$
+(A-B)\cup(B-A)
+$$
+
+This is the symmetric difference:
+
+$$
+\boxed{A\triangle B}
+$$
+
+Hence, $A\triangle B$ represents events that occur in exactly one of the two categories.
+\end{frame}
