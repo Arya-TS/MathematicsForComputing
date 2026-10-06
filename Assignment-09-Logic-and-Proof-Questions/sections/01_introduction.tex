@@ -1,0 +1,707 @@
+% =========================================================
+% TOPIC 1 -- INTRODUCTION
+% =========================================================
+
+\section{Introduction}
+
+% =========================================================
+% TOPIC TITLE SLIDE
+% =========================================================
+
+\begin{frame}{Introduction}
+
+\begin{center}
+
+\vspace{1cm}
+
+{\Huge\textbf{Introduction}}
+
+\vspace{0.6cm}
+
+\textit{Applying fundamental concepts of mathematical reasoning to
+computing scenarios}
+
+\end{center}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 1 -- PART 1
+% =========================================================
+
+\begin{frame}{Introduction -- Question 1}
+
+\begin{block}{Software Requirement Verification}
+
+A software system has the following requirements:
+
+\begin{itemize}
+    \item Every registered user must have a unique user ID.
+    \item Every user ID is associated with exactly one account.
+    \item An inactive account must still have a unique user ID.
+\end{itemize}
+
+A developer claims:
+
+\begin{center}
+\textit{``If two accounts have the same user ID, they must belong to the same user.''}
+\end{center}
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 1 -- PART 2
+% =========================================================
+
+\begin{frame}{Introduction -- Question 1 (Continued)}
+
+\begin{block}{Question}
+
+Determine whether the developer's statement logically follows from the
+given requirements.
+
+\medskip
+
+Explain your reasoning and identify the mathematical idea involved.
+
+\medskip
+
+Let
+
+\[
+P=\text{``two accounts have the same user ID.''}
+\]
+
+and let
+
+\[
+Q=\text{``the accounts belong to the same user.''}
+\]
+
+Express the developer's statement in logical form.
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 1 -- PART 1
+% =========================================================
+
+\begin{frame}{Introduction -- Question 1: Answer}
+
+\begin{exampleblock}{Solution}
+
+The requirements state that every user ID is unique.
+
+Therefore, two different accounts cannot have the same user ID.
+
+Hence,
+
+\[
+P=\mathrm{False}.
+\]
+
+The developer's statement has the form
+
+\[
+P\rightarrow Q.
+\]
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 1 -- PART 2
+% =========================================================
+
+\begin{frame}{Introduction -- Question 1: Answer (Continued)}
+
+\begin{exampleblock}{Solution}
+
+Since the antecedent $P$ is false under the given requirements,
+
+\[
+P\rightarrow Q
+\]
+
+is logically true.
+
+This illustrates the concept of \textbf{vacuous truth} in logical
+implication.
+
+\medskip
+
+\textbf{Conclusion:}
+
+The implication is formally true because its antecedent describes an
+impossible situation. However, the requirements do not independently
+establish the claimed relationship between the accounts.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 2 -- PART 1
+% =========================================================
+
+\begin{frame}{Introduction -- Question 2}
+
+\begin{block}{AI Classification Rule}
+
+An AI-based spam filter uses the following rule:
+
+\begin{center}
+\textit{A message is spam if it contains a suspicious link or more than
+five promotional keywords.}
+\end{center}
+
+Consider a message containing a suspicious link but only two promotional
+keywords.
+
+Let
+
+\[
+P=\text{``The message contains a suspicious link.''}
+\]
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 2 -- PART 2
+% =========================================================
+
+\begin{frame}{Introduction -- Question 2 (Continued)}
+
+\begin{block}{Question}
+
+Let
+
+\[
+Q=\text{``The message contains more than five promotional keywords.''}
+\]
+
+\medskip
+
+Determine whether the message is classified as spam.
+
+\medskip
+
+Express the spam rule using $P$ and $Q$.
+
+\medskip
+
+Why is knowing only the truth value of $Q$ insufficient to determine
+whether the message is spam?
+
+Explain your answer using the logical operator involved.
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 2 -- PART 1
+% =========================================================
+
+\begin{frame}{Introduction -- Question 2: Answer}
+
+\begin{exampleblock}{Solution}
+
+The message contains a suspicious link.
+
+Therefore,
+
+\[
+P=\mathrm{True}.
+\]
+
+The spam rule uses the OR operator:
+
+\[
+\boxed{P\lor Q}
+\]
+
+The message contains only two promotional keywords, so it does not contain
+more than five.
+
+Therefore,
+
+\[
+Q=\mathrm{False}.
+\]
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 2 -- PART 2
+% =========================================================
+
+\begin{frame}{Introduction -- Question 2: Answer (Continued)}
+
+\begin{exampleblock}{Solution}
+
+Substituting the truth values,
+
+\[
+P\lor Q
+=
+\mathrm{True}\lor\mathrm{False}
+=
+\mathrm{True}.
+\]
+
+Therefore, the message is classified as spam.
+
+\medskip
+
+Knowing only $Q$ is insufficient because the result of
+
+\[
+P\lor Q
+\]
+
+depends on both propositions.
+
+\medskip
+
+\textbf{Key idea:}
+
+A disjunction is true when at least one of its propositions is true.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 3 -- PART 1
+% =========================================================
+
+\begin{frame}{Introduction -- Question 3}
+
+\begin{block}{Database Access Control}
+
+A database administrator defines the following access policy:
+
+\begin{center}
+\textit{A user can access a confidential file if the user is an administrator
+or has been explicitly granted permission.}
+\end{center}
+
+Let
+
+\[
+A=\text{``the user is an administrator''}
+\]
+
+and
+
+\[
+P=\text{``the user has explicit permission.''}
+\]
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 3 -- PART 2
+% =========================================================
+
+\begin{frame}{Introduction -- Question 3 (Continued)}
+
+\begin{block}{Question}
+
+A user who is not an administrator and has not been granted permission
+attempts to access the file.
+
+\medskip
+
+Determine whether access should be permitted.
+
+\medskip
+
+Represent the access policy using a logical expression.
+
+\medskip
+
+Explain how the truth values of $A$ and $P$ determine the result.
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 3 -- PART 1
+% =========================================================
+
+\begin{frame}{Introduction -- Question 3: Answer}
+
+\begin{exampleblock}{Solution}
+
+The policy states that access is allowed when either condition is satisfied.
+
+Therefore, the logical expression is
+
+\[
+\boxed{A\lor P}.
+\]
+
+The user is not an administrator, so
+
+\[
+A=\mathrm{False}.
+\]
+
+The user has not been granted permission, so
+
+\[
+P=\mathrm{False}.
+\]
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 3 -- PART 2
+% =========================================================
+
+\begin{frame}{Introduction -- Question 3: Answer (Continued)}
+
+\begin{exampleblock}{Solution}
+
+Substituting the truth values,
+
+\[
+A\lor P
+=
+\mathrm{False}\lor\mathrm{False}
+=
+\mathrm{False}.
+\]
+
+Therefore,
+
+\[
+\boxed{\text{Access is denied.}}
+\]
+
+\medskip
+
+\textbf{Key idea:}
+
+For a disjunction $A\lor P$ to be true, at least one of $A$ or $P$
+must be true.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 4 -- PART 1
+% =========================================================
+
+\begin{frame}{Introduction -- Question 4}
+
+\begin{block}{Machine Learning Model Evaluation}
+
+A machine-learning model is designed to flag fraudulent transactions.
+
+The system uses the statement:
+
+\begin{center}
+\textit{``If a transaction is flagged as suspicious, then it is fraudulent.''}
+\end{center}
+
+During testing, a transaction is flagged as suspicious, but is later found
+to be legitimate.
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 4 -- PART 2
+% =========================================================
+
+\begin{frame}{Introduction -- Question 4 (Continued)}
+
+\begin{block}{Question}
+
+Let
+
+\[
+P=\text{``the transaction is flagged as suspicious''}
+\]
+
+and
+
+\[
+Q=\text{``the transaction is fraudulent.''}
+\]
+
+\medskip
+
+Determine whether the observation invalidates the stated implication.
+
+Explain why or why not using the logical meaning of implication.
+
+Give a condition under which the implication would definitely be false.
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 4 -- PART 1
+% =========================================================
+
+\begin{frame}{Introduction -- Question 4: Answer}
+
+\begin{exampleblock}{Solution}
+
+The statement is represented as
+
+\[
+P\rightarrow Q.
+\]
+
+In the observed case, the transaction was flagged as suspicious.
+
+Therefore,
+
+\[
+P=\mathrm{True}.
+\]
+
+However, the transaction was later found to be legitimate.
+
+Therefore,
+
+\[
+Q=\mathrm{False}.
+\]
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 4 -- PART 2
+% =========================================================
+
+\begin{frame}{Introduction -- Question 4: Answer (Continued)}
+
+\begin{exampleblock}{Solution}
+
+An implication is false only in the case
+
+\[
+\mathrm{True}\rightarrow\mathrm{False}.
+\]
+
+Here,
+
+\[
+P\rightarrow Q
+=
+\mathrm{True}\rightarrow\mathrm{False}
+=
+\mathrm{False}.
+\]
+
+Therefore, the observation invalidates the stated implication.
+
+\medskip
+
+This is an example of a \textbf{false positive}: the system flags a
+legitimate transaction as suspicious.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 5 -- PART 1
+% =========================================================
+
+\begin{frame}{Introduction -- Question 5}
+
+\begin{block}{Autonomous System Decision}
+
+An autonomous vehicle uses the following rule:
+
+\begin{center}
+\textit{If the road is wet and visibility is poor, the vehicle reduces
+its speed.}
+\end{center}
+
+Let
+
+\[
+W=\text{``the road is wet''},
+\]
+
+\[
+V=\text{``visibility is poor''},
+\]
+
+\[
+S=\text{``the vehicle reduces speed.''}
+\]
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% QUESTION 5 -- PART 2
+% =========================================================
+
+\begin{frame}{Introduction -- Question 5 (Continued)}
+
+\begin{block}{Question}
+
+The following observations are recorded:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Condition} & \textbf{Observation}\\
+\midrule
+Road is wet & True\\
+Visibility is poor & False\\
+Vehicle reduces speed & False\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Represent the decision rule using $W$, $V$, and $S$.
+
+Determine whether the observed situation violates the decision rule.
+
+\end{block}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 5 -- PART 1
+% =========================================================
+
+\begin{frame}{Introduction -- Question 5: Answer}
+
+\begin{exampleblock}{Solution}
+
+The rule states:
+
+\[
+\boxed{(W\land V)\rightarrow S}
+\]
+
+From the observations,
+
+\[
+W=\mathrm{True},
+\]
+
+\[
+V=\mathrm{False},
+\]
+
+\[
+S=\mathrm{False}.
+\]
+
+Therefore,
+
+\[
+W\land V
+=
+\mathrm{True}\land\mathrm{False}
+=
+\mathrm{False}.
+\]
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 5 -- PART 2A
+% =========================================================
+
+\begin{frame}{Introduction -- Question 5: Answer (Continued)}
+
+\begin{exampleblock}{Solution}
+
+The complete implication becomes
+
+\[
+\mathrm{False}\rightarrow\mathrm{False}.
+\]
+
+An implication with a false antecedent is true.
+
+Therefore, the observed situation does not violate the decision rule.
+
+\medskip
+
+A violating observation would be
+
+\[
+W=\mathrm{True},
+\qquad
+V=\mathrm{True},
+\qquad
+S=\mathrm{False}.
+\]
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% ANSWER 5 -- PART 2B
+% =========================================================
+
+\begin{frame}{Introduction -- Question 5: Answer (Final)}
+
+\begin{exampleblock}{Solution}
+
+For the violating observation,
+
+\[
+(W\land V)\rightarrow S
+=
+\mathrm{True}\rightarrow\mathrm{False}.
+\]
+
+Therefore,
+
+\[
+(W\land V)\rightarrow S=\mathrm{False}.
+\]
+
+\medskip
+
+\textbf{Conclusion:}
+
+The rule is violated when both required conditions occur, but the required
+action does not occur.
+
+\end{exampleblock}
+
+\end{frame}
+
+% =========================================================
+% END OF TOPIC 1
+% =========================================================
