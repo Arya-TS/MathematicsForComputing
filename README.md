@@ -15,6 +15,7 @@ The repository contains assignments, presentations and related work completed as
 | Assignment 05 | Descriptive Statistics                         |
 | Assignment 06 | Statistical Department Report                  |
 | Assignment 07 | Vectors and Linear Algebra                     |
+| Assignment 09 | Logic and Proof                                |
 
 ## Topics
 
@@ -31,6 +32,13 @@ The coursework covers mathematical concepts and their applications in computing,
 * Derivatives and Applications
 * Mathematical Modelling
 * Vectors and Linear Algebra
+* Logic and Proof
+* Propositions and Predicates
+* Quantifiers and Truth Tables
+* Satisfiability
+* Mathematical Proof Techniques
+* Mathematical Induction
+* Set Equations and Inclusion--Exclusion
 
 ## Tools
 
@@ -59,6 +67,7 @@ MathematicsForComputing/
 ├── Assignment-05-Descriptive-Statistics/
 ├── Assignment-06-Statistical_Departments/
 ├── Assignment-07-Vectors-and-Linear-Algebra/
+├── Assignment-09-Logic-and-Proof/
 │
 ├── README.md
 ├── LICENSE
@@ -94,6 +103,10 @@ A report covering the **activities and functions of the Department of Statistics
 ### Assignment 07 — Vectors and Linear Algebra
 
 Covers fundamental concepts of **vectors, vector operations, matrices and linear algebra** with applications in computing.
+
+### Assignment 09 — Logic and Proof
+
+A **LaTeX Beamer presentation** containing application-based questions and solutions covering **logic, propositions, predicates and quantifiers, truth tables, satisfiability, proof techniques, set theory and mathematical induction**.
 
 ## Author
 
