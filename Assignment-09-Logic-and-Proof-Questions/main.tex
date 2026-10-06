@@ -1,0 +1,162 @@
+\documentclass[aspectratio=169,12pt]{beamer}
+
+% =========================================================
+% THEME
+% =========================================================
+
+\usetheme{Madrid}
+
+% =========================================================
+% PACKAGES
+% =========================================================
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+
+% =========================================================
+% PASTEL PROFESSIONAL COLORS
+% =========================================================
+
+\definecolor{PastelBlue}{RGB}{91,135,166}
+\definecolor{PastelLavender}{RGB}{125,118,155}
+\definecolor{LightBlue}{RGB}{235,242,247}
+\definecolor{LightLavender}{RGB}{242,240,247}
+\definecolor{DarkText}{RGB}{55,65,75}
+
+\setbeamercolor{structure}{fg=PastelBlue}
+
+\setbeamercolor{normal text}{
+    fg=DarkText,
+    bg=white
+}
+
+\setbeamercolor{frametitle}{
+    fg=PastelBlue,
+    bg=LightBlue
+}
+
+\setbeamercolor{block title}{
+    fg=white,
+    bg=PastelBlue
+}
+
+\setbeamercolor{block body}{
+    fg=DarkText,
+    bg=LightBlue
+}
+
+\setbeamercolor{block title example}{
+    fg=white,
+    bg=PastelLavender
+}
+
+\setbeamercolor{block body example}{
+    fg=DarkText,
+    bg=LightLavender
+}
+
+% =========================================================
+% FOOTER
+% =========================================================
+
+\setbeamertemplate{footline}
+{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[
+            wd=.33\paperwidth,
+            ht=2.5ex,
+            dp=1.125ex,
+            leftskip=.3cm
+        ]{author in head/foot}
+            \usebeamerfont{author in head/foot}\insertshortauthor
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[
+            wd=.34\paperwidth,
+            ht=2.5ex,
+            dp=1.125ex,
+            center
+        ]{title in head/foot}
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[
+            wd=.33\paperwidth,
+            ht=2.5ex,
+            dp=1.125ex,
+            rightskip=.3cm
+        ]{date in head/foot}
+            \usebeamerfont{date in head/foot}
+            \hfill\insertshortdate\hspace{0.2cm}
+        \end{beamercolorbox}%
+    }%
+    \vskip0pt%
+}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% % =========================================================
+% % DOCUMENT INFORMATION
+% % =========================================================
+
+\title[Logic and Proof]{Logic and Proof}
+\subtitle{Mathematics for Computing -- Application-Based Questions}
+
+\author[Arya T S]{Arya T S}
+
+\institute{
+    M.Tech Artificial Intelligence \& Software Engineering\\
+    Cochin University of Science and Technology (CUSAT)
+}
+
+\date{October 2026}
+
+% =========================================================
+% DOCUMENT
+% =========================================================
+
+\begin{document}
+
+% =========================================================
+% TITLE SLIDE
+% =========================================================
+
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+
+% % =========================================================
+% % CONTENT
+% % =========================================================
+
+% \input{sections/01_introduction}
+% \input{sections/02_proofs}
+% \input{sections/03_propositions}
+% \input{sections/04_predicates_quantifiers}
+% \input{sections/05_truth_tables}
+% \input{sections/06_first_order_logic}
+% \input{sections/07_satisfiability}
+% \input{sections/08_pattern_of_proof}
+% \input{sections/09_proofs_by_cases}
+% \input{sections/10_proof_of_implications}
+% \input{sections/11_proof_by contradiction}
+% \input{sections/12_proving_iff}
+% \input{sections/13_sets}
+% \input{sections/14_set_equations}
+\input{sections/15_russells_paradox}
+\input{sections/16_well_ordering}
+\input{sections/17_induction}
+\input{sections/18_invariants}
+\input{sections/19_strong_induction}
+\input{sections/20_structural_induction}
+% =========================================================
+% END
+% =========================================================
+
+\end{document}
