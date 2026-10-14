@@ -4,7 +4,7 @@ This repository contains my coursework for the **Mathematics for Computing** cou
 
 ## Repository Contents
 
-The repository contains assignments, presentations, reports, and computational projects completed as part of the course.
+The repository contains assignments, presentations, reports, and related work completed as part of the course.
 
 | Assignment | Topic |
 |---|---|
@@ -15,6 +15,7 @@ The repository contains assignments, presentations, reports, and computational p
 | Assignment 05 | Descriptive Statistics |
 | Assignment 06 | Statistical Department Report |
 | Assignment 07 | Vectors and Linear Algebra |
+| Assignment 08 | Eigenvector Basis and Linear Transformation |
 | Assignment 09 | Logic and Proof |
 | Assignment 10 | N-Queens Puzzle Using First-Order Predicate Calculus |
 
@@ -32,15 +33,16 @@ The coursework covers mathematical concepts and their applications in computing,
 - Derivatives and Applications
 - Mathematical Modelling
 - Vectors and Linear Algebra
+- Eigenvalues and Eigenvectors
+- Linear Transformations and Basis Transformation
 - Logic and Proof
 - Propositions and Predicates
 - Quantifiers and Truth Tables
-- Satisfiability
+- Satisfiability and Constraint Solving
 - Mathematical Proof Techniques
 - Mathematical Induction
 - Set Equations and Inclusion–Exclusion
-- First-Order Predicate Calculus
-- Constraint Satisfaction and Logical Reasoning
+- First-Order Predicate Calculus and AI-based Constraint Solving
 
 ## Tools
 
@@ -48,13 +50,12 @@ The assignments use various mathematical and computational tools, including:
 
 - Python
 - Jupyter Notebook
-- Pandas
 - NumPy
+- Pandas
 - Matplotlib
 - Excel
 - Desmos
-- LaTeX
-- Overleaf
+- LaTeX and Overleaf
 - Z3 Solver
 - Tkinter
 - GitHub
@@ -71,6 +72,7 @@ MathematicsForComputing/
 ├── Assignment-05-Descriptive-Statistics/
 ├── Assignment-06-Statistical_Departments/
 ├── Assignment-07-Vectors-and-Linear-Algebra/
+├── Assignment-08-Eigenvector-Basis-and-Linear-Transformation/
 ├── Assignment-09-Logic-and-Proof/
 ├── Assignment-10-N-Queens-Predicate-Calculus/
 │
@@ -109,27 +111,21 @@ A report covering the **activities and functions of the Department of Statistics
 
 Covers fundamental concepts of **vectors, vector operations, matrices, and linear algebra**, with applications in computing.
 
+### Assignment 08 — Eigenvector Basis and Linear Transformation
+
+Demonstrates a **3D linear transformation** using a transformation matrix and represents given points in both the standard basis and the eigenvector basis.
+
+The assignment uses Python to calculate eigenvalues, eigenvectors, and transformed points, with 3D visualization using Matplotlib.
+
 ### Assignment 09 — Logic and Proof
 
 A **LaTeX Beamer presentation** containing application-based questions and solutions covering **logic, propositions, predicates and quantifiers, truth tables, satisfiability, proof techniques, set theory, and mathematical induction**.
 
 ### Assignment 10 — N-Queens Puzzle Using First-Order Predicate Calculus
 
-A Python-based implementation of the **N-Queens puzzle** using **First-Order Predicate Calculus concepts and the Z3 constraint solver**.
+A Python-based implementation of the **N-Queens puzzle** using **First-Order Predicate Calculus (FOPC)** and the Z3 constraint solver.
 
-The project represents queen placement using the predicate `Queen(r, c)` and encodes constraints to ensure that no two queens share a row, column, or diagonal.
-
-The application is designed to support:
-
-- Board sizes from 1 to 13
-- Logical constraint modelling and solution generation using Z3
-- Interactive gameplay through a Tkinter graphical interface
-- User and AI modes
-- Hints and elapsed-time tracking
-- Light and dark themes
-- Solution validation and win detection
-
-The project demonstrates how logical constraints can be grounded over a finite domain and solved computationally.
+The project represents queen placement using the predicate `Queen(r, c)` and encodes constraints to prevent queens from sharing a row, column, or diagonal. It includes a graphical interface with user and AI modes, hints, timing, and light/dark themes.
 
 ## Author
 
